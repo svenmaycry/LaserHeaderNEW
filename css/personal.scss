@@ -1,0 +1,415 @@
+.main {
+  &__wrapper {
+    position: relative;
+    background: linear-gradient(to bottom, #FFFFFF, #E3EFFF);
+    z-index: 1;
+  }
+}
+
+// СЕКЦИЯ БАНЕРА СТАТЕЙ И АКЦИЯ
+.personal {
+
+  &__wrapper {
+    display: grid;
+    grid-template-areas:
+        "banner articles"
+        "banner actions";
+    grid-template-columns: 1100px 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px;
+
+    @media (max-width: 1700px) {
+      grid-template-columns: 800px 1fr;
+    }
+
+    @media (max-width: 1439px) {
+      grid-template-areas:
+        "banner banner"
+        "articles actions";
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr auto;
+
+    }
+  }
+
+  // БЛОК БАННЕРА
+  &-banner {
+    grid-area: banner;
+    border-radius: 10px;
+    border: 1px solid #000;
+
+    &__list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+
+    &-item {
+
+      &__link {
+        display: block;
+        overflow: hidden;
+        height: 100%;
+      }
+
+      &__img {
+        width: 100%;
+        height: 100%;
+      }
+
+      video {
+        width: 100%;
+        height: 100%;
+      }
+
+    }
+
+    .swiper {
+      position: relative;
+      border-radius: 10px;
+      height: 100%;
+
+      &:hover, &:focus {
+        .swiper-button-prev, .swiper-button-next {
+          opacity: 1;
+        }
+      }
+
+      &-button-prev, &-button-next {
+        background-color: $border-base;
+        border-radius: 50%;
+        height: 30px;
+        width: 30px;
+        opacity: 0;
+        transition: opacity 0.3s ease-in, background-color 0.3s ease-in;
+
+        svg {
+          height: 1.2em;
+          width: 1.2em;
+        }
+
+        &::after {
+          content: '';
+        }
+
+        &:hover, &:focus {
+          background-color: $mainWhiteColor;
+        }
+      }
+
+      &-button-prev {
+        transform: rotate(-180deg);
+      }
+
+      &-pagination {
+        position: absolute;
+        bottom: 10px;
+        right: 0;
+        left: 0;
+        cursor: pointer;
+
+        &-bullet {
+          margin-right: 10px;
+          border-radius: 50%;
+        }
+      }
+
+    }
+  }
+
+  // БЛОК СТАТЕЙ
+  &-articles {
+    grid-area: articles;
+    position: relative;
+    overflow-x: hidden;
+    background-color: #E3EFFF;
+    border-radius: 10px;
+    border: 1px solid #000;
+
+    &__cnt {
+      padding: 14px 16px;
+      overflow-y: hidden;
+    }
+
+    &__title {
+      display: flex;
+      font-family: $fontHeading;
+      font-size: 15px;
+      font-weight: 700;
+      margin: 0 0 20px;
+
+      &::before {
+        content: '';
+        display: block;
+        position: relative;
+        top: -3px;
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        background: $mainWhiteColor url('https://svgshare.com/i/189z.svg') 3px 2px / 80% no-repeat;
+        margin-right: 5px;
+      }
+    }
+
+    &__list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    &-item {
+
+      &__link {
+        display: flex;
+        align-items: center;
+        background-color: $mainWhiteColor;
+        border-radius: 10px;
+        padding: 25px 3px;
+        transition: filter 0.3s ease-in;
+
+        &:hover, &:focus {
+          filter: drop-shadow(0 20px 40px rgba(0, 0, 0, .05)) drop-shadow(0 0 14px rgba(0, 0, 0, .03));
+
+          .personal-articles-item__text {
+            color: $primary-color;
+          }
+        }
+      }
+
+      &__img {
+        width: 83px;
+        margin-right: 5px;
+
+        @media (max-width: 1800px) {
+          width: 58px;
+        }
+      }
+
+      &__text {
+        font-size: 12px;
+        color: #000000;
+        max-width: 150px;
+        font-weight: 600;
+        line-height: 1.4;
+        transition: color 0.3s ease-in;
+        margin: 0;
+      }
+
+    }
+
+    .swiper {
+      border-radius: 10px;
+
+      &-button-prev, &-button-next {
+        border-radius: 50%;
+        height: 30px;
+        width: 30px;
+        opacity: 1;
+        transition: opacity 0.3s ease-in, background-color 0.3s ease-in, transform 0.3s ease-in;
+        top: 35px;
+
+        svg {
+          height: 1.2em;
+          width: 1.2em;
+        }
+
+        &::after {
+          content: '';
+        }
+
+        &:hover, &:focus {
+          transform: scale(1.2);
+          outline: none;
+        }
+      }
+
+
+      &-button-prev {
+        left: auto;
+        right: 65px;
+        background: url('https://svgshare.com/i/18Ac.svg') 0 0 / cover no-repeat;
+      }
+
+      &-button-next {
+        left: auto;
+        right: 15px;
+        background: url('https://svgshare.com/i/189n.svg') 0 0 / cover no-repeat;
+      }
+
+      &-button-disabled {
+        opacity: .35;
+        cursor: auto;
+        pointer-events: none;
+      }
+    }
+  }
+
+  // БЛОК АКЦИЙ
+  &-actions {
+    grid-area: actions;
+    display: grid;
+    column-gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    border-radius: 10px;
+
+    &__link {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      border-radius: 10px;
+      border: 1px solid #000;
+
+    }
+
+    &__img {
+      height: 100%;
+      width: 100%;
+    }
+
+  }
+}
+
+// СЕКЦИЯ КАТЕГОРИЙ
+.categories {
+  position: relative;
+  padding-bottom: 110px;
+
+  &__title {
+    font-family: $fontHeading;
+    font-size: clamp(18px, 5vw, 22px);
+    margin: min(3vw, 25px) 0 min(3vw, 25px);
+  }
+
+  &__list {
+    list-style: none;
+    padding: 13px;
+    margin: 0;
+  }
+
+  &-item {
+
+    &__link {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: inherit;
+      max-width: 120px;
+
+      @media (max-width: 767px) {
+        max-width: 80px;
+      }
+
+      &:hover, &:focus {
+        .categories-item__img {
+          transform: scale(1.1);
+        }
+
+        .categories-item__text {
+          color: $primary-color;
+        }
+
+        .categories-item__img-cnt {
+          box-shadow: none;
+
+          &::before {
+            content: '';
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+    &__img-cnt {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: $mainWhiteColor;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+      border-radius: 10px;
+      margin-bottom: 15px;
+      min-height: 120px;
+      transition: box-shadow 0.3s ease-in;
+
+      @media (max-width: 767px) {
+        min-height: 80px;
+        box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: -3px;
+        right: -3px;
+        bottom: -3px;
+        left: -3px;
+        border-radius: inherit;
+        background: linear-gradient(to bottom, #FF0000, #0094DA);
+        filter: blur(3px);
+        transition: opacity 0.3s ease-in;
+        opacity: 0;
+        z-index: -1;
+      }
+    }
+
+    &__img {
+      transition: transform 0.3s ease-in;
+    }
+
+    &__text {
+      font-size: 14px;
+      line-height: 1.3;
+      max-width: 100px;
+      margin: 0 auto;
+      text-align: center;
+      transition: color 0.3s ease-in;
+    }
+  }
+
+  .swiper {
+
+    &-button-prev, &-button-next {
+      border-radius: 50%;
+      height: 30px;
+      width: 30px;
+      opacity: 1;
+      transition: opacity 0.3s ease-in, background-color 0.3s ease-in, transform 0.3s ease-in;
+      top: 35px;
+
+      svg {
+        height: 1.2em;
+        width: 1.2em;
+      }
+
+      &::after {
+        content: '';
+      }
+
+      &:hover, &:focus {
+        transform: scale(1.2);
+        outline: none;
+      }
+    }
+
+
+    &-button-prev {
+      left: auto;
+      right: 160px;
+      background: url('https://svgshare.com/i/18Ac.svg') 0 0 / cover no-repeat;
+    }
+
+    &-button-next {
+      left: auto;
+      right: 110px;
+      background: url('https://svgshare.com/i/189n.svg') 0 0 / cover no-repeat;
+    }
+
+    &-button-disabled {
+      opacity: .35;
+      cursor: auto;
+      pointer-events: none;
+    }
+  }
+}
