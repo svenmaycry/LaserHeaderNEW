@@ -82,20 +82,28 @@ const articlesSwiper = new Swiper('.js-swiper-articles', {
 
   breakpoints: {
     320: {
-      slidesPerView: 1,
-      slidesPerGroup: 1,
+      slidesPerView: 1.4,
+      slidesPerGroup: 1.4,
+    },
+    479: {
+      slidesPerView: 2.2,
+      slidesPerGroup: 2.2,
     },
     768: {
-      slidesPerView: 2.4,
-      slidesPerGroup: 2.4,
+      slidesPerView: 2.2,
+      slidesPerGroup: 2.2,
+    },
+    1440: {
+      slidesPerView: 2.6,
+      slidesPerGroup: 2.6,
     },
     992: {
-      slidesPerView: 2.4,
-      slidesPerGroup: 2.4,
+      slidesPerView: 2.6,
+      slidesPerGroup: 2.6,
     },
     1268: {
-      slidesPerView: 2.4,
-      slidesPerGroup: 2.4,
+      slidesPerView: 2.6,
+      slidesPerGroup: 2.6,
     },
   }
 
@@ -108,7 +116,7 @@ const categoriesSwiper = new Swiper('.js-swiper-categories', {
   loop: false,
   slidesPerView: 3,
   slidesPerGroup: 3,
-  spaceBetween: 5,
+  spaceBetween: 30,
   speed: 900,
   parallax: true,
   preloadImages: false,
@@ -146,6 +154,7 @@ const categoriesSwiper = new Swiper('.js-swiper-categories', {
     700: {
       slidesPerView: 5,
       slidesPerGroup: 5,
+      spaceBetween: 10,
     },
     1000: {
       slidesPerView: 6,

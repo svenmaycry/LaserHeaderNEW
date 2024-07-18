@@ -97,6 +97,11 @@ body.lock {
 body > main {
   margin-top: 160px;
 }
+@media (max-width: 767px) {
+  body > main {
+    margin-top: 115px;
+  }
+}
 
 .container {
   max-width: 1330px;
@@ -1869,26 +1874,37 @@ body > main {
 .personal__wrapper {
   display: grid;
   grid-template-areas: "banner articles" "banner actions";
-  grid-template-columns: 1100px 1fr;
+  grid-template-columns: 960px 1fr;
   grid-template-rows: 1fr 1fr;
   gap: 20px;
 }
-@media (max-width: 1700px) {
+@media (max-width: 1600px) {
   .personal__wrapper {
     grid-template-columns: 800px 1fr;
   }
 }
-@media (max-width: 1439px) {
+@media (max-width: 1440px) {
   .personal__wrapper {
     grid-template-areas: "banner banner" "articles actions";
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr auto;
   }
 }
+@media (max-width: 1279px) {
+  .personal__wrapper {
+    grid-template-areas: "banner banner" "articles articles" "actions actions";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+  }
+}
+@media (max-width: 767px) {
+  .personal__wrapper {
+    gap: 5px;
+  }
+}
 .personal-banner {
   grid-area: banner;
   border-radius: 10px;
-  border: 1px solid #000;
 }
 .personal-banner__list {
   list-style: none;
@@ -1904,10 +1920,7 @@ body > main {
 .personal-banner-item__img {
   width: 100%;
   height: 100%;
-}
-.personal-banner-item video {
-  width: 100%;
-  height: 100%;
+  max-height: 420px;
 }
 .personal-banner .swiper {
   position: relative;
@@ -1955,11 +1968,15 @@ body > main {
   overflow-x: hidden;
   background-color: #E3EFFF;
   border-radius: 10px;
-  border: 1px solid #000;
 }
 .personal-articles__cnt {
   padding: 14px 16px;
   overflow-y: hidden;
+}
+@media (max-width: 767px) {
+  .personal-articles__cnt {
+    padding: 5px 16px;
+  }
 }
 .personal-articles__title {
   display: flex;
@@ -1972,7 +1989,7 @@ body > main {
   content: "";
   display: block;
   position: relative;
-  top: -3px;
+  top: -2px;
   width: 28px;
   height: 28px;
   border-radius: 50%;
@@ -1991,6 +2008,11 @@ body > main {
   border-radius: 10px;
   padding: 25px 3px;
   transition: filter 0.3s ease-in;
+}
+@media (max-width: 767px) {
+  .personal-articles-item__link {
+    padding: 8px 3px;
+  }
 }
 .personal-articles-item__link:hover, .personal-articles-item__link:focus {
   filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.05)) drop-shadow(0 0 14px rgba(0, 0, 0, 0.03));
@@ -2056,21 +2078,31 @@ body > main {
 .personal-actions {
   grid-area: actions;
   display: grid;
-  column-gap: 20px;
+  column-gap: 30px;
   grid-template-columns: repeat(2, 1fr);
   justify-items: center;
   border-radius: 10px;
+}
+@media (max-width: 767px) {
+  .personal-actions {
+    column-gap: 15px;
+  }
 }
 .personal-actions__link {
   width: 100%;
   height: 100%;
   overflow: hidden;
   border-radius: 10px;
-  border: 1px solid #000;
 }
 .personal-actions__img {
-  height: 100%;
   width: 100%;
+  height: 100%;
+  max-height: 183px;
+}
+@media (max-width: 1279px) {
+  .personal-actions__img {
+    max-height: none;
+  }
 }
 
 .categories {
@@ -2079,8 +2111,8 @@ body > main {
 }
 .categories__title {
   font-family: "Cera Pro", Helvetica, sans-serif;
-  font-size: clamp(18px, 5vw, 22px);
-  margin: min(3vw, 25px) 0 min(3vw, 25px);
+  font-size: clamp(18px, 3vw, 22px);
+  margin: min(2vw, 25px) 0 min(2vw, 25px);
 }
 .categories__list {
   list-style: none;
@@ -2118,7 +2150,7 @@ body > main {
   align-items: center;
   justify-content: center;
   background-color: rgb(255, 255, 255);
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   margin-bottom: 15px;
   min-height: 120px;
@@ -2127,7 +2159,7 @@ body > main {
 @media (max-width: 767px) {
   .categories-item__img-cnt {
     min-height: 80px;
-    box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
   }
 }
 .categories-item__img-cnt::before {
@@ -2145,6 +2177,8 @@ body > main {
   z-index: -1;
 }
 .categories-item__img {
+  width: 100%;
+  height: 100%;
   transition: transform 0.3s ease-in;
 }
 .categories-item__text {
@@ -2161,7 +2195,7 @@ body > main {
   width: 30px;
   opacity: 1;
   transition: opacity 0.3s ease-in, background-color 0.3s ease-in, transform 0.3s ease-in;
-  top: 35px;
+  top: 26px;
 }
 .categories .swiper-button-prev svg, .categories .swiper-button-next svg {
   height: 1.2em;
@@ -2176,12 +2210,12 @@ body > main {
 }
 .categories .swiper-button-prev {
   left: auto;
-  right: 160px;
+  right: clamp(55px, 15vw, 160px);
   background: url("https://svgshare.com/i/18Ac.svg") 0 0/cover no-repeat;
 }
 .categories .swiper-button-next {
   left: auto;
-  right: 110px;
+  right: clamp(13px, 6vw, 110px);
   background: url("https://svgshare.com/i/189n.svg") 0 0/cover no-repeat;
 }
 .categories .swiper-button-disabled {

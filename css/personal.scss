@@ -14,21 +14,33 @@
     grid-template-areas:
         "banner articles"
         "banner actions";
-    grid-template-columns: 1100px 1fr;
+    grid-template-columns: 960px 1fr;
     grid-template-rows: 1fr 1fr;
     gap: 20px;
 
-    @media (max-width: 1700px) {
+    @media (max-width: 1600px) {
       grid-template-columns: 800px 1fr;
     }
 
-    @media (max-width: 1439px) {
+    @media (max-width: 1440px) {
       grid-template-areas:
         "banner banner"
         "articles actions";
       grid-template-columns: 1fr 1fr;
       grid-template-rows: 1fr auto;
+    }
 
+    @media (max-width: 1279px) {
+      grid-template-areas:
+        "banner banner"
+        "articles articles"
+        "actions actions";
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto;
+    }
+
+    @media (max-width: 767px) {
+      gap: 5px;
     }
   }
 
@@ -36,7 +48,6 @@
   &-banner {
     grid-area: banner;
     border-radius: 10px;
-    border: 1px solid #000;
 
     &__list {
       list-style: none;
@@ -56,13 +67,8 @@
       &__img {
         width: 100%;
         height: 100%;
+        max-height: 420px;
       }
-
-      video {
-        width: 100%;
-        height: 100%;
-      }
-
     }
 
     .swiper {
@@ -125,11 +131,14 @@
     overflow-x: hidden;
     background-color: #E3EFFF;
     border-radius: 10px;
-    border: 1px solid #000;
 
     &__cnt {
       padding: 14px 16px;
       overflow-y: hidden;
+
+      @media (max-width: 767px) {
+        padding: 5px 16px;
+      }
     }
 
     &__title {
@@ -143,7 +152,7 @@
         content: '';
         display: block;
         position: relative;
-        top: -3px;
+        top: -2px;
         width: 28px;
         height: 28px;
         border-radius: 50%;
@@ -167,6 +176,10 @@
         border-radius: 10px;
         padding: 25px 3px;
         transition: filter 0.3s ease-in;
+
+        @media (max-width: 767px) {
+          padding: 8px 3px;
+        }
 
         &:hover, &:focus {
           filter: drop-shadow(0 20px 40px rgba(0, 0, 0, .05)) drop-shadow(0 0 14px rgba(0, 0, 0, .03));
@@ -195,7 +208,6 @@
         transition: color 0.3s ease-in;
         margin: 0;
       }
-
     }
 
     .swiper {
@@ -249,23 +261,30 @@
   &-actions {
     grid-area: actions;
     display: grid;
-    column-gap: 20px;
+    column-gap: 30px;
     grid-template-columns: repeat(2, 1fr);
     justify-items: center;
     border-radius: 10px;
+
+    @media (max-width: 767px) {
+      column-gap: 15px;
+    }
 
     &__link {
       width: 100%;
       height: 100%;
       overflow: hidden;
       border-radius: 10px;
-      border: 1px solid #000;
-
     }
 
     &__img {
-      height: 100%;
       width: 100%;
+      height: 100%;
+      max-height: 183px;
+
+      @media (max-width: 1279px) {
+        max-height: none;
+      }
     }
 
   }
@@ -278,8 +297,8 @@
 
   &__title {
     font-family: $fontHeading;
-    font-size: clamp(18px, 5vw, 22px);
-    margin: min(3vw, 25px) 0 min(3vw, 25px);
+    font-size: clamp(18px, 3vw, 22px);
+    margin: min(2vw, 25px) 0 min(2vw, 25px);
   }
 
   &__list {
@@ -327,7 +346,7 @@
       align-items: center;
       justify-content: center;
       background-color: $mainWhiteColor;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
       border-radius: 10px;
       margin-bottom: 15px;
       min-height: 120px;
@@ -335,7 +354,7 @@
 
       @media (max-width: 767px) {
         min-height: 80px;
-        box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
       }
 
       &::before {
@@ -355,6 +374,8 @@
     }
 
     &__img {
+      width: 100%;
+      height: 100%;
       transition: transform 0.3s ease-in;
     }
 
@@ -376,7 +397,7 @@
       width: 30px;
       opacity: 1;
       transition: opacity 0.3s ease-in, background-color 0.3s ease-in, transform 0.3s ease-in;
-      top: 35px;
+      top: 26px;
 
       svg {
         height: 1.2em;
@@ -396,13 +417,13 @@
 
     &-button-prev {
       left: auto;
-      right: 160px;
+      right: clamp(55px, 15vw, 160px);
       background: url('https://svgshare.com/i/18Ac.svg') 0 0 / cover no-repeat;
     }
 
     &-button-next {
       left: auto;
-      right: 110px;
+      right: clamp(13px, 6vw, 110px);
       background: url('https://svgshare.com/i/189n.svg') 0 0 / cover no-repeat;
     }
 
