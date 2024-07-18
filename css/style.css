@@ -2038,6 +2038,11 @@ body > main {
   transition: color 0.3s ease-in;
   margin: 0;
 }
+@media (max-width: 767px) {
+  .personal-articles-item__text {
+    line-height: 1.2;
+  }
+}
 .personal-articles .swiper {
   border-radius: 10px;
 }

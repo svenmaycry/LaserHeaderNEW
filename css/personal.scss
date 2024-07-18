@@ -207,6 +207,10 @@
         line-height: 1.4;
         transition: color 0.3s ease-in;
         margin: 0;
+
+        @media (max-width: 767px) {
+          line-height: 1.2;
+        }
       }
     }
 

@@ -82,8 +82,8 @@ const articlesSwiper = new Swiper('.js-swiper-articles', {
 
   breakpoints: {
     320: {
-      slidesPerView: 1.4,
-      slidesPerGroup: 1.4,
+      slidesPerView: 1.5,
+      slidesPerGroup: 1.5,
     },
     479: {
       slidesPerView: 2.2,
