@@ -7,12 +7,14 @@
   background-color: white;
 
   &__top {
-    display: flex;
-    align-items: center;
-
     @media (min-width: 1279px) {
       padding-right: calc(17px - (100vw - 100%));
     }
+  }
+
+  &__top-cnt {
+    display: flex;
+    align-items: center;
 
     @media (max-width: 1279px) {
       padding-top: 12px;
@@ -24,15 +26,15 @@
     box-shadow: 0 0 8px $shadowVeryLowColor;
     padding-top: 10px;
     padding-bottom: 10px;
+
+    @media (min-width: 1279px) {
+      padding-right: calc(17px - (100vw - 100%));
+    }
   }
 
   &__bottom-cnt {
     display: flex;
     align-items: center;
-
-    @media (min-width: 1279px) {
-      padding-right: calc(17px - (100vw - 100%));
-    }
   }
 
   &__logo {
