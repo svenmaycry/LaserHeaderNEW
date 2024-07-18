@@ -1975,7 +1975,7 @@ body > main {
 }
 @media (max-width: 767px) {
   .personal-articles__cnt {
-    padding: 5px 16px;
+    padding: 7px 16px;
   }
 }
 .personal-articles__title {
@@ -2126,7 +2126,7 @@ body > main {
 }
 @media (max-width: 767px) {
   .categories__list {
-    padding: 4px 13px;
+    padding: 7px 13px;
   }
 }
 .categories-item__link {
