@@ -2126,7 +2126,7 @@ body > main {
 }
 @media (max-width: 767px) {
   .categories__list {
-    padding: 2px 13px;
+    padding: 4px 13px;
   }
 }
 .categories-item__link {
@@ -2185,6 +2185,14 @@ body > main {
   transition: opacity 0.3s ease-in;
   opacity: 0;
   z-index: -1;
+}
+@media (max-width: 767px) {
+  .categories-item__img-cnt::before {
+    top: -1px;
+    right: -1px;
+    bottom: -1px;
+    left: -1px;
+  }
 }
 .categories-item__img {
   width: 100%;
