@@ -219,7 +219,11 @@
         width: 30px;
         opacity: 1;
         transition: opacity 0.3s ease-in, background-color 0.3s ease-in, transform 0.3s ease-in;
-        top: 35px;
+        top: 32px;
+
+        @media (max-width: 767px) {
+          top: 25px;
+        }
 
         svg {
           height: 1.2em;
@@ -305,6 +309,10 @@
     list-style: none;
     padding: 13px;
     margin: 0;
+
+    @media (max-width: 767px) {
+      padding: 2px 13px;
+    }
   }
 
   &-item {
@@ -399,6 +407,10 @@
       transition: opacity 0.3s ease-in, background-color 0.3s ease-in, transform 0.3s ease-in;
       top: 26px;
 
+      @media (max-width: 767px) {
+        top: 22px;
+      }
+
       svg {
         height: 1.2em;
         width: 1.2em;
@@ -417,7 +429,7 @@
 
     &-button-prev {
       left: auto;
-      right: clamp(55px, 15vw, 160px);
+      right: clamp(60px, 15vw, 160px);
       background: url('https://svgshare.com/i/18Ac.svg') 0 0 / cover no-repeat;
     }
 

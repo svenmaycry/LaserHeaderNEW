@@ -2047,7 +2047,12 @@ body > main {
   width: 30px;
   opacity: 1;
   transition: opacity 0.3s ease-in, background-color 0.3s ease-in, transform 0.3s ease-in;
-  top: 35px;
+  top: 32px;
+}
+@media (max-width: 767px) {
+  .personal-articles .swiper-button-prev, .personal-articles .swiper-button-next {
+    top: 25px;
+  }
 }
 .personal-articles .swiper-button-prev svg, .personal-articles .swiper-button-next svg {
   height: 1.2em;
@@ -2118,6 +2123,11 @@ body > main {
   list-style: none;
   padding: 13px;
   margin: 0;
+}
+@media (max-width: 767px) {
+  .categories__list {
+    padding: 2px 13px;
+  }
 }
 .categories-item__link {
   display: flex;
@@ -2197,6 +2207,11 @@ body > main {
   transition: opacity 0.3s ease-in, background-color 0.3s ease-in, transform 0.3s ease-in;
   top: 26px;
 }
+@media (max-width: 767px) {
+  .categories .swiper-button-prev, .categories .swiper-button-next {
+    top: 22px;
+  }
+}
 .categories .swiper-button-prev svg, .categories .swiper-button-next svg {
   height: 1.2em;
   width: 1.2em;
@@ -2210,7 +2225,7 @@ body > main {
 }
 .categories .swiper-button-prev {
   left: auto;
-  right: clamp(55px, 15vw, 160px);
+  right: clamp(60px, 15vw, 160px);
   background: url("https://svgshare.com/i/18Ac.svg") 0 0/cover no-repeat;
 }
 .categories .swiper-button-next {
