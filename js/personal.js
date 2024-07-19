@@ -120,9 +120,6 @@ const categoriesSwiper = new Swiper('.js-swiper-categories', {
   speed: 900,
   parallax: true,
   preloadImages: false,
-  autoplay: {
-    delay: 3000,
-  },
 
   // If we need pagination
   pagination: {
