@@ -113,7 +113,7 @@ const categoriesSwiper = new Swiper('.js-swiper-categories', {
   // Optional parameters
   observer: true,
   observeParents: true,
-  loop: false,
+  loop: true,
   slidesPerView: 3,
   slidesPerGroup: 3,
   spaceBetween: 0,
