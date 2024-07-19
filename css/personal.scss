@@ -16,10 +16,10 @@
         "banner actions";
     grid-template-columns: 960px 1fr;
     grid-template-rows: 1fr 1fr;
-    gap: 20px;
+    gap: 30px;
 
     @media (max-width: 1600px) {
-      grid-template-columns: 800px 1fr;
+      grid-template-columns: 850px 1fr;
     }
 
     @media (max-width: 1440px) {
@@ -40,7 +40,7 @@
     }
 
     @media (max-width: 767px) {
-      gap: 5px;
+      gap: 10px;
     }
   }
 
@@ -146,7 +146,7 @@
       font-family: $fontHeading;
       font-size: 15px;
       font-weight: 700;
-      margin: 0 0 20px;
+      margin: 0 0 10px;
 
       &::before {
         content: '';
@@ -311,11 +311,11 @@
 
   &__list {
     list-style: none;
-    padding: 13px;
+    padding: 13px 0;
     margin: 0;
 
     @media (max-width: 767px) {
-      padding: 7px 13px;
+      padding: 7px 0;
     }
   }
 
@@ -326,11 +326,6 @@
       flex-direction: column;
       align-items: center;
       color: inherit;
-      max-width: 120px;
-
-      @media (max-width: 767px) {
-        max-width: 80px;
-      }
 
       &:hover, &:focus {
         .categories-item__img {
@@ -360,15 +355,18 @@
       background-color: $mainWhiteColor;
       box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
       border-radius: 10px;
-      margin-bottom: 15px;
+      max-width: 120px;
       min-height: 120px;
       transition: box-shadow 0.3s ease-in;
+      margin-bottom: 15px;
 
-      @media (max-width: 767px) {
-        min-height: 80px;
+      @media (max-width: 900px) {
+        max-width: 63px;
+        min-height: 63px;
         box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
         margin-bottom: 5px;
       }
+
 
       &::before {
         content: '';
@@ -441,13 +439,13 @@
 
     &-button-prev {
       left: auto;
-      right: clamp(60px, 15vw, 160px);
+      right: clamp(60px, 15vw, 145px);
       background: url('https://svgshare.com/i/18Ac.svg') 0 0 / cover no-repeat;
     }
 
     &-button-next {
       left: auto;
-      right: clamp(13px, 6vw, 110px);
+      right: clamp(13px, 6vw, 90px);
       background: url('https://svgshare.com/i/189n.svg') 0 0 / cover no-repeat;
     }
 

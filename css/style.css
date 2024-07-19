@@ -1876,11 +1876,11 @@ body > main {
   grid-template-areas: "banner articles" "banner actions";
   grid-template-columns: 960px 1fr;
   grid-template-rows: 1fr 1fr;
-  gap: 20px;
+  gap: 30px;
 }
 @media (max-width: 1600px) {
   .personal__wrapper {
-    grid-template-columns: 800px 1fr;
+    grid-template-columns: 850px 1fr;
   }
 }
 @media (max-width: 1440px) {
@@ -1899,7 +1899,7 @@ body > main {
 }
 @media (max-width: 767px) {
   .personal__wrapper {
-    gap: 5px;
+    gap: 10px;
   }
 }
 .personal-banner {
@@ -1983,7 +1983,7 @@ body > main {
   font-family: "Cera Pro", Helvetica, sans-serif;
   font-size: 15px;
   font-weight: 700;
-  margin: 0 0 20px;
+  margin: 0 0 10px;
 }
 .personal-articles__title::before {
   content: "";
@@ -2126,12 +2126,12 @@ body > main {
 }
 .categories__list {
   list-style: none;
-  padding: 13px;
+  padding: 13px 0;
   margin: 0;
 }
 @media (max-width: 767px) {
   .categories__list {
-    padding: 7px 13px;
+    padding: 7px 0;
   }
 }
 .categories-item__link {
@@ -2139,12 +2139,6 @@ body > main {
   flex-direction: column;
   align-items: center;
   color: inherit;
-  max-width: 120px;
-}
-@media (max-width: 767px) {
-  .categories-item__link {
-    max-width: 80px;
-  }
 }
 .categories-item__link:hover .categories-item__img, .categories-item__link:focus .categories-item__img {
   transform: scale(1.1);
@@ -2167,13 +2161,15 @@ body > main {
   background-color: rgb(255, 255, 255);
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
-  margin-bottom: 15px;
+  max-width: 120px;
   min-height: 120px;
   transition: box-shadow 0.3s ease-in;
+  margin-bottom: 15px;
 }
-@media (max-width: 767px) {
+@media (max-width: 900px) {
   .categories-item__img-cnt {
-    min-height: 80px;
+    max-width: 63px;
+    min-height: 63px;
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
     margin-bottom: 5px;
   }
@@ -2239,12 +2235,12 @@ body > main {
 }
 .categories .swiper-button-prev {
   left: auto;
-  right: clamp(60px, 15vw, 160px);
+  right: clamp(60px, 15vw, 145px);
   background: url("https://svgshare.com/i/18Ac.svg") 0 0/cover no-repeat;
 }
 .categories .swiper-button-next {
   left: auto;
-  right: clamp(13px, 6vw, 110px);
+  right: clamp(13px, 6vw, 90px);
   background: url("https://svgshare.com/i/189n.svg") 0 0/cover no-repeat;
 }
 .categories .swiper-button-disabled {

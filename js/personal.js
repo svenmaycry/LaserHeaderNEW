@@ -116,7 +116,7 @@ const categoriesSwiper = new Swiper('.js-swiper-categories', {
   loop: false,
   slidesPerView: 3,
   slidesPerGroup: 3,
-  spaceBetween: 30,
+  spaceBetween: 0,
   speed: 900,
   parallax: true,
   preloadImages: false,
@@ -146,36 +146,48 @@ const categoriesSwiper = new Swiper('.js-swiper-categories', {
       slidesPerGroup: 3,
       spaceBetween: 0,
     },
-    479: {
+    340: {
       slidesPerView: 4,
+      slidesPerGroup: 3,
+    },
+    479: {
+      slidesPerView: 6,
       slidesPerGroup: 4,
-      spaceBetween: 0,
+    },
+    606: {
+      slidesPerView: 6,
+      slidesPerGroup: 4,
     },
     700: {
-      slidesPerView: 5,
+      slidesPerView: 8,
       slidesPerGroup: 5,
-      spaceBetween: 10,
     },
-    1000: {
+    900: {
       slidesPerView: 6,
       slidesPerGroup: 5,
     },
-    1190: {
+    1000: {
       slidesPerView: 7,
       slidesPerGroup: 5,
     },
-    1268: {
+    1190: {
       slidesPerView: 8,
       slidesPerGroup: 5,
-      spaceBetween: 0,
     },
-    1440: {
+    1279: {
       slidesPerView: 9,
       slidesPerGroup: 5,
+      spaceBetween: 10,
     },
-    1700: {
+    1440: {
       slidesPerView: 10,
       slidesPerGroup: 5,
+      spaceBetween: 10,
+    },
+    1700: {
+      slidesPerView: 11,
+      slidesPerGroup: 5,
+      spaceBetween: 25,
     },
   }
 
