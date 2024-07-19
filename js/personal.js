@@ -148,35 +148,35 @@ const categoriesSwiper = new Swiper('.js-swiper-categories', {
     },
     340: {
       slidesPerView: 4,
-      slidesPerGroup: 3,
+      slidesPerGroup: 4,
     },
     479: {
       slidesPerView: 6,
-      slidesPerGroup: 4,
+      slidesPerGroup: 6,
     },
     606: {
       slidesPerView: 6,
-      slidesPerGroup: 4,
+      slidesPerGroup: 6,
     },
     700: {
       slidesPerView: 8,
-      slidesPerGroup: 5,
+      slidesPerGroup: 8,
     },
     900: {
       slidesPerView: 6,
-      slidesPerGroup: 5,
+      slidesPerGroup: 6,
     },
     1000: {
       slidesPerView: 7,
-      slidesPerGroup: 5,
+      slidesPerGroup: 7,
     },
     1190: {
       slidesPerView: 8,
-      slidesPerGroup: 5,
+      slidesPerGroup: 8,
     },
     1279: {
       slidesPerView: 9,
-      slidesPerGroup: 5,
+      slidesPerGroup: 9,
       spaceBetween: 10,
     },
     1440: {
