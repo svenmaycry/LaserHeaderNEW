@@ -5,7 +5,7 @@ const mainHeader = document.querySelector('.js-main-header');
 const headerWrapper = document.querySelector('.js-main-header-wrapper');
 const mainNavItemButton = document.querySelectorAll('.js-main-nav-item-button');
 const searchInput = document.querySelector('.js-search-input');
-const prodItem = document.querySelector('.js-prod-item');
+const catalogItem = document.querySelector('.js-catalog-item');
 
 // Модуль работы с меню (бургер).
 let bodyLockStatus = true;
@@ -421,9 +421,9 @@ const closeSpoiler = () => {
 // Менять класс у айтема Каталога
 const prodClassChange = () => {
   if (window.innerWidth <= 1279) {
-    prodItem.classList.remove('main-nav-item--prod');
+    catalogItem.classList.remove('main-nav-item--catalog');
   } else {
-    prodItem.classList.add('main-nav-item--prod');
+    catalogItem.classList.add('main-nav-item--catalog');
   }
 }
 

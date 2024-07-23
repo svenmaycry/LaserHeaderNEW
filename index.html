@@ -15,124 +15,130 @@
 <div class="overlay  js-header-overlay"></div>
 
 <header class="main-header  js-main-header">
-  <div data-spoilers data-one-spoiler
-       class="main-header__wrapper  js-main-header-wrapper">
+  <div data-spoilers data-one-spoiler class="main-header__wrapper  js-main-header-wrapper">
 
     <!--    ВЕРХНИЙ УРОВЕНЬ ШАПКИ-->
     <div class="main-header__top">
       <div class="container  container--wide  main-header__top-cnt">
 
-        <div class="main-header__geo  geo">
-          <a class="geo__city ">
-            <svg class="geo__icon" width="14" height="20">
+        <div class="main-header__geo  main-header-geo">
+          <a class="main-header-geo__city ">
+            <svg class="main-header-geo__icon" width="14" height="20">
               <use xlink:href="#icon-lc-geo"></use>
             </svg>
             <span>Санкт-Петербург</span>
-
           </a>
         </div>
 
         <nav class="main-header__nav  main-nav">
+
+          <!--          Список верхнего уровня меню-->
           <ul class="main-nav__list">
             <li class="main-nav__item  main-nav-item  main-nav-item--special">
-              <button type="button" data-spoiler data-spoiler-close
-                      class="main-nav-item__button  js-main-nav-item-button"><span>%</span>Акции
+              <button
+                type="button"
+                data-spoiler data-spoiler-close
+                class="main-nav-item__button  js-main-nav-item-button"
+              >
+                <span>%</span>
+                Акции
                 <svg width="13" height="13">
                   <use xlink:href="#icon-arrow-down"></use>
                 </svg>
               </button>
-              <!-- !Тут контент АКЦИЙ-->
+              <!-- Тут контент АКЦИЙ-->
               <div class="main-nav-item__wrapper  main-nav-offers">
                 <div class="main-nav-item__container  main-nav-item__container--offers">
+
                   <ul class="main-nav-offers__list  main-nav-item__grid-list">
-                    <li class="main-nav-offers__card  offers-card">
-                      <article class="offers-card__wrapper">
+                    <li class="main-nav-offers__item  main-nav-offers-item">
+                      <article class="main-nav-offers-item__wrapper">
                         <a href="https://lasercut.ru/vse-aktsii/chiller-v-podarok-k-wattsan-6040/"
-                           class="offers-card__img-wrapper">
-                          <img width="250" height="400" class="offers-card__img"
+                           class="main-nav-offers-item__img-wrapper">
+                          <img width="250" height="400" class="main-nav-offers-item__img"
                                src="https://i.ibb.co/g9V9ryb/offer-img-1.png"
                                alt="Чиллер в подарок к Wattsan 6040 до 29 марта">
                         </a>
-                        <div class="offers-card__content">
-                          <p class="offers-card__date">до
+                        <div class="main-nav-offers-item__content">
+                          <p class="main-nav-offers-item__date">до
                             <time datetime="2024-03-29">
                               29.03.2024
                             </time>
                           </p>
                           <a href="https://lasercut.ru/vse-aktsii/chiller-v-podarok-k-wattsan-6040/"
-                             class="offers-card__title-wrapper">
-                            <h2 class="offers-card__title">Чиллер в подарок к Wattsan 6040 до 29 марта</h2>
+                             class="main-nav-offers-item__title-wrapper">
+                            <h2 class="main-nav-offers-item__title">Чиллер в подарок к Wattsan 6040 до 29 марта</h2>
                           </a>
                         </div>
                       </article>
                     </li>
-                    <li class="main-nav-offers__card  offers-card">
-                      <article class="offers-card__wrapper">
+                    <li class="main-nav-offers__item  main-nav-offers-item">
+                      <article class="main-nav-offers-item__wrapper">
                         <a
                           href="https://lasercut.ru/vse-aktsii/povorotka-i-chiller-k-uv-markeru-v-podarok-do-30-noyabrya/"
-                          class="offers-card__img-wrapper">
-                          <img width="250" height="400" class="offers-card__img"
+                          class="main-nav-offers-item__img-wrapper">
+                          <img width="250" height="400" class="main-nav-offers-item__img"
                                src="https://i.ibb.co/nDhXpNZ/offer-img-2.png"
                                alt="Поворотка и чиллер к UV маркеру в подарок до 29 марта">
                         </a>
-                        <div class="offers-card__content">
-                          <p class="offers-card__date">до
+                        <div class="main-nav-offers-item__content">
+                          <p class="main-nav-offers-item__date">до
                             <time datetime="2024-03-29">
                               29.03.2024
                             </time>
                           </p>
                           <a
                             href="https://lasercut.ru/vse-aktsii/povorotka-i-chiller-k-uv-markeru-v-podarok-do-30-noyabrya/"
-                            class="offers-card__title-wrapper">
-                            <h2 class="offers-card__title">«Поворотка» и чиллер к UV маркеру в подарок до 29
+                            class="main-nav-offers-item__title-wrapper">
+                            <h2 class="main-nav-offers-item__title">«Поворотка» и чиллер к UV маркеру в подарок до 29
                               марта!</h2>
                           </a>
                         </div>
                       </article>
                     </li>
-                    <li class="main-nav-offers__card  offers-card">
-                      <article class="offers-card__wrapper">
+                    <li class="main-nav-offers__item  main-nav-offers-item">
+                      <article class="main-nav-offers-item__wrapper">
                         <a
                           href="https://lasercut.ru/vse-aktsii/svarochnye-sistemy-ipg-lightweld-s-komplektatsiey-lyuks-po-tsene-proizvoditelya-do-30-noyabrya/"
-                          class="offers-card__img-wrapper">
-                          <img width="250" height="400" class="offers-card__img"
+                          class="main-nav-offers-item__img-wrapper">
+                          <img width="250" height="400" class="main-nav-offers-item__img"
                                src="https://i.ibb.co/yWFBb0j/offer-img-3.png"
                                alt="Сварочные системы IPG LightWeld с комплектацией ЛЮКС по цене производителя">
                         </a>
-                        <div class="offers-card__content">
-                          <p class="offers-card__date">до
+                        <div class="main-nav-offers-item__content">
+                          <p class="main-nav-offers-item__date">до
                             <time datetime="2024-03-29">
                               31.12.2024
                             </time>
                           </p>
                           <a
                             href="https://lasercut.ru/vse-aktsii/svarochnye-sistemy-ipg-lightweld-s-komplektatsiey-lyuks-po-tsene-proizvoditelya-do-30-noyabrya/"
-                            class="offers-card__title-wrapper">
-                            <h2 class="offers-card__title">Сварочные системы IPG LightWeld с комплектацией
+                            class="main-nav-offers-item__title-wrapper">
+                            <h2 class="main-nav-offers-item__title">Сварочные системы IPG LightWeld с комплектацией
                               «ЛЮКС» по цене производителя!</h2>
                           </a>
                         </div>
                       </article>
                     </li>
-                    <li class="main-nav-offers__card  offers-card">
-                      <article class="offers-card__wrapper">
+                    <li class="main-nav-offers__item  main-nav-offers-item">
+                      <article class="main-nav-offers-item__wrapper">
                         <a
                           href="https://lasercut.ru/vse-aktsii/optovye-tseny-na-lazernye-trubki-reci-do-30-sentyabrya/"
-                          class="offers-card__img-wrapper">
-                          <img width="250" height="400" class="offers-card__img"
+                          class="main-nav-offers-item__img-wrapper">
+                          <img width="250" height="400" class="main-nav-offers-item__img"
                                src="https://i.ibb.co/xHfKwXq/offer-img-4.png"
                                alt="ОПТОВЫЕ цены на лазерные трубки Reci до 29 марта">
                         </a>
-                        <div class="offers-card__content">
-                          <p class="offers-card__date">до
+                        <div class="main-nav-offers-item__content">
+                          <p class="main-nav-offers-item__date">до
                             <time datetime="2024-03-29">
                               29.03.2024
                             </time>
                           </p>
                           <a
                             href="https://lasercut.ru/vse-aktsii/optovye-tseny-na-lazernye-trubki-reci-do-30-sentyabrya/"
-                            class="offers-card__title-wrapper">
-                            <h2 class="offers-card__title">ОПТОВЫЕ цены на лазерные трубки Reci до 29 марта!
+                            class="main-nav-offers-item__title-wrapper">
+                            <h2 class="main-nav-offers-item__title">ОПТОВЫЕ цены на лазерные трубки Reci до 29 марта!
                             </h2>
                           </a>
                         </div>
@@ -141,49 +147,54 @@
                   </ul>
                   <a href="https://lasercut.ru/vystavki/" class="btn  btn--center">Все
                     акции</a>
+
                 </div>
               </div>
             </li>
-
             <li class="main-nav__item  main-nav-item">
-              <button type="button" data-spoiler data-spoiler-close
-                      class="main-nav-item__button  js-main-nav-item-button">Сервис
+              <button
+                type="button"
+                data-spoiler data-spoiler-close
+                class="main-nav-item__button  js-main-nav-item-button"
+              >
+                Сервис
                 <svg width="13" height="13">
                   <use xlink:href="#icon-arrow-down"></use>
                 </svg>
               </button>
-              <!-- !Тут контент СЕРВИСА-->
+              <!-- Тут контент СЕРВИСА-->
               <div class="main-nav-item__wrapper  main-nav-service">
                 <div data-tabs-header class="main-nav-service__wrapper  main-nav-item__container">
-                  <div data-tabs-header-body class="main-nav-service__media-block  service-media-block">
-                    <div class="service-media-block__image-wrapper">
-                      <img width="1040" height="438" class="service-media-block__image"
+
+                  <div data-tabs-header-body class="main-nav-service__media  main-nav-service-media">
+                    <div class="main-nav-service-media__image-wrapper">
+                      <img width="1040" height="438" class="main-nav-service-media__image"
                            src="https://i.ibb.co/q9P0ScX/zapusk-i-naladka.jpg" alt="Запуск и наладка">
                     </div>
-                    <div class="service-media-block__image-wrapper">
-                      <img width="1280" height="720" class="service-media-block__image"
+                    <div class="main-nav-service-media__image-wrapper">
+                      <img width="1280" height="720" class="main-nav-service-media__image"
                            src="https://i.ibb.co/RPKC7y0/zapusk-i-naladka-laser.webp"
                            alt="Запуск и наладка лазерных станков">
                     </div>
-                    <div class="service-media-block__image-wrapper">
-                      <img width="1280" height="720" class="service-media-block__image"
+                    <div class="main-nav-service-media__image-wrapper">
+                      <img width="1280" height="720" class="main-nav-service-media__image"
                            src="https://i.ibb.co/wr4VgCG/remont.jpg" alt="Диагностика">
                     </div>
-                    <div class="service-media-block__image-wrapper">
-                      <img width="1280" height="1280" class="service-media-block__image"
+                    <div class="main-nav-service-media__image-wrapper">
+                      <img width="1280" height="1280" class="main-nav-service-media__image"
                            src="https://i.ibb.co/k4x2GbQ/remont-oborudov.jpg" alt="Обучение персонала">
                     </div>
-                    <div class="service-media-block__image-wrapper">
-                      <img width="1000" height="1000" class="service-media-block__image"
+                    <div class="main-nav-service-media__image-wrapper">
+                      <img width="1000" height="1000" class="main-nav-service-media__image"
                            src="https://i.ibb.co/88LgfRG/obuchenie-personalu.jpg" alt="Ремонт чиллеров">
                     </div>
-                    <div class="service-media-block__image-wrapper">
-                      <img width="1244" height="1204" class="service-media-block__image"
+                    <div class="main-nav-service-media__image-wrapper">
+                      <img width="1244" height="1204" class="main-nav-service-media__image"
                            src="https://i.ibb.co/k4x2GbQ/remont-oborudov.jpg" alt="Ремонт оборудования">
                     </div>
                   </div>
-                  <div class="main-nav-service__list-container">
-                    <h2 class="main-nav-delivery__title  main-nav-title">Lorem, ipsum dolor.</h2>
+                  <div class="main-nav-service__desc">
+                    <h2 class="main-nav-service__title  main-nav-title">Lorem, ipsum dolor.</h2>
                     <ul data-tabs-header-titles class="main-nav-service__list">
                       <li class="main-nav-service__item   main-nav-tab-active">
                         <a class="main-nav-item__link"
@@ -219,25 +230,30 @@
                       </li>
                     </ul>
                   </div>
+
                 </div>
               </div>
             </li>
             <li class="main-nav__item  main-nav-item">
-              <button type="button" data-spoiler data-spoiler-close
-                      class="main-nav-item__button  js-main-nav-item-button">Выставки
+              <button
+                type="button"
+                data-spoiler data-spoiler-close
+                class="main-nav-item__button  js-main-nav-item-button"
+              >
+                Выставки
                 <svg width="13" height="13">
                   <use xlink:href="#icon-arrow-down"></use>
                 </svg>
               </button>
-              <!-- !Тут контент ВЫСТАВОК-->
+              <!-- Тут контент ВЫСТАВОК-->
               <div class="main-nav-item__wrapper  main-nav-exhibitions">
                 <div class="main-nav-exhibitions__wrapper  main-nav-item__container">
+
                   <ul class="main-nav-exhibitions__list">
                     <li class="main-nav-exhibitions__item">
                       <a class="main-nav-item__link  main-nav-item__link--exhibitions"
                          href="https://lasercut.ru/fotonika-2024/">Фотоника-2024</a>
                     </li>
-
                     <li class="main-nav-exhibitions__item">
                       <a class="main-nav-item__link  main-nav-item__link--exhibitions"
                          href="https://lasercut.ru/metalloobrabotka-svarka-ural-2024/">Металлообработка.
@@ -316,31 +332,36 @@
                          href="https://lasercut.ru/metallobrabotka-2022/">Металлообработка-2022</a>
                     </li>
                   </ul>
-                  <div class="main-nav-exhibitions__media  exhibitions-media-block">
-                    <img width="1680" height="680" class="exhibitions-media-block__image"
+                  <div class="main-nav-exhibitions__media  main-nav-exhibitions-media">
+                    <img width="1680" height="680" class="main-nav-exhibitions-media__image"
                          src="https://i.ibb.co/551snbF/exhibitions-photo.jpg" alt="Выставка">
                     <a href="https://lasercut.ru/vystavki/" class="btn  btn--center">Все
                       выставки</a>
                   </div>
+
                 </div>
               </div>
             </li>
             <li class="main-nav__item  main-nav-item">
-              <button type="button" data-spoiler data-spoiler-close
-                      class="main-nav-item__button  js-main-nav-item-button">Доставка и
-                оплата
+              <button
+                type="button"
+                data-spoiler data-spoiler-close
+                class="main-nav-item__button  js-main-nav-item-button"
+              >
+                Доставка и оплата
                 <svg width="13" height="13">
                   <use xlink:href="#icon-arrow-down"></use>
                 </svg>
               </button>
-              <!-- !Тут контент ДОСТАВКИ и ОПЛАТЫ-->
+              <!-- Тут контент ДОСТАВКИ и ОПЛАТЫ-->
               <div class="main-nav-item__wrapper  main-nav-delivery">
                 <div class="main-nav-delivery__wrapper  main-nav-item__container">
-                  <div class="main-nav-delivery__media-block  delivery-media-block">
-                    <img width="1250" height="260" class="delivery-media-block__image"
+
+                  <div class="main-nav-delivery__media  main-nav-delivery-media">
+                    <img width="1250" height="260" class="main-nav-delivery-media__image"
                          src="https://i.ibb.co/cbRdzq2/delivery-image.jpg" alt="Доставка и оплата">
                   </div>
-                  <div class="main-nav-delivery__list-container">
+                  <div class="main-nav-delivery__desc">
                     <h2 class="main-nav-delivery__title  main-nav-title">Lorem, ipsum dolor.</h2>
                     <ul class="main-nav-delivery__list">
                       <li class="main-nav-delivery__item">
@@ -356,20 +377,26 @@
                       </li>
                     </ul>
                   </div>
+
                 </div>
               </div>
             </li>
             <li class="main-nav__item  main-nav-item">
-              <button type="button" data-spoiler data-spoiler-close
-                      class="main-nav-item__button  js-main-nav-item-button">О компании
+              <button
+                type="button"
+                data-spoiler data-spoiler-close
+                class="main-nav-item__button  js-main-nav-item-button"
+              >
+                О компании
                 <svg width="13" height="13">
                   <use xlink:href="#icon-arrow-down"></use>
                 </svg>
               </button>
-              <!-- !Тут контент О КОМПАНИИ-->
+              <!-- Тут контент О КОМПАНИИ-->
               <div class="main-nav-item__wrapper  main-nav-about">
                 <div class="main-nav-about__wrapper  main-nav-item__container">
-                  <div class="main-nav-about__list-container">
+
+                  <div class="main-nav-about__desc">
                     <h2 class="main-nav-about__title  main-nav-title">Lorem, ipsum dolor.</h2>
                     <ul class="main-nav-about__list">
                       <li class="main-nav-about__item">
@@ -382,89 +409,101 @@
                       </li>
                     </ul>
                   </div>
-                  <div class="main-nav-about__media-block  about-company-media-block">
-                    <img width="1280" height="853" class="about-company-media-block__image"
+                  <div class="main-nav-about__media  main-nav-about-media">
+                    <img width="1280" height="853" class="main-nav-about-media__image"
                          src="https://i.ibb.co/vmtVBsF/About-image.webp" alt="О компании">
                   </div>
+
                 </div>
               </div>
             </li>
             <li class="main-nav__item  main-nav-item">
-              <button type="button" data-spoiler data-spoiler-close
-                      class="main-nav-item__button  js-main-nav-item-button">Блог
+              <button
+                type="button"
+                data-spoiler data-spoiler-close
+                class="main-nav-item__button  js-main-nav-item-button"
+              >
+                Блог
                 <svg width="13" height="13">
                   <use xlink:href="#icon-arrow-down"></use>
                 </svg>
               </button>
-              <!-- !Тут контент БЛОГА-->
+              <!-- Тут контент БЛОГА-->
               <div class="main-nav-item__wrapper  main-nav-blog">
                 <div class="main-nav-item__container  main-nav-item__container--blog">
+
                   <ul class="main-nav-blog__list  main-nav-item__grid-list">
-                    <li class="main-nav-blog__card  blog-card">
-                      <img class="blog-card__image" width="1040" height="693"
+                    <li class="main-nav-blog__card  main-nav-blog-card">
+                      <img class="main-nav-blog-card__image" width="1040" height="693"
                            src="https://i.ibb.co/ws35Mnm/blog-image-1.jpg" alt="Концевые датчики">
-                      <time class="blog-card__date" datetime="2023-10-15">15 октября 2023</time>
+                      <time class="main-nav-blog-card__date" datetime="2023-10-15">15 октября 2023</time>
                       <a
                         href="https://lasercut.ru/blog/kontsevye-datchiki-ustroystvo-i-funktsii-induktivnye-datchiki-na-stankah-s-chpu/"
-                        class="blog-card__link">Концевые датчики: устройство и функции. Индуктивные
+                        class="main-nav-blog-card__link">Концевые датчики: устройство и функции. Индуктивные
                         датчики
                         на станках с ЧПУ</a>
                     </li>
-                    <li class="main-nav-blog__card  blog-card">
-                      <img class="blog-card__image" width="1040" height="693"
+                    <li class="main-nav-blog__card  main-nav-blog-card">
+                      <img class="main-nav-blog-card__image" width="1040" height="693"
                            src="https://i.ibb.co/ws35Mnm/blog-image-1.jpg" alt="Станки с ЧПУ с ювелирном деле">
-                      <time class="blog-card__date" datetime="2023-10-20">20 октября 2023</time>
+                      <time class="main-nav-blog-card__date" datetime="2023-10-20">20 октября 2023</time>
                       <a
                         href="https://lasercut.ru/blog/stanki-s-chpu-v-yuvelirnom-dele.-lazernaya-gravirovka-i-markirovka-na-yuvelirnyh-izdeliyah/"
-                        class="blog-card__link">Станки с ЧПУ в ювелирном деле. Лазерная гравировка и
+                        class="main-nav-blog-card__link">Станки с ЧПУ в ювелирном деле. Лазерная гравировка и
                         маркировка на ювелирных изделиях</a>
                     </li>
-                    <li class="main-nav-blog__card  blog-card">
-                      <img class="blog-card__image" width="1040" height="693"
+                    <li class="main-nav-blog__card  main-nav-blog-card">
+                      <img class="main-nav-blog-card__image" width="1040" height="693"
                            src="https://i.ibb.co/ws35Mnm/blog-image-1.jpg" alt="Станки для обработки ПВХ листов">
-                      <time class="blog-card__date" datetime="2023-10-13">13 октября 2023</time>
+                      <time class="main-nav-blog-card__date" datetime="2023-10-13">13 октября 2023</time>
                       <a href="https://lasercut.ru/blog/stanki-dlya-obrabotki-pvxlistov/"
-                         class="blog-card__link">Станки для обработки ПВХ листов</a>
+                         class="main-nav-blog-card__link">Станки для обработки ПВХ листов</a>
                     </li>
-                    <li class="main-nav-blog__card  blog-card">
-                      <img class="blog-card__image" width="1040" height="693"
+                    <li class="main-nav-blog__card  main-nav-blog-card">
+                      <img class="main-nav-blog-card__image" width="1040" height="693"
                            src="https://i.ibb.co/ws35Mnm/blog-image-1.jpg" alt="Нужен ли вам УФ маркер">
-                      <time class="blog-card__date" datetime="2023-10-16">16 октября 2023</time>
-                      <a href="https://lasercut.ru/blog/nuzhen-li-vam-uf-marker/" class="blog-card__link">Нужен
+                      <time class="main-nav-blog-card__date" datetime="2023-10-16">16 октября 2023</time>
+                      <a href="https://lasercut.ru/blog/nuzhen-li-vam-uf-marker/" class="main-nav-blog-card__link">Нужен
                         ли
                         вам УФ маркер?</a>
                     </li>
                   </ul>
                   <a href="https://lasercut.ru/vystavki/" class="btn  btn--center">Все
                     статьи</a>
+
                 </div>
               </div>
             </li>
             <li class="main-nav__item  main-nav-item">
-              <button type="button" data-spoiler data-spoiler-close
-                      class="main-nav-item__button  js-main-nav-item-button">Контакты
+              <button
+                type="button"
+                data-spoiler data-spoiler-close
+                class="main-nav-item__button  js-main-nav-item-button"
+              >
+                Контакты
                 <svg width="13" height="13">
                   <use xlink:href="#icon-arrow-down"></use>
                 </svg>
               </button>
-              <!-- !Тут контент КОНТАКТОВ-->
-              <div class="main-nav-item__wrapper  main-nav-contacts">
-                <div class="main-nav-item__container  main-nav-item__container--contacts">
-                  <ul class="main-nav-contacts__list  main-nav-item__grid-list">
-                    <li class="main-nav-contacts__card  contacts-card">
-                      <div class="contacts-card__content">
-                        <img width="612" height="422" class="contacts-card__image"
+              <!-- Тут контент ОФИСОВ (КОНТАКТОВ)-->
+              <div class="main-nav-item__wrapper  main-nav-offices">
+                <div class="main-nav-item__container  main-nav-item__container--offices">
+
+                  <ul class="main-nav-offices__list  main-nav-item__grid-list">
+                    <li class="main-nav-offices__card  main-nav-offices-card">
+                      <div class="main-nav-offices-card__content">
+                        <img width="612" height="422" class="main-nav-offices-card__image"
                              src="https://i.ibb.co/PjZn7HZ/contact-image.jpg" alt="Офис Санкт-Петербург">
-                        <a href="https://lasercut.ru/ofis-v-sankt-peterburge/" class="contacts-card__link">Офис
+                        <a href="https://lasercut.ru/ofis-v-sankt-peterburge/" class="main-nav-offices-card__link">Офис
                           в
                           Санкт-Петербурге</a>
-                        <dl class="contacts-card__list">
-                          <dt class="contacts-card__term  visually-hidden">Адрес</dt>
-                          <dd class="contacts-card__address">192019, г. Санкт-Петербург,
+                        <dl class="main-nav-offices-card__list">
+                          <dt class="main-nav-offices-card__term  visually-hidden">Адрес</dt>
+                          <dd class="main-nav-offices-card__address">192019, г. Санкт-Петербург,
                             Глухоозёрское шоссе, 12Ж
                           </dd>
-                          <dt class="contacts-card__term  visually-hidden">Телефон</dt>
-                          <dd class="contacts-card__phone">
+                          <dt class="main-nav-offices-card__term  visually-hidden">Телефон</dt>
+                          <dd class="main-nav-offices-card__phone">
                             <object>
                               <a href="tel:88123099804">+7 (812)309-98-04</a>
                             </object>
@@ -472,19 +511,19 @@
                         </dl>
                       </div>
                     </li>
-                    <li class="main-nav-contacts__card  contacts-card">
-                      <div class="contacts-card__content">
-                        <img width="612" height="422" class="contacts-card__image"
+                    <li class="main-nav-offices__card  main-nav-offices-card">
+                      <div class="main-nav-offices-card__content">
+                        <img width="612" height="422" class="main-nav-offices-card__image"
                              src="https://i.ibb.co/PjZn7HZ/contact-image.jpg" alt="Офис Москва">
-                        <a href="https://lasercut.ru/ofis-v-moskve/" class="contacts-card__link">Офис в
+                        <a href="https://lasercut.ru/ofis-v-moskve/" class="main-nav-offices-card__link">Офис в
                           Москве</a>
-                        <dl class="contacts-card__list">
-                          <dt class="contacts-card__term  visually-hidden">Адрес</dt>
-                          <dd class="contacts-card__address">109428, г. Москва,
+                        <dl class="main-nav-offices-card__list">
+                          <dt class="main-nav-offices-card__term  visually-hidden">Адрес</dt>
+                          <dd class="main-nav-offices-card__address">109428, г. Москва,
                             Стахановская улица, 7с4
                           </dd>
-                          <dt class="contacts-card__term  visually-hidden">Телефон</dt>
-                          <dd class="contacts-card__phone">
+                          <dt class="main-nav-offices-card__term  visually-hidden">Телефон</dt>
+                          <dd class="main-nav-offices-card__phone">
                             <object>
                               <a href="tel:88123099804">+7 (495)268-12-99</a>
                             </object>
@@ -492,22 +531,22 @@
                         </dl>
                       </div>
                     </li>
-                    <li class="main-nav-contacts__card  contacts-card">
-                      <div class="contacts-card__content">
-                        <img width="612" height="422" class="contacts-card__image"
+                    <li class="main-nav-offices__card  main-nav-offices-card">
+                      <div class="main-nav-offices-card__content">
+                        <img width="612" height="422" class="main-nav-offices-card__image"
                              src="https://i.ibb.co/PjZn7HZ/contact-image.jpg" alt="Офис Казань">
-                        <a href="https://lasercut.ru/kazan/" class="contacts-card__link">Офис в Казани</a>
-                        <dl class="contacts-card__list">
-                          <dt class="contacts-card__term  visually-hidden  visually-hidden  visually-hidden">
+                        <a href="https://lasercut.ru/kazan/" class="main-nav-offices-card__link">Офис в Казани</a>
+                        <dl class="main-nav-offices-card__list">
+                          <dt class="main-nav-offices-card__term  visually-hidden  visually-hidden  visually-hidden">
                             Адрес
                           </dt>
-                          <dd class="contacts-card__address">220036, г. Казань,
+                          <dd class="main-nav-offices-card__address">220036, г. Казань,
                             ул. Техническая 52.
                           </dd>
-                          <dt class="contacts-card__term  visually-hidden  visually-hidden  visually-hidden">
+                          <dt class="main-nav-offices-card__term  visually-hidden  visually-hidden  visually-hidden">
                             Телефон
                           </dt>
-                          <dd class="contacts-card__phone">
+                          <dd class="main-nav-offices-card__phone">
                             <object>
                               <a href="tel:88123099804">+7 (843)206-01-17</a>
                             </object>
@@ -515,18 +554,18 @@
                         </dl>
                       </div>
                     </li>
-                    <li class="main-nav-contacts__card  contacts-card">
-                      <div class="contacts-card__content">
-                        <img width="612" height="422" class="contacts-card__image"
+                    <li class="main-nav-offices__card  main-nav-offices-card">
+                      <div class="main-nav-offices-card__content">
+                        <img width="612" height="422" class="main-nav-offices-card__image"
                              src="https://i.ibb.co/PjZn7HZ/contact-image.jpg" alt="Офис Екатеринбург">
-                        <a href="https://lasercut.ru/ofis-v-ekaterinburge/" class="contacts-card__link">Офис в
+                        <a href="https://lasercut.ru/ofis-v-ekaterinburge/" class="main-nav-offices-card__link">Офис в
                           Екатеринбурге</a>
-                        <dl class="contacts-card__list">
-                          <dt class="contacts-card__term  visually-hidden  visually-hidden">Адрес</dt>
-                          <dd class="contacts-card__address">620043, г. Екатеринбург, ул. Начдива Васильева, 3
+                        <dl class="main-nav-offices-card__list">
+                          <dt class="main-nav-offices-card__term  visually-hidden  visually-hidden">Адрес</dt>
+                          <dd class="main-nav-offices-card__address">620043, г. Екатеринбург, ул. Начдива Васильева, 3
                           </dd>
-                          <dt class="contacts-card__term  visually-hidden  visually-hidden">Телефон</dt>
-                          <dd class="contacts-card__phone">
+                          <dt class="main-nav-offices-card__term  visually-hidden  visually-hidden">Телефон</dt>
+                          <dd class="main-nav-offices-card__phone">
                             <object>
                               <a href="tel:88123099804">+7 (343)318-31-90</a>
                             </object>
@@ -534,19 +573,19 @@
                         </dl>
                       </div>
                     </li>
-                    <li class="main-nav-contacts__card  contacts-card  contacts-card--krasnodar">
-                      <div class="contacts-card__content">
-                        <img width="612" height="422" class="contacts-card__image"
+                    <li class="main-nav-offices__card  main-nav-offices-card  main-nav-offices-card--krasnodar">
+                      <div class="main-nav-offices-card__content">
+                        <img width="612" height="422" class="main-nav-offices-card__image"
                              src="https://i.ibb.co/PjZn7HZ/contact-image.jpg" alt="Офис Краснодар">
-                        <a href="https://lasercut.ru/ofis-v-krasnodare/" class="contacts-card__link">Офис в
+                        <a href="https://lasercut.ru/ofis-v-krasnodare/" class="main-nav-offices-card__link">Офис в
                           Краснодаре</a>
-                        <dl class="contacts-card__list">
-                          <dt class="contacts-card__term  visually-hidden">Адрес</dt>
-                          <dd class="contacts-card__address">350028, г. Краснодар,
+                        <dl class="main-nav-offices-card__list">
+                          <dt class="main-nav-offices-card__term  visually-hidden">Адрес</dt>
+                          <dd class="main-nav-offices-card__address">350028, г. Краснодар,
                             ул. Героев-Разведчиков, 34
                           </dd>
-                          <dt class="contacts-card__term  visually-hidden">Телефон</dt>
-                          <dd class="contacts-card__phone">
+                          <dt class="main-nav-offices-card__term  visually-hidden">Телефон</dt>
+                          <dd class="main-nav-offices-card__phone">
                             <object>
                               <a href="tel:88123099804">+7 (861)203-47-04</a>
                             </object>
@@ -554,19 +593,19 @@
                         </dl>
                       </div>
                     </li>
-                    <li class="main-nav-contacts__card  contacts-card">
-                      <div class="contacts-card__content">
-                        <img width="612" height="422" class="contacts-card__image"
+                    <li class="main-nav-offices__card  main-nav-offices-card">
+                      <div class="main-nav-offices-card__content">
+                        <img width="612" height="422" class="main-nav-offices-card__image"
                              src="https://i.ibb.co/PjZn7HZ/contact-image.jpg" alt="Офис Минск">
-                        <a href="https://lasercut.ru/ofis-v-minske/" class="contacts-card__link">Офис в
+                        <a href="https://lasercut.ru/ofis-v-minske/" class="main-nav-offices-card__link">Офис в
                           Минске</a>
-                        <dl class="contacts-card__list">
-                          <dt class="contacts-card__term  visually-hidden">Адрес</dt>
-                          <dd class="contacts-card__address">220036, г. Минск,
+                        <dl class="main-nav-offices-card__list">
+                          <dt class="main-nav-offices-card__term  visually-hidden">Адрес</dt>
+                          <dd class="main-nav-offices-card__address">220036, г. Минск,
                             пер. Северный, д. 13, к 1, каб. 11
                           </dd>
-                          <dt class="contacts-card__term  visually-hidden">Телефон</dt>
-                          <dd class="contacts-card__phone">
+                          <dt class="main-nav-offices-card__term  visually-hidden">Телефон</dt>
+                          <dd class="main-nav-offices-card__phone">
                             <object>
                               <a href="tel:88123099804">+375 17336-3421</a>
                             </object>
@@ -577,75 +616,77 @@
                   </ul>
                   <a href="https://lasercut.ru/vystavki/" class="btn  btn--center">Все
                     офисы</a>
+
                 </div>
               </div>
             </li>
           </ul>
-          <div class="mobile-contacts">
-            <div class="mobile-contacts__social  social-header">
-              <ul class="social-header__list">
 
-                <li class="social-header__item  social-header__item--vk">
-                  <a class="social-header__link" href="[[++gr_vk]]" target="_blank" rel="nofollow">
+          <!-- Тут блок СОЦИАЛОК + КОНТАКТОВ (для LAPTOP)-->
+          <div class="main-nav__contacts-info">
+
+            <div class="main-nav__social-header  main-nav-social-header">
+              <ul class="main-nav-social-header__list">
+                <li class="main-nav-social-header__item  main-nav-social-header__item--vk">
+                  <a class="main-nav-social-header__link" href="[[++gr_vk]]" target="_blank" rel="nofollow">
                     <svg width="30" height="30">
                       <use xlink:href="#icon-vk"></use>
                     </svg>
                     <span class="visually-hidden">Вконтакте</span>
                   </a>
                 </li>
-
-                <li class="social-header__item  social-header__item--youtube">
-                  <a class="social-header__link" href="[[++gr_youtube]]" target="_blank" rel="nofollow">
+                <li class="main-nav-social-header__item  main-nav-social-header__item--youtube">
+                  <a class="main-nav-social-header__link" href="[[++gr_youtube]]" target="_blank" rel="nofollow">
                     <svg width="30" height="30">
                       <use xlink:href="#icon-youtube-simple"></use>
                     </svg>
                     <span class="visually-hidden">YouTube</span>
                   </a>
                 </li>
-
-                <li class="social-header__item  social-header__item--telegram">
-                  <a class="social-header__link" href="//t.me/[[++gr_site_telegram]]" target="_blank" rel="nofollow">
+                <li class="main-nav-social-header__item  main-nav-social-header__item--telegram">
+                  <a class="main-nav-social-header__link" href="//t.me/[[++gr_site_telegram]]" target="_blank"
+                     rel="nofollow">
                     <svg width="30" height="30">
                       <use xlink:href="#icon-tg"></use>
                     </svg>
                     <span class="visually-hidden">Telegram</span>
                   </a>
                 </li>
-                <li class="social-header__item  social-header__item--whatsapp">
-                  <a class="social-header__link" href="[[++gr_whatsapp]]" target="_blank" rel="nofollow">
+                <li class="main-nav-social-header__item  main-nav-social-header__item--whatsapp">
+                  <a class="main-nav-social-header__link" href="[[++gr_whatsapp]]" target="_blank" rel="nofollow">
                     <svg width="30" height="30">
                       <use xlink:href="#icon-whatsapp"></use>
                     </svg>
                     <span class="visually-hidden">Whatsapp</span>
                   </a>
                 </li>
-
               </ul>
             </div>
-            <dl class="mobile-contacts__list">
-              <div class="mobile-contacts__item">
-                <dt class="mobile-contacts__term">Телефон:</dt>
-                <dd class="mobile-contacts__tel">
+            <dl class="main-nav__mobile-contacts  main-nav-mobile-contacts">
+              <div class="main-nav-mobile-contacts__item">
+                <dt class="main-nav-mobile-contacts__term">Телефон:</dt>
+                <dd class="main-nav-mobile-contacts__tel">
                   <a href="tel:88007771787">+7 (800) 777-17-87</a>
                 </dd>
               </div>
-              <div class="mobile-contacts__item">
-                <dt class="mobile-contacts__term">Электронная почта:</dt>
-                <dd class="mobile-contacts__mail">
+              <div class="main-nav-mobile-contacts__item">
+                <dt class="main-nav-mobile-contacts__term">Электронная почта:</dt>
+                <dd class="main-nav-mobile-contacts__mail">
                   <a href="mailto:info@lasercut.ru">info@lasercut.ru</a>
                 </dd>
               </div>
-              <div class="mobile-contacts__item">
-                <dt class="mobile-contacts__term">Адрес:</dt>
-                <dd class="mobile-contacts__adress">
+              <div class="main-nav-mobile-contacts__item">
+                <dt class="main-nav-mobile-contacts__term">Адрес:</dt>
+                <dd class="main-nav-mobile-contacts__address">
                   <address>192019, г. Санкт-Петербург, Глухоозёрское шоссе, 12Ж</address>
                 </dd>
               </div>
             </dl>
+
           </div>
         </nav>
 
-        <button type="button" class="main-nav__button  icon-menu  js-icon-menu">
+        <button type="button" class="main-header__menu-btn  icon-menu  js-icon-menu">
           <span></span>
         </button>
 
@@ -654,7 +695,7 @@
 
     <!--    НИЖНИЙ УРОВЕНЬ ШАПКИ-->
     <div class="main-header__bottom">
-      <div class="container container--wide  main-header__bottom-cnt">
+      <div class="container  container--wide  main-header__bottom-cnt">
 
         <a href="https://lasercut.ru/" class="main-header__logo">
           <picture>
@@ -664,325 +705,331 @@
           </picture>
         </a>
 
-        <ul class="main-header__bottom-list">
-          <li data-da=".main-nav__list,1279,0" class="main-nav__item  main-nav-item  main-nav-item--prod  js-prod-item">
-            <button type="button" data-spoiler data-spoiler-close
-                    class="main-nav-item__button  js-main-nav-item-button">
+        <ul class="main-header__catalog-list">
+          <li data-da=".main-nav__list,1279,0"
+              class="main-header__item  main-nav-item  main-nav-item--catalog  js-catalog-item">
+            <button
+              type="button"
+              data-spoiler data-spoiler-close
+              class="main-nav-item__button  js-main-nav-item-button"
+            >
               Каталог
               <svg width="13" height="13">
                 <use xlink:href="#icon-arrow-down"></use>
               </svg>
             </button>
-            <!-- !Тут контент ТОВАРОВ-->
+            <!-- Тут контент ТОВАРОВ-->
             <div class="main-nav-item__wrapper  main-nav-products">
               <div data-tabs-header class="main-nav-products__wrapper  main-nav-item__container">
+
                 <ul data-tabs-header-titles class="main-nav-products__list">
-                  <li class="main-nav-products__item  products-item  main-nav-tab-active">
-                    <a href="https://lasercut.ru/katalog/lazernyie-stanki/" class="products-item__link">
-                      <div class="products-item__image-wrapper">
-                        <img width="60" height="60" class="products-item__image"
+                  <li class="main-nav-products__item  main-nav-products-item  main-nav-tab-active">
+                    <a href="https://lasercut.ru/katalog/lazernyie-stanki/" class="main-nav-products-item__link">
+                      <div class="main-nav-products-item__image-wrapper">
+                        <img width="60" height="60" class="main-nav-products-item__image"
                              src="https://i.ibb.co/C12M3XM/image.png"
                              alt="Лазерный станок Zerder 1060 Ace">
                       </div>
-                      <p class="products-item__text">Лазерные станки</p>
-                      <svg class="products-item__arrow" width="20" height="20">
+                      <p class="main-nav-products-item__text">Лазерные станки</p>
+                      <svg class="main-nav-products-item__arrow" width="20" height="20">
                         <use xlink:href="#icon-arrow-down"></use>
                       </svg>
                     </a>
                   </li>
-                  <li class="main-nav-products__item  products-item">
-                    <a href="https://lasercut.ru/katalog/lazernyie-markeryi/" class="products-item__link">
-                      <div class="products-item__image-wrapper">
-                        <img width="60" height="60" class="products-item__image"
+                  <li class="main-nav-products__item  main-nav-products-item">
+                    <a href="https://lasercut.ru/katalog/lazernyie-markeryi/" class="main-nav-products-item__link">
+                      <div class="main-nav-products-item__image-wrapper">
+                        <img width="60" height="60" class="main-nav-products-item__image"
                              src="https://i.ibb.co/bBq6hKN/laser-marker.png"
                              alt="Лазерный маркер Wattsan UV TT JPT">
                       </div>
-                      <p class="products-item__text">Лазерные маркеры</p>
-                      <svg class="products-item__arrow" width="20" height="20">
+                      <p class="main-nav-products-item__text">Лазерные маркеры</p>
+                      <svg class="main-nav-products-item__arrow" width="20" height="20">
                         <use xlink:href="#icon-arrow-down"></use>
                       </svg>
                     </a>
                   </li>
-                  <li class="main-nav-products__item  products-item">
+                  <li class="main-nav-products__item  main-nav-products-item">
                     <a href="https://lasercut.ru/katalog/lazernyie-stanki-po-metallu/"
-                       class="products-item__link">
-                      <div class="products-item__image-wrapper">
-                        <img width="60" height="60" class="products-item__image"
+                       class="main-nav-products-item__link">
+                      <div class="main-nav-products-item__image-wrapper">
+                        <img width="60" height="60" class="main-nav-products-item__image"
                              src="https://i.ibb.co/5sMfbgZ/stanok-po-metallu.png"
                              alt="Станок по металлу Wattsan 1313S">
                       </div>
-                      <p class="products-item__text">Станки по металлу</p>
-                      <svg class="products-item__arrow" width="20" height="20">
+                      <p class="main-nav-products-item__text">Станки по металлу</p>
+                      <svg class="main-nav-products-item__arrow" width="20" height="20">
                         <use xlink:href="#icon-arrow-down"></use>
                       </svg>
                     </a>
                   </li>
-                  <li class="main-nav-products__item  products-item">
-                    <a href="https://lasercut.ru/katalog/lazernye-truborezy/" class="products-item__link">
-                      <div class="products-item__image-wrapper">
-                        <img width="60" height="60" class="products-item__image"
+                  <li class="main-nav-products__item  main-nav-products-item">
+                    <a href="https://lasercut.ru/katalog/lazernye-truborezy/" class="main-nav-products-item__link">
+                      <div class="main-nav-products-item__image-wrapper">
+                        <img width="60" height="60" class="main-nav-products-item__image"
                              src="https://i.ibb.co/TwCHRdL/laser-truborez.png"
                              alt="Лазерный труборез Wattsan Uniq Light">
                       </div>
-                      <p class="products-item__text">Лазерные труборезы</p>
-                      <svg class="products-item__arrow" width="20" height="20">
+                      <p class="main-nav-products-item__text">Лазерные труборезы</p>
+                      <svg class="main-nav-products-item__arrow" width="20" height="20">
                         <use xlink:href="#icon-arrow-down"></use>
                       </svg>
                     </a>
                   </li>
-                  <li class="main-nav-products__item  products-item">
-                    <a href="https://lasercut.ru/katalog/frezernyie-stanki/" class="products-item__link">
-                      <div class="products-item__image-wrapper">
-                        <img width="60" height="60" class="products-item__image"
+                  <li class="main-nav-products__item  main-nav-products-item">
+                    <a href="https://lasercut.ru/katalog/frezernyie-stanki/" class="main-nav-products-item__link">
+                      <div class="main-nav-products-item__image-wrapper">
+                        <img width="60" height="60" class="main-nav-products-item__image"
                              src="https://i.ibb.co/6NNHzFb/frezer-stanok-s-chpu.png"
                              alt="Фрезерный станок с ЧПУ Wattsan 0404 MINI">
                       </div>
-                      <p class="products-item__text">Фрезерные станки с ЧПУ</p>
-                      <svg class="products-item__arrow" width="20" height="20">
+                      <p class="main-nav-products-item__text">Фрезерные станки с ЧПУ</p>
+                      <svg class="main-nav-products-item__arrow" width="20" height="20">
                         <use xlink:href="#icon-arrow-down"></use>
                       </svg>
                     </a>
                   </li>
-                  <li class="main-nav-products__item  products-item">
+                  <li class="main-nav-products__item  main-nav-products-item">
                     <a href="https://lasercut.ru/katalog/lazernyij-svarochnyij-apparat/"
-                       class="products-item__link">
-                      <div class="products-item__image-wrapper">
-                        <img width="60" height="60" class="products-item__image"
+                       class="main-nav-products-item__link">
+                      <div class="main-nav-products-item__image-wrapper">
+                        <img width="60" height="60" class="main-nav-products-item__image"
                              src="https://i.ibb.co/1TzdfV8/laser-svarka.png"
                              alt="Ручная лазерная сварка 4 в 1 Wattsan G1 Raycus 1000 Вт">
                       </div>
-                      <p class="products-item__text">Лазерная сварка</p>
-                      <svg class="products-item__arrow" width="20" height="20">
+                      <p class="main-nav-products-item__text">Лазерная сварка</p>
+                      <svg class="main-nav-products-item__arrow" width="20" height="20">
                         <use xlink:href="#icon-arrow-down"></use>
                       </svg>
                     </a>
                   </li>
-                  <li class="main-nav-products__item  products-item">
-                    <a href="https://lasercut.ru/katalog/lazernaya-ochistka/" class="products-item__link">
-                      <div class="products-item__image-wrapper">
-                        <img width="60" height="60" class="products-item__image"
+                  <li class="main-nav-products__item  main-nav-products-item">
+                    <a href="https://lasercut.ru/katalog/lazernaya-ochistka/" class="main-nav-products-item__link">
+                      <div class="main-nav-products-item__image-wrapper">
+                        <img width="60" height="60" class="main-nav-products-item__image"
                              src="https://i.ibb.co/MC7DsYB/laser-ochistka.png"
                              alt="Лазерная очистка Wattsan PA 100 Вт Raycus">
                       </div>
-                      <p class="products-item__text">Лазерная очистка</p>
-                      <svg class="products-item__arrow" width="20" height="20">
+                      <p class="main-nav-products-item__text">Лазерная очистка</p>
+                      <svg class="main-nav-products-item__arrow" width="20" height="20">
                         <use xlink:href="#icon-arrow-down"></use>
                       </svg>
                     </a>
                   </li>
-                  <li class="main-nav-products__item  products-item">
+                  <li class="main-nav-products__item  main-nav-products-item">
                     <a href="https://lasercut.ru/katalog/vertikalnye-frezernye-stanki-po-metallu/"
-                       class="products-item__link">
-                      <div class="products-item__image-wrapper">
-                        <img width="60" height="60" class="products-item__image"
+                       class="main-nav-products-item__link">
+                      <div class="main-nav-products-item__image-wrapper">
+                        <img width="60" height="60" class="main-nav-products-item__image"
                              src="https://i.ibb.co/PrG0Gt2/frezer-po-metallu.png"
                              alt="Вертикальный фрезерный станок с ЧПУ VMC 8040">
                       </div>
-                      <p class="products-item__text">Фрезеры по металлу</p>
-                      <svg class="products-item__arrow" width="20" height="20">
+                      <p class="main-nav-products-item__text">Фрезеры по металлу</p>
+                      <svg class="main-nav-products-item__arrow" width="20" height="20">
                         <use xlink:href="#icon-arrow-down"></use>
                       </svg>
                     </a>
                   </li>
-                  <li class="main-nav-products__item  products-item">
-                    <a href="https://lasercut.ru/katalog/tokarnye-stanki/" class="products-item__link">
-                      <div class="products-item__image-wrapper">
-                        <img width="60" height="60" class="products-item__image"
+                  <li class="main-nav-products__item  main-nav-products-item">
+                    <a href="https://lasercut.ru/katalog/tokarnye-stanki/" class="main-nav-products-item__link">
+                      <div class="main-nav-products-item__image-wrapper">
+                        <img width="60" height="60" class="main-nav-products-item__image"
                              src="https://i.ibb.co/PxJPH7K/tokarniy-stanok.png"
                              alt="Токарный многоцелевой крупногабаритный станок WT 4000">
                       </div>
-                      <p class="products-item__text">Токарные станки</p>
-                      <svg class="products-item__arrow" width="20" height="20">
+                      <p class="main-nav-products-item__text">Токарные станки</p>
+                      <svg class="main-nav-products-item__arrow" width="20" height="20">
                         <use xlink:href="#icon-arrow-down"></use>
                       </svg>
                     </a>
                   </li>
-                  <li class="main-nav-products__item  products-item">
+                  <li class="main-nav-products__item  main-nav-products-item">
                     <a href="https://lasercut.ru/katalog/gibochnye-stanki-trubogiby-i-listogiby/"
-                       class="products-item__link">
-                      <div class="products-item__image-wrapper">
-                        <img width="60" height="60" class="products-item__image"
+                       class="main-nav-products-item__link">
+                      <div class="main-nav-products-item__image-wrapper">
+                        <img width="60" height="60" class="main-nav-products-item__image"
                              src="https://i.ibb.co/Q6ZNyn9/gibochniy-stanok.png"
                              alt="Wattsan E 4016 BP для листа">
                       </div>
-                      <p class="products-item__text">Гибочные станки</p>
-                      <svg class="products-item__arrow" width="20" height="20">
+                      <p class="main-nav-products-item__text">Гибочные станки</p>
+                      <svg class="main-nav-products-item__arrow" width="20" height="20">
                         <use xlink:href="#icon-arrow-down"></use>
                       </svg>
                     </a>
                   </li>
-                  <li class="main-nav-products__item  products-item">
-                    <a href="https://lasercut.ru/katalog/lentochnopilnye-stanki/" class="products-item__link">
-                      <div class="products-item__image-wrapper">
-                        <img width="60" height="60" class="products-item__image"
+                  <li class="main-nav-products__item  main-nav-products-item">
+                    <a href="https://lasercut.ru/katalog/lentochnopilnye-stanki/" class="main-nav-products-item__link">
+                      <div class="main-nav-products-item__image-wrapper">
+                        <img width="60" height="60" class="main-nav-products-item__image"
                              src="https://i.ibb.co/0qtszzq/lentopilochniy-stanok.png"
                              alt="Ленточнопильный станок по металлу BS712N">
                       </div>
-                      <p class="products-item__text">Ленточнопильные станки</p>
-                      <svg class="products-item__arrow" width="20" height="20">
+                      <p class="main-nav-products-item__text">Ленточнопильные станки</p>
+                      <svg class="main-nav-products-item__arrow" width="20" height="20">
                         <use xlink:href="#icon-arrow-down"></use>
                       </svg>
                     </a>
                   </li>
-                  <li class="main-nav-products__item  products-item">
+                  <li class="main-nav-products__item  main-nav-products-item">
                     <a href="https://lasercut.ru/katalog/mnogofunktsionalnye-raskroechnye-kompleksy/"
-                       class="products-item__link">
-                      <div class="products-item__image-wrapper">
-                        <img width="60" height="60" class="products-item__image"
+                       class="main-nav-products-item__link">
+                      <div class="main-nav-products-item__image-wrapper">
+                        <img width="60" height="60" class="main-nav-products-item__image"
                              src="https://i.ibb.co/9YMZn9V/mnogofunkcional.png"
                              alt="Многофункциональный раскроечный комплекс WT 1625">
                       </div>
-                      <p class="products-item__text">Многофункциональные комплексы</p>
-                      <svg class="products-item__arrow" width="20" height="20">
+                      <p class="main-nav-products-item__text">Многофункциональные комплексы</p>
+                      <svg class="main-nav-products-item__arrow" width="20" height="20">
                         <use xlink:href="#icon-arrow-down"></use>
                       </svg>
                     </a>
                   </li>
-                  <li class="main-nav-products__item  products-item">
-                    <a href="https://lasercut.ru/katalog/komplektuyushhie/" class="products-item__link">
-                      <div class="products-item__image-wrapper">
-                        <img width="60" height="60" class="products-item__image"
+                  <li class="main-nav-products__item  main-nav-products-item">
+                    <a href="https://lasercut.ru/katalog/komplektuyushhie/" class="main-nav-products-item__link">
+                      <div class="main-nav-products-item__image-wrapper">
+                        <img width="60" height="60" class="main-nav-products-item__image"
                              src="https://i.ibb.co/kc5dS7J/katalog-komplekt.png" alt="Каталог комплектующих">
                       </div>
-                      <p class="products-item__text">Каталог комплектующих</p>
-                      <svg class="products-item__arrow" width="20" height="20">
+                      <p class="main-nav-products-item__text">Каталог комплектующих</p>
+                      <svg class="main-nav-products-item__arrow" width="20" height="20">
                         <use xlink:href="#icon-arrow-down"></use>
                       </svg>
                     </a>
                   </li>
                 </ul>
-                <div data-tabs-header-body class="main-nav-products__media-block  products-media-block">
-                  <div class="products-media-block__content">
-                    <img class="products-media-block__image" width="500" height="400"
+                <div data-tabs-header-body class="main-nav-products__media  main-nav-products-media">
+                  <div class="main-nav-products-media__content">
+                    <img class="main-nav-products-media__image" width="500" height="400"
                          src="https://i.ibb.co/C12M3XM/image.png" alt="Лазерный станок, гравер">
-                    <h2 class="products-media-block__title">Лазерный станок, гравер</h2>
-                    <p class="products-media-block__desc">Тут описание лазерного станка. </p>
+                    <h2 class="main-nav-products-media__title">Лазерный станок, гравер</h2>
+                    <p class="main-nav-products-media__desc">Тут описание лазерного станка. </p>
                     <a href="https://lasercut.ru/katalog/lazernyie-stanki/"
                        class="btn  btn--products">Подробнее...</a>
                   </div>
-                  <div class="products-media-block__content">
-                    <img class="products-media-block__image" width="500" height="400"
+                  <div class="main-nav-products-media__content">
+                    <img class="main-nav-products-media__image" width="500" height="400"
                          src="https://i.ibb.co/bBq6hKN/laser-marker.png" alt="Лазерный маркировщик">
-                    <h2 class="products-media-block__title">Лазерный маркировщик</h2>
-                    <p class="products-media-block__desc">Тут описание лазерного маркера</p>
+                    <h2 class="main-nav-products-media__title">Лазерный маркировщик</h2>
+                    <p class="main-nav-products-media__desc">Тут описание лазерного маркера</p>
                     <a href="https://lasercut.ru/katalog/lazernyie-markeryi/"
                        class="btn  btn--products">Подробнее...</a>
                   </div>
-                  <div class="products-media-block__content">
-                    <img class="products-media-block__image" width="500" height="400"
+                  <div class="main-nav-products-media__content">
+                    <img class="main-nav-products-media__image" width="500" height="400"
                          src="https://i.ibb.co/5sMfbgZ/stanok-po-metallu.png" alt="Лазерные станки по металлу">
-                    <h2 class="products-media-block__title">Лазерные станки по металлу</h2>
-                    <p class="products-media-block__desc">Тут описание станка по металлу</p>
+                    <h2 class="main-nav-products-media__title">Лазерные станки по металлу</h2>
+                    <p class="main-nav-products-media__desc">Тут описание станка по металлу</p>
                     <a href="https://lasercut.ru/katalog/lazernyie-stanki-po-metallu/"
                        class="btn  btn--products">Подробнее...</a>
                   </div>
-                  <div class="products-media-block__content">
-                    <img class="products-media-block__image" width="500" height="400"
+                  <div class="main-nav-products-media__content">
+                    <img class="main-nav-products-media__image" width="500" height="400"
                          src="https://i.ibb.co/TwCHRdL/laser-truborez.png" alt="Лазерные труборезы">
-                    <h2 class="products-media-block__title">Лазерные труборезы</h2>
-                    <p class="products-media-block__desc">Тут описание лазерного трубореза</p>
+                    <h2 class="main-nav-products-media__title">Лазерные труборезы</h2>
+                    <p class="main-nav-products-media__desc">Тут описание лазерного трубореза</p>
                     <a href="https://lasercut.ru/katalog/lazernye-truborezy/"
                        class="btn  btn--products">Подробнее...</a>
                   </div>
-                  <div class="products-media-block__content">
-                    <img class="products-media-block__image" width="500" height="400"
+                  <div class="main-nav-products-media__content">
+                    <img class="main-nav-products-media__image" width="500" height="400"
                          src="https://i.ibb.co/6NNHzFb/frezer-stanok-s-chpu.png"
                          alt="Фрезерный станок с ЧПУ Wattsan 0404 MINI">
-                    <h2 class="products-media-block__title">Фрезерный станок с ЧПУ Wattsan 0404 MINI</h2>
-                    <p class="products-media-block__desc">Тут описание фрезерного станка</p>
+                    <h2 class="main-nav-products-media__title">Фрезерный станок с ЧПУ Wattsan 0404 MINI</h2>
+                    <p class="main-nav-products-media__desc">Тут описание фрезерного станка</p>
                     <a href="https://lasercut.ru/katalog/frezernyie-stanki/"
                        class="btn  btn--products">Подробнее...</a>
                   </div>
-                  <div class="products-media-block__content">
-                    <img class="products-media-block__image" width="500" height="400"
+                  <div class="main-nav-products-media__content">
+                    <img class="main-nav-products-media__image" width="500" height="400"
                          src="https://i.ibb.co/1TzdfV8/laser-svarka.png"
                          alt="Ручная лазерная сварка 4 в 1 Wattsan G1 Raycus 1000 Вт">
-                    <h2 class="products-media-block__title">Ручная лазерная сварка 4 в 1 Wattsan G1 Raycus
+                    <h2 class="main-nav-products-media__title">Ручная лазерная сварка 4 в 1 Wattsan G1 Raycus
                       1000 Вт</h2>
-                    <p class="products-media-block__desc">Тут описание лазерной сварки</p>
+                    <p class="main-nav-products-media__desc">Тут описание лазерной сварки</p>
                     <a href="https://lasercut.ru/katalog/lazernyij-svarochnyij-apparat/"
                        class="btn  btn--products">Подробнее...</a>
                   </div>
-                  <div class="products-media-block__content">
-                    <img class="products-media-block__image" width="500" height="400"
+                  <div class="main-nav-products-media__content">
+                    <img class="main-nav-products-media__image" width="500" height="400"
                          src="https://i.ibb.co/MC7DsYB/laser-ochistka.png"
                          alt="Лазерная очистка Wattsan PA 100 Вт Raycus">
-                    <h2 class="products-media-block__title">Лазерная очистка Wattsan Air 100 Вт Raycus</h2>
-                    <p class="products-media-block__desc">Тут описание лазерной очистки</p>
+                    <h2 class="main-nav-products-media__title">Лазерная очистка Wattsan Air 100 Вт Raycus</h2>
+                    <p class="main-nav-products-media__desc">Тут описание лазерной очистки</p>
                     <a href="https://lasercut.ru/katalog/lazernaya-ochistka/"
                        class="btn  btn--products">Подробнее...</a>
                   </div>
-                  <div class="products-media-block__content">
-                    <img class="products-media-block__image" width="500" height="400"
+                  <div class="main-nav-products-media__content">
+                    <img class="main-nav-products-media__image" width="500" height="400"
                          src="https://i.ibb.co/PrG0Gt2/frezer-po-metallu.png"
                          alt="Вертикальный фрезерный станок с ЧПУ VMC 8040">
-                    <h2 class="products-media-block__title">Вертикальный фрезерный станок с ЧПУ VMC 8040
+                    <h2 class="main-nav-products-media__title">Вертикальный фрезерный станок с ЧПУ VMC 8040
                     </h2>
-                    <p class="products-media-block__desc">Тут описание фрезера по металлу</p>
+                    <p class="main-nav-products-media__desc">Тут описание фрезера по металлу</p>
                     <a href="https://lasercut.ru/katalog/vertikalnye-frezernye-stanki-po-metallu/"
                        class="btn  btn--products">Подробнее...</a>
                   </div>
-                  <div class="products-media-block__content">
-                    <img class="products-media-block__image" width="500" height="400"
+                  <div class="main-nav-products-media__content">
+                    <img class="main-nav-products-media__image" width="500" height="400"
                          src="https://i.ibb.co/PxJPH7K/tokarniy-stanok.png"
                          alt="Токарный многоцелевой крупногабаритный станок WT 4000">
-                    <h2 class="products-media-block__title">Токарный многоцелевой крупногабаритный станок
+                    <h2 class="main-nav-products-media__title">Токарный многоцелевой крупногабаритный станок
                       WT
                       4000</h2>
-                    <p class="products-media-block__desc">Тут описание токарного станка</p>
+                    <p class="main-nav-products-media__desc">Тут описание токарного станка</p>
                     <a href="https://lasercut.ru/katalog/tokarnye-stanki/"
                        class="btn  btn--products">Подробнее...</a>
                   </div>
-                  <div class="products-media-block__content">
-                    <img class="products-media-block__image" width="500" height="400"
+                  <div class="main-nav-products-media__content">
+                    <img class="main-nav-products-media__image" width="500" height="400"
                          src="https://i.ibb.co/Q6ZNyn9/gibochniy-stanok.png" alt="Wattsan E 4016 BP для листа">
-                    <h2 class="products-media-block__title">Wattsan E 4016 BP для листа</h2>
-                    <p class="products-media-block__desc">Тут описание гибочного станка</p>
+                    <h2 class="main-nav-products-media__title">Wattsan E 4016 BP для листа</h2>
+                    <p class="main-nav-products-media__desc">Тут описание гибочного станка</p>
                     <a href="https://lasercut.ru/katalog/gibochnye-stanki-trubogiby-i-listogiby/"
                        class="btn  btn--products">Подробнее...</a>
                   </div>
-                  <div class="products-media-block__content">
-                    <img class="products-media-block__image" width="500" height="400"
+                  <div class="main-nav-products-media__content">
+                    <img class="main-nav-products-media__image" width="500" height="400"
                          src="https://i.ibb.co/0qtszzq/lentopilochniy-stanok.png"
                          alt="Ленточнопильный станок по металлу BS712N">
-                    <h2 class="products-media-block__title">Ленточнопильный станок по металлу BS712N</h2>
-                    <p class="products-media-block__desc">Тут описание лентопильного станка</p>
+                    <h2 class="main-nav-products-media__title">Ленточнопильный станок по металлу BS712N</h2>
+                    <p class="main-nav-products-media__desc">Тут описание лентопильного станка</p>
                     <a href="https://lasercut.ru/katalog/lentochnopilnye-stanki/"
                        class="btn  btn--products">Подробнее...</a>
                   </div>
-                  <div class="products-media-block__content">
-                    <img class="products-media-block__image" width="500" height="400"
+                  <div class="main-nav-products-media__content">
+                    <img class="main-nav-products-media__image" width="500" height="400"
                          src="https://i.ibb.co/9YMZn9V/mnogofunkcional.png"
                          alt="Многофункциональный раскроечный комплекс WT 1625">
-                    <h2 class="products-media-block__title">Многофункциональный раскроечный комплекс WT
+                    <h2 class="main-nav-products-media__title">Многофункциональный раскроечный комплекс WT
                       1625
                     </h2>
-                    <p class="products-media-block__desc">Тут описание многофункцианального комплекса</p>
+                    <p class="main-nav-products-media__desc">Тут описание многофункцианального комплекса</p>
                     <a href="https://lasercut.ru/katalog/mnogofunktsionalnye-raskroechnye-kompleksy/"
                        class="btn  btn--products">Подробнее...</a>
                   </div>
-                  <div class="products-media-block__content">
-                    <img class="products-media-block__image" width="500" height="400"
+                  <div class="main-nav-products-media__content">
+                    <img class="main-nav-products-media__image" width="500" height="400"
                          src="https://i.ibb.co/kc5dS7J/katalog-komplekt.png" alt="Все комплектующие">
-                    <h2 class="products-media-block__title">Все комплектующие
+                    <h2 class="main-nav-products-media__title">Все комплектующие
                     </h2>
-                    <p class="products-media-block__desc">Тут все комплектующие</p>
+                    <p class="main-nav-products-media__desc">Тут все комплектующие</p>
                     <a href="https://lasercut.ru/katalog/komplektuyushhie/"
                        class="btn  btn--products">Подробнее...</a>
                   </div>
                 </div>
+
               </div>
             </div>
           </li>
         </ul>
 
-        <div class="main-header__search  search-header">
+        <div class="main-header__search  main-header-search">
 
-          <form class="search-header__form" action="" method="GET">
+          <form class="main-header-search__form" action="" method="GET">
             <label for="search-header"></label>
             <input class="js-search-input" id="search-header" type="text" name="form-input"
                    placeholder="Например, Лазерный станок">
-            <button class="search-header__btn">
+            <button class="main-header-search__btn">
               <svg width="30" height="30">
                 <use xlink:href="#icon-header-search"></use>
               </svg>
@@ -991,14 +1038,14 @@
 
         </div>
 
-        <dl class="main-header__contacts  contacts-info">
+        <dl class="main-header__bottom-contacts  main-header-bottom-contacts">
           <dt style="display: none">Phone</dt>
-          <dd class="contacts-info__phone">
-            <a href="tel:88007771787" class="contacts-info__phone-value">+7 (800) 777-17-87</a>
+          <dd class="main-header-bottom-contacts__phone">
+            <a href="tel:88007771787" class="main-header-bottom-contacts__phone-value">+7 (800) 777-17-87</a>
           </dd>
           <dt style="display: none">Mail</dt>
-          <dd class="contacts-info__mail">
-            <a href="mailto:info@lasercut.ru" class="contacts-info__mail-value">info@lasercut.ru</a>
+          <dd class="main-header-bottom-contacts__mail">
+            <a href="mailto:info@lasercut.ru" class="main-header-bottom-contacts__mail-value">info@lasercut.ru</a>
           </dd>
         </dl>
 
@@ -1011,6 +1058,7 @@
 <main class="page__main  main">
   <div class="main__wrapper">
 
+    <!--    СЕКЦИЯ БАННЕРОВ И СТАТЕЙ-->
     <section class="personal">
       <div class="container  container--wide  personal__wrapper">
 
@@ -1147,7 +1195,7 @@
       </div>
     </section>
 
-    <!--  БЛОК С КАТЕГОРИЯМИ-->
+    <!--  СЕКЦИЯ КАТЕГОРИЙ-->
     <section class="categories">
       <div class="container  container--wide  categories__wrapper">
         <h3 class="categories__title">Популярные категории</h3>
