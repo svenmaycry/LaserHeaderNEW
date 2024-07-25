@@ -2,7 +2,7 @@
 .vercel
 node_modules/
 package-lock.json
-
+.DS_Store
 css/style.css.map
 
 css/null.css
