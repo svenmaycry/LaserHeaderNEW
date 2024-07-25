@@ -2,7 +2,8 @@
 .vercel
 node_modules/
 package-lock.json
-
+# macOS-specific files
+.DS_Store
 css/style.css.map
 
 css/null.css
