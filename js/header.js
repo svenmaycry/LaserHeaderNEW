@@ -251,25 +251,18 @@ function tabsHeader() {
   }
 }
 
-
 //  Модуль с Динамическим Адаптивом разметки
 function dynamicAdapt() {
-  let addWindowScrollEvent = false;
-  setTimeout(() => {
-    if (addWindowScrollEvent) {
-      let windowScroll = new Event("windowScroll");
-      window.addEventListener("scroll", () => document.dispatchEvent(windowScroll));
-    }
-  }, 0);
-
   class DynamicAdapt {
     constructor(type) {
       this.type = type;
       this.daClassname = "_dynamic_adapt_";
+      this.nodes = document.querySelectorAll("[data-da]");
+      this.arrOfObj = [];
+      this.mediaQueries = [];
     }
 
     init() {
-      this.nodes = document.querySelectorAll("[data-da]");
       this.arrOfObj = Array.from(this.nodes).map(node => {
         const [destinationSelector, breakpoint = "767", place = "last"] = node.dataset.da.trim().split(",");
         return {
@@ -294,6 +287,10 @@ function dynamicAdapt() {
         matchMedia.addEventListener('change', () => this.mediaHandler(matchMedia, arrOfObjFilter));
         this.mediaHandler(matchMedia, arrOfObjFilter);
       });
+      if (this.nodes.length > 0) {
+        let windowScroll = new Event("windowScroll");
+        window.addEventListener("scroll", () => document.dispatchEvent(windowScroll));
+      }
     }
 
     mediaHandler(matchMedia, arrOfObj) {

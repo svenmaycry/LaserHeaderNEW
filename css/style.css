@@ -1157,9 +1157,6 @@ body > main {
 .main-nav-item--special .main-nav-item__button span {
   margin-right: 5px;
 }
-.main-nav-item--catalog {
-  border: none;
-}
 .main-nav-item--catalog .main-nav-item__button {
   color: rgb(255, 255, 255);
   padding: 12px 24px 12px 40px;
@@ -1761,7 +1758,7 @@ body > main {
   }
 }
 .main-nav-social-header__link {
-  display: block;
+  display: flex;
 }
 @media (min-width: 1279px) {
   .main-nav-social-header__link:focus svg {

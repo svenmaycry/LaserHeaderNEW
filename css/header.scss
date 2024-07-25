@@ -537,7 +537,6 @@
     }
 
     &--catalog {
-      border: none;
 
       .main-nav-item {
 
@@ -1228,7 +1227,8 @@
     }
 
     &__link {
-      display: block;
+      display: flex;
+      
       @media (min-width: 1279px) {
         &:focus {
           svg {
