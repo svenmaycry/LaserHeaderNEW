@@ -7,8 +7,11 @@
   z-index: 20;
 
   &__top {
-    @media (min-width: 1279px) {
-      padding-right: calc(17px - (100vw - 100%));
+
+    &.has-scrollbar {
+      @media (min-width: 1279px) {
+        padding-right: calc(17px - (100vw - 100%));
+      }
     }
   }
 
@@ -90,11 +93,12 @@
 
   &__bottom {
     box-shadow: 0 0 8px $shadowVeryLowColor;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding: 10px 0;
 
-    @media (min-width: 1279px) {
-      padding-right: calc(17px - (100vw - 100%));
+    &.has-scrollbar {
+      @media (min-width: 1279px) {
+        padding-right: calc(17px - (100vw - 100%));
+      }
     }
   }
 
@@ -1228,7 +1232,7 @@
 
     &__link {
       display: flex;
-      
+
       @media (min-width: 1279px) {
         &:focus {
           svg {

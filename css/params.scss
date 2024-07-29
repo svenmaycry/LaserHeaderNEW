@@ -23,11 +23,11 @@ body {
   font-weight: normal;
   font-style: normal;
   background-color: #ffffff;
-  //display: flex;
-  //flex-direction: column;
 
   @media (min-width: 1279px) {
-    padding-right: calc(19px - (100vw - 100%));
+    &.has-scrollbar {
+      padding-right: calc(19px - (100vw - 100%));
+    }
   }
 
   > * {

@@ -424,9 +424,21 @@ const prodClassChange = () => {
   }
 }
 
+// Добавление / удаление классов у body и header в зависимости от скроллбара
+const updatePadding = () => {
+  if (document.documentElement.scrollHeight > document.documentElement.clientHeight) {
+    body.classList.add('has-scrollbar');
+    document.querySelector('.js-main-header-top').classList.add('has-scrollbar');
+    document.querySelector('.js-main-header-bottom').classList.add('has-scrollbar')
+  } else {
+    body.classList.remove('has-scrollbar');
+    document.querySelector('.js-main-header-top').classList.remove('has-scrollbar');
+    document.querySelector('.js-main-header-bottom').classList.remove('has-scrollbar')
+  }
+}
+
 // Функции-хендлеры.
 const onIconMenuClick = (e) => {
-  // closeSearchWrapper();
   overlayClose(e);
   closeSpoilersContent();
 };
@@ -439,6 +451,7 @@ const onDocumentResize = () => {
   changeContainerAttribute();
   closeSpoiler();
   prodClassChange();
+  updatePadding();
 };
 
 const onInputClick = (e) => {
