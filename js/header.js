@@ -44,35 +44,39 @@ function spoilersHeader() {
   const spoilersArray = document.querySelectorAll("[data-spoilers]");
 
   if (spoilersArray.length > 0) {
-    const spoilersRegular = Array.from(spoilersArray).filter(function (item) {
-      return !item.dataset.spoilers.split(",")[0];
-    });
-    // Инициализация обычных слойлеров
-    if (spoilersRegular.length) initSpoilers(spoilersRegular);
+    const regularHeaderSpoilers = Array.from(spoilersArray).filter(item => !item.dataset.mainSpoilers);
+    const mediaHeaderSpoilers = Array.from(spoilersArray).filter(item => item.dataset.mainSpoilers);
 
-    // Инициализация
-    function initSpoilers(spoilersArray, matchMedia = false) {
-      spoilersArray.forEach((spoilersBlock) => {
-        spoilersBlock = matchMedia ? spoilersBlock.item : spoilersBlock;
-        if (matchMedia.matches || !matchMedia) {
-          spoilersBlock.classList.add("--spoiler-init");
-          initSpoilerBody(spoilersBlock);
-          spoilersBlock.addEventListener("click", setSpoilerAction);
-        } else {
-          spoilersBlock.classList.remove("--spoiler-init");
-          initSpoilerBody(spoilersBlock, false);
-          spoilersBlock.removeEventListener("click", setSpoilerAction);
-        }
+    if (regularHeaderSpoilers.length) initSpoilers(regularHeaderSpoilers);
+
+    if (mediaHeaderSpoilers.length) {
+      mediaHeaderSpoilers.forEach(spoilersHeaderBlock => {
+        const paramsArray = spoilersHeaderBlock.dataset.mainSpoilers.split(",");
+        const breakpoint = paramsArray[0];
+        const type = paramsArray[1] ? paramsArray[1].trim() : "max";
+
+        const matchMedia = window.matchMedia(`(${type}-width: ${breakpoint}px)`);
+
+        matchMedia.addEventListener('change', () => initHeaderSpoilersOnMedia(spoilersHeaderBlock, matchMedia));
+        initHeaderSpoilersOnMedia(spoilersHeaderBlock, matchMedia);
       });
     }
 
-    // Работа с контентом
-    function initSpoilerBody(spoilersBlock) {
-      let spoilerTitles = spoilersBlock.querySelectorAll("[data-spoiler]");
-      if (spoilerTitles.length)
-        spoilerTitles = Array.from(spoilerTitles).filter(
-          (item) => item.closest("[data-spoilers]") === spoilersBlock
-        );
+    function initHeaderSpoilersOnMedia(spoilersBlock, matchMedia) {
+      if (matchMedia.matches) {
+        spoilersBlock.classList.add("--spoiler-init");
+        spoilersBlock.addEventListener("click", setSpoilerAction);
+      } else {
+        spoilersBlock.classList.remove("--spoiler-init");
+        spoilersBlock.removeEventListener("click", setSpoilerAction);
+      }
+    }
+
+    function initSpoilers(spoilersMainArray) {
+      spoilersMainArray.forEach(spoilersMainBlock => {
+        spoilersMainBlock.classList.add("--spoiler-init");
+        spoilersMainBlock.addEventListener("click", setSpoilerAction);
+      });
     }
 
     function setSpoilerAction(e) {
@@ -82,10 +86,7 @@ function spoilersHeader() {
         const spoilersBlock = spoilerTitle.closest("[data-spoilers]");
         const oneSpoiler = spoilersBlock.hasAttribute("data-one-spoiler");
 
-        if (
-          oneSpoiler &&
-          !spoilerTitle.classList.contains("--spoiler-active")
-        ) {
+        if (oneSpoiler && !spoilerTitle.classList.contains("--spoiler-active")) {
           hideSpoilersBody(spoilersBlock);
         }
 
@@ -109,16 +110,12 @@ function spoilersHeader() {
       );
       if (spoilerActiveTitle) {
         overlay.classList.remove("--active");
-
         body.classList.remove("lock");
-
         spoilerActiveTitle.classList.remove("--spoiler-active");
       }
     }
 
     const spoilersClose = document.querySelectorAll("[data-spoiler-close]");
-
-    const isEscapeKey = (e) => "Escape" === e.key;
 
     if (spoilersClose.length) {
       document.addEventListener("click", function (e) {
@@ -131,7 +128,7 @@ function spoilersHeader() {
           });
       });
       document.addEventListener("keydown", function (e) {
-        if (isEscapeKey(e))
+        if ("Escape" === e.key)
           spoilersClose.forEach((spoilerClose) => {
             overlay.classList.remove("--active");
             if (!body.classList.contains("main-nav-open"))
@@ -145,109 +142,37 @@ function spoilersHeader() {
 
 // Модуль работы с табами.
 function tabsHeader() {
-  const tabs = document.querySelectorAll('[data-tabs-header]');
-  let tabsActiveHash = [];
+  const tabsHeaderBlocks = document.querySelectorAll('[data-tabs-header]');
 
-  tabs.forEach((tabsBlock, index) => {
-    tabsBlock.classList.add('--tab-init');
-    tabsBlock.setAttribute('data-tabs-header-index', index);
-    tabsBlock.addEventListener('mouseover', setTabsHeaderAction);
-    initTabs(tabsBlock);
+  tabsHeaderBlocks.forEach((tabsHeaderBlock) => {
+    const tabsTitles = tabsHeaderBlock.querySelectorAll('[data-tabs-header-titles] > *');
+    const tabsContents = tabsHeaderBlock.querySelectorAll('[data-tabs-header-body] > *');
+
+    tabsTitles.forEach((tabTitle, index) => {
+      tabTitle.setAttribute('data-tabs-header-title', index);
+      tabsContents[index].setAttribute('data-tabs-header-item', index);
+
+      tabsContents[index].hidden = !tabTitle.classList.contains('main-nav-tab-active');
+
+      tabTitle.addEventListener('mouseover', () => {
+        activateTab(tabsHeaderBlock, index);
+      });
+    });
   });
 
-  // Работа с контентом
-  function initTabs(tabsBlock) {
-    let tabsTitles = tabsBlock.querySelectorAll('[data-tabs-header-titles]>*');
-    let tabsContent = tabsBlock.querySelectorAll('[data-tabs-header-body]>*');
-    const tabsBlockIndex = tabsBlock.dataset.tabsIndex;
-    const tabsActiveHashBlock = tabsActiveHash[0] === tabsBlockIndex;
+  function activateTab(tabsHeaderBlock, activeIndex) {
+    const tabsTitles = tabsHeaderBlock.querySelectorAll('[data-tabs-header-title]');
+    const tabsContents = tabsHeaderBlock.querySelectorAll('[data-tabs-header-item]');
 
-    if (tabsActiveHashBlock) {
-      const tabsActiveTitle = tabsBlock.querySelector(
-        '[data-tabs-header-titles]>.main-nav-tab-active'
-      );
-    }
-    if (tabsContent.length) {
-      tabsContent = Array.from(tabsContent).filter(
-        (item) => item.closest('[data-tabs-header]') === tabsBlock
-      );
-      tabsTitles = Array.from(tabsTitles).filter(
-        (item) => item.closest('[data-tabs-header]') === tabsBlock
-      );
-      tabsContent.forEach((tabsContentItem, index) => {
-        tabsTitles[index].setAttribute('data-tabs-header-title', '');
-        tabsContentItem.setAttribute('data-tabs-header-item', '');
-
-        if (tabsActiveHashBlock && index === tabsActiveHash[1]) {
-          tabsTitles[index].classList.add('main-nav-tab-active');
-        }
-        tabsContentItem.hidden = !tabsTitles[index].classList.contains(
-          'main-nav-tab-active'
-        );
-      });
-    }
-  }
-
-  function setTabsStatus(tabsBlock) {
-    let tabsTitles = tabsBlock.querySelectorAll('[data-tabs-header-title]');
-    let tabsContent = tabsBlock.querySelectorAll('[data-tabs-header-item]');
-
-    function isTabsAnimate(tabsBlock) {
-      if (tabsBlock.hasAttribute('data-tabs-header-animate')) {
-        return tabsBlock.dataset.tabsAnimate > 0
-          ? Number(tabsBlock.dataset.tabsAnimate)
-          : 500;
-      }
-    }
-
-    const tabsBlockAnimate = isTabsAnimate(tabsBlock);
-    if (tabsContent.length > 0) {
-      tabsContent = Array.from(tabsContent).filter(
-        (item) => item.closest('[data-tabs-header]') === tabsBlock
-      );
-      tabsTitles = Array.from(tabsTitles).filter(
-        (item) => item.closest('[data-tabs-header]') === tabsBlock
-      );
-      tabsContent.forEach((tabsContentItem, index) => {
-        if (tabsTitles[index].classList.contains('main-nav-tab-active')) {
-          if (tabsBlockAnimate) {
-          } else {
-            tabsContentItem.hidden = false;
-          }
-        } else {
-          if (tabsBlockAnimate) {
-          } else {
-            tabsContentItem.hidden = true;
-          }
-        }
-      });
-    }
-  }
-
-  function setTabsHeaderAction(e) {
-    const el = e.target;
-    if (el.closest('[data-tabs-header-title]')) {
-      const tabTitle = el.closest('[data-tabs-header-title]');
-      const tabsBlock = tabTitle.closest('[data-tabs-header]');
-      if (
-        !tabTitle.classList.contains('main-nav-tab-active')
-      ) {
-        let tabActiveTitle = tabsBlock.querySelectorAll(
-          '[data-tabs-header-title].main-nav-tab-active'
-        );
-        tabActiveTitle.length
-          ? (tabActiveTitle = Array.from(tabActiveTitle).filter(
-            (item) => item.closest('[data-tabs-header]') === tabsBlock
-          ))
-          : null;
-        tabActiveTitle.length
-          ? tabActiveTitle[0].classList.remove('main-nav-tab-active')
-          : null;
+    tabsTitles.forEach((tabTitle, index) => {
+      if (index === activeIndex) {
         tabTitle.classList.add('main-nav-tab-active');
-        setTabsStatus(tabsBlock);
+        tabsContents[index].hidden = false;
+      } else {
+        tabTitle.classList.remove('main-nav-tab-active');
+        tabsContents[index].hidden = true;
       }
-      e.preventDefault();
-    }
+    });
   }
 }
 
