@@ -18,12 +18,12 @@
   <div data-spoilers data-one-spoiler class="main-header__wrapper  js-main-header-wrapper">
 
     <!--    ВЕРХНИЙ УРОВЕНЬ ШАПКИ-->
-    <div class="main-header__top  js-main-header-top">
-      <div class="container  container--wide  main-header__top-cnt">
+    <div class="main-header__top  main-header-top  js-main-header-top">
+      <div class="container  container--wide  main-header-top__cnt">
 
-        <div class="main-header__geo  main-header-geo">
-          <a class="main-header-geo__city ">
-            <svg class="main-header-geo__icon" width="14" height="20">
+        <div class="main-header-top__geo  main-header-top-geo">
+          <a class="main-header-top-geo__city ">
+            <svg class="main-header-top-geo__icon" width="14" height="20">
               <use xlink:href="#icon-lc-geo"></use>
             </svg>
             <span>Санкт-Петербург</span>
@@ -686,7 +686,7 @@
           </div>
         </nav>
 
-        <button type="button" class="main-header__menu-btn  icon-menu  js-icon-menu">
+        <button type="button" class="main-header-top__menu-btn  js-icon-menu">
           <span></span>
         </button>
 
@@ -694,18 +694,18 @@
     </div>
 
     <!--    НИЖНИЙ УРОВЕНЬ ШАПКИ-->
-    <div class="main-header__bottom  js-main-header-bottom">
-      <div class="container  container--wide  main-header__bottom-cnt">
+    <div class="main-header__bottom  main-header-bottom  js-main-header-bottom">
+      <div class="container  container--wide  main-header-bottom__cnt">
 
-        <a href="https://lasercut.ru/" class="main-header__logo">
+        <a href="https://lasercut.ru/" class="main-header-bottom__logo">
           <picture>
             <source media="(max-width: 767px)" srcset="https://svgshare.com/i/1721.svg">
-            <img class="main-header__logo-img" src="https://svgshare.com/i/171f.svg" width="198" height="52"
+            <img class="main-header-bottom__logo-img" src="https://svgshare.com/i/171f.svg" width="198" height="52"
                  alt="Логотип Лазеркат">
           </picture>
         </a>
 
-        <ul class="main-header__catalog-list">
+        <ul class="main-header-bottom__catalog-list">
           <li data-da=".main-nav__list,1279,0"
               class="main-header__item  main-nav-item  main-nav-item--catalog  js-catalog-item">
             <button
@@ -1023,13 +1023,13 @@
           </li>
         </ul>
 
-        <div class="main-header__search  main-header-search">
+        <div class="main-header-bottom__search  main-header-bottom-search">
 
-          <form class="main-header-search__form" action="" method="GET">
+          <form class="main-header-bottom-search__form" action="" method="GET">
             <label for="search-header"></label>
             <input class="js-search-input" id="search-header" type="text" name="form-input"
                    placeholder="Например, Лазерный станок">
-            <button class="main-header-search__btn">
+            <button class="main-header-bottom-search__btn">
               <svg width="30" height="30">
                 <use xlink:href="#icon-header-search"></use>
               </svg>
@@ -1038,7 +1038,7 @@
 
         </div>
 
-        <dl class="main-header__bottom-contacts  main-header-bottom-contacts">
+        <dl class="main-header-bottom__contacts  main-header-bottom-contacts">
           <dt style="display: none">Phone</dt>
           <dd class="main-header-bottom-contacts__phone">
             <a href="tel:88007771787" class="main-header-bottom-contacts__phone-value">+7 (800) 777-17-87</a>
@@ -1200,7 +1200,7 @@
     <section class="categories">
       <div class="container  container--wide  categories__wrapper">
 
-        <h3 class="categories__title">Категории</h3>
+        <h3 class="categories__title">Популярные категории</h3>
         <!-- Кнопки навигации -->
         <div class="swiper-button-prev  swiper-button-prev--categories"></div>
         <div class="swiper-button-next  swiper-button-next--categories"></div>
