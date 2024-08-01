@@ -90,7 +90,7 @@ function spoilersHeader() {
           hideSpoilersBody(spoilersBlock);
         }
 
-        if (window.innerWidth >= 1279) {
+        if (window.innerWidth >= 1280) {
           overlay.classList.toggle("--active");
         }
 
@@ -316,7 +316,7 @@ const showAndHideHeader = () => {
 const changeContainerAttribute = () => {
   if (window.innerWidth <= 1279)
     headerWrapper.removeAttribute("data-one-spoiler");
-  else if (window.innerWidth >= 1279)
+  else if (window.innerWidth >= 1280)
     headerWrapper.setAttribute("data-one-spoiler", "");
 };
 
@@ -332,7 +332,7 @@ const closeSpoiler = () => {
     });
   }
 
-  if (body.classList.contains("main-nav-open") && window.innerWidth >= 1279) {
+  if (body.classList.contains("main-nav-open") && window.innerWidth >= 1280) {
     body.classList.remove("lock", "main-nav-open");
     mainNavItemButton.forEach((spoiler) => {
       spoiler.classList.remove("--spoiler-active");
@@ -342,11 +342,10 @@ const closeSpoiler = () => {
 
 // Менять класс у айтема Каталога
 const prodClassChange = () => {
-  if (window.innerWidth <= 1279) {
+  if (window.innerWidth <= 1279)
     catalogItem.classList.remove('main-nav-item--catalog');
-  } else {
+  else if (window.innerWidth >= 1280)
     catalogItem.classList.add('main-nav-item--catalog');
-  }
 }
 
 // Добавление / удаление классов у body и header в зависимости от скроллбара

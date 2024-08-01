@@ -9,7 +9,7 @@
   &-top {
 
     &.has-scrollbar {
-      @media (min-width: 1279px) {
+      @media (min-width: 1280px) {
         padding-right: calc(17px - (100vw - 100%));
       }
     }
@@ -96,7 +96,7 @@
     padding: 10px 0;
 
     &.has-scrollbar {
-      @media (min-width: 1279px) {
+      @media (min-width: 1280px) {
         padding-right: calc(17px - (100vw - 100%));
       }
     }
@@ -195,7 +195,7 @@
           }
         }
 
-        @media (min-width: 1279px) {
+        @media (min-width: 1280px) {
           &:focus {
             color: $primary-color;
           }
@@ -224,7 +224,7 @@
             color: $primary-color;
           }
         }
-        @media (min-width: 1279px) {
+        @media (min-width: 1280px) {
           &:focus {
             color: $primary-color;
           }
@@ -352,7 +352,7 @@
 
       &.--spoiler-active {
 
-        @media (min-width: 1279px) {
+        @media (min-width: 1280px) {
           background-color: #E7F0FB;
         }
 
@@ -492,7 +492,7 @@
         }
       }
 
-      @media (min-width: 1279px) {
+      @media (min-width: 1280px) {
         &:focus {
           color: $primary-color;
         }
@@ -621,7 +621,7 @@
         opacity: 1;
         color: $primary-color;
 
-        @media (min-width: 1279px) {
+        @media (min-width: 1280px) {
           color: $mainWhiteColor;
         }
 
@@ -634,7 +634,7 @@
           transform: scale(1.3);
         }
 
-        @media (min-width: 1279px) {
+        @media (min-width: 1280px) {
           background-color: $primary-color;
           border-radius: 10px;
           font-weight: 700;
@@ -658,7 +658,7 @@
         padding: 7px 0;
         color: inherit;
 
-        @media (min-width: 1279px) {
+        @media (min-width: 1280px) {
           &:focus {
             .main-nav-products-item & {
               color: $mainWhiteColor;
@@ -782,7 +782,7 @@
           margin-bottom: 3px;
         }
 
-        @media (min-width: 1279px) {
+        @media (min-width: 1280px) {
           &:focus {
             .offers-card__img {
               transform: scale(1.1);
@@ -826,7 +826,7 @@
         color: $primary-color;
         max-width: 250px;
 
-        @media (min-width: 1279px) {
+        @media (min-width: 1280px) {
           &:focus {
             color: $danger-color;
           }
@@ -894,7 +894,7 @@
       list-style: none;
       padding: 0;
 
-      @media (min-width: 1279px) {
+      @media (min-width: 1280px) {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -1039,7 +1039,7 @@
         transition: color 0.3s;
         color: $primary-color;
 
-        @media (min-width: 1279px) {
+        @media (min-width: 1280px) {
           &:focus {
             color: $danger-color;
           }
@@ -1100,7 +1100,7 @@
         margin-bottom: 10px;
         line-height: 1;
 
-        @media (min-width: 1279px) {
+        @media (min-width: 1280px) {
           &:focus {
             color: $danger-color;
           }
@@ -1169,7 +1169,7 @@
               color: $primary-color;
             }
           }
-          @media (min-width: 1279px) {
+          @media (min-width: 1280px) {
             &:focus {
               color: $primary-color;
             }
@@ -1180,7 +1180,7 @@
   }
 
   &__contacts-info {
-    @media (min-width: 1279px) {
+    @media (min-width: 1280px) {
       margin-left: auto;
       align-self: center;
     }
@@ -1207,7 +1207,7 @@
     &__item {
 
       &--vk {
-        @media (min-width: 1279px) {
+        @media (min-width: 1280px) {
           display: none;
         }
 
@@ -1223,7 +1223,7 @@
       }
 
       &--whatsapp {
-        @media (min-width: 1279px) {
+        @media (min-width: 1280px) {
           display: none;
         }
       }
@@ -1232,7 +1232,7 @@
     &__link {
       display: flex;
 
-      @media (min-width: 1279px) {
+      @media (min-width: 1280px) {
         &:focus {
           svg {
             transform: scale(1.3);
@@ -1241,7 +1241,7 @@
       }
 
       svg {
-        @media (min-width: 1279px) {
+        @media (min-width: 1280px) {
           transition: transform 0.3s ease-in 0s;
           @media (any-hover: hover) {
             &:hover {
@@ -1255,7 +1255,7 @@
 
   &-mobile-contacts {
 
-    @media (min-width: 1279px) {
+    @media (min-width: 1280px) {
       display: none;
     }
 
