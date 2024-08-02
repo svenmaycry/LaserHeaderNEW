@@ -1,6 +1,8 @@
 // СЕКЦИЯ БАНЕРА СТАТЕЙ И АКЦИЙ
 .personal {
 
+  background: url('https://svgshare.com/i/18v3.svg') 100% 40% no-repeat;
+
   &__wrapper {
     display: grid;
     grid-template-areas:
@@ -125,16 +127,10 @@
     grid-area: articles;
     position: relative;
     overflow-x: hidden;
-    background-color: #E3EFFF;
     border-radius: 10px;
 
     &__cnt {
-      padding: 14px 16px;
       overflow-y: hidden;
-
-      @media (max-width: 767px) {
-        padding: 7px 16px;
-      }
     }
 
     &__title {
@@ -169,8 +165,9 @@
         display: flex;
         align-items: center;
         background-color: $mainWhiteColor;
+        border: 1px solid #DCE4F0;
         border-radius: 10px;
-        padding: 25px 3px;
+        padding: 35px 3px;
 
         @media (max-width: 767px) {
           padding: 8px 3px;
@@ -212,15 +209,11 @@
 
       &-button-prev, &-button-next {
         border-radius: 50%;
-        height: 30px;
-        width: 30px;
+        height: 17px;
+        width: 17px;
         opacity: 1;
         transition: opacity 0.3s ease-in, background-color 0.3s ease-in, transform 0.3s ease-in;
-        top: 32px;
-
-        @media (max-width: 767px) {
-          top: 25px;
-        }
+        top: 27px;
 
         svg {
           height: 1.2em;
@@ -240,14 +233,14 @@
 
       &-button-prev {
         left: auto;
-        right: 65px;
-        background: url('https://svgshare.com/i/18Ac.svg') 0 0 / cover no-repeat;
+        right: 60px;
+        background: url('https://svgshare.com/i/18u5.svg') 0 0 / cover no-repeat;
       }
 
       &-button-next {
         left: auto;
-        right: 15px;
-        background: url('https://svgshare.com/i/189n.svg') 0 0 / cover no-repeat;
+        right: 4px;
+        background: url('https://svgshare.com/i/18tt.svg') 0 0 / cover no-repeat;
       }
 
       &-button-disabled {
@@ -330,7 +323,6 @@
         }
 
         .categories-item__img-cnt {
-          box-shadow: none;
 
           &::before {
             content: '';
@@ -346,7 +338,7 @@
       align-items: center;
       justify-content: center;
       background-color: $mainWhiteColor;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border: 1px solid #DCE4F0;
       border-radius: 10px;
       max-width: 120px;
       min-height: 120px;
@@ -356,7 +348,6 @@
       @media (max-width: 900px) {
         max-width: 63px;
         min-height: 63px;
-        box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
         margin-bottom: 5px;
       }
 
@@ -404,14 +395,14 @@
 
     &-button-prev, &-button-next {
       border-radius: 50%;
-      height: 30px;
-      width: 30px;
+      height: 17px;
+      width: 17px;
       opacity: 1;
       transition: opacity 0.3s ease-in, background-color 0.3s ease-in, transform 0.3s ease-in;
-      top: 26px;
+      top: 35px;
 
       @media (max-width: 767px) {
-        top: 22px;
+        top: 28px;
       }
 
       svg {
@@ -432,14 +423,14 @@
 
     &-button-prev {
       left: auto;
-      right: clamp(60px, 15vw, 145px);
-      background: url('https://svgshare.com/i/18Ac.svg') 0 0 / cover no-repeat;
+      right: clamp(60px, 15vw, 133px);
+      background: url('https://svgshare.com/i/18u5.svg') 0 0 / cover no-repeat;
     }
 
     &-button-next {
       left: auto;
-      right: clamp(13px, 6vw, 90px);
-      background: url('https://svgshare.com/i/189n.svg') 0 0 / cover no-repeat;
+      right: clamp(13px, 6vw, 76px);
+      background: url('https://svgshare.com/i/18tt.svg') 0 0 / cover no-repeat;
     }
 
     &-button-disabled {

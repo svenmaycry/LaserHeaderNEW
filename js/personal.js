@@ -93,17 +93,17 @@ const articlesSwiper = new Swiper('.js-swiper-articles', {
       slidesPerView: 2.2,
       slidesPerGroup: 2.2,
     },
-    1440: {
-      slidesPerView: 2.6,
-      slidesPerGroup: 2.6,
-    },
     992: {
-      slidesPerView: 2.6,
-      slidesPerGroup: 2.6,
+      slidesPerView: 3,
+      slidesPerGroup: 3,
     },
     1268: {
-      slidesPerView: 2.6,
-      slidesPerGroup: 2.6,
+      slidesPerView: 3,
+      slidesPerGroup: 3,
+    },
+    1440: {
+      slidesPerView: 3,
+      slidesPerGroup: 3,
     },
   }
 
