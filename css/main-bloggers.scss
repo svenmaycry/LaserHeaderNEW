@@ -83,6 +83,14 @@
       color: $greyColor;
       margin: 0 0 min(2vw, 10px);
 
+      &::before {
+        content: '';
+        background: url('https://svgshare.com/i/18w7.svg') 0 0 no-repeat;
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        margin-right: 10px;
+      }
     }
 
     &__desc {

@@ -2262,6 +2262,14 @@ body > main {
   color: #9c9a9a;
   margin: 0 0 min(2vw, 10px);
 }
+.main-bloggers-item__count::before {
+  content: "";
+  background: url("https://svgshare.com/i/18w7.svg") 0 0 no-repeat;
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-right: 10px;
+}
 .main-bloggers-item__desc {
   font-size: clamp(14px, 3vw, 16px);
   line-height: 1.3;
