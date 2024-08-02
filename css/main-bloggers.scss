@@ -1,0 +1,150 @@
+.main-bloggers {
+  position: relative;
+  padding-bottom: 150px;
+
+  &__title {
+    display: inline-block;
+    font-family: "Cera Pro", Helvetica, sans-serif;
+    font-size: clamp(18px, 3vw, 22px);
+    font-weight: 700;
+    line-height: 1;
+    margin: 0 10px min(2vw, 10px) 0;
+  }
+
+  &__subtitle {
+    font-size: clamp(16px, 3vw, 20px);
+    margin: 0 0 min(2vw, 120px);
+    line-height: 1;
+  }
+
+  &__link {
+    position: absolute;
+    top: 0;
+    right: 85px;
+    color: $primary-color;
+    transition: color 0.3s ease-in;
+
+    &:hover, &:focus {
+      color: $danger-color;
+    }
+  }
+
+  &__list {
+    padding: 7px;
+    margin: 0;
+    list-style: none;
+  }
+
+  &-item {
+    max-width: 400px;
+
+    &__link {
+      display: flex;
+      align-items: center;
+      column-gap: min(2vw, 40px);
+      cursor: pointer;
+      padding: 20px 20px 20px 20px;
+      border-radius: 20px;
+      background-color: #F5F8FF;
+      transition: box-shadow 0.2s ease-in;
+
+      &:hover, &:focus {
+        box-shadow: 0 0 7px rgba(0, 0, 0, 0.5);
+      }
+
+      @media (max-width: 1279px) {
+        flex-direction: column;
+        row-gap: 20px;
+        text-align: center;
+      }
+    }
+
+    &__img {
+      width: 114px;
+      height: 114px;
+      border-radius: 50%;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+
+      @media (max-width: 1600px) {
+        width: 80px;
+        height: 80px;
+      }
+    }
+
+    &__name {
+      font-size: clamp(16px, 3vw, 24px);
+      line-height: 1;
+      margin: 0 0 min(2vw, 15px);
+    }
+
+    &__count {
+      font-size: clamp(14px, 3vw, 16px);
+      line-height: 1;
+      color: $greyColor;
+      margin: 0 0 min(2vw, 10px);
+
+    }
+
+    &__desc {
+      font-size: clamp(14px, 3vw, 16px);
+      line-height: 1.3;
+      margin: 0;
+    }
+  }
+
+  .swiper {
+
+    &-button-prev, &-button-next {
+      border-radius: 50%;
+      height: 17px;
+      width: 17px;
+      opacity: 1;
+      transition: opacity 0.3s ease-in, background-color 0.3s ease-in, transform 0.3s ease-in;
+      top: inherit;
+      bottom: 103px;
+
+      &::after {
+        content: '';
+      }
+
+      &:hover, &:focus {
+        transform: scale(1.2);
+        outline: none;
+      }
+    }
+
+
+    &-button-prev {
+      left: auto;
+      right: clamp(60px, 10vw, 145px);
+      background: url('https://svgshare.com/i/18u5.svg') 0 0 / cover no-repeat;
+    }
+
+    &-button-next {
+      left: auto;
+      right: clamp(13px, 6vw, 90px);
+      background: url('https://svgshare.com/i/18tt.svg') 0 0 / cover no-repeat;
+    }
+
+    &-button-disabled {
+      opacity: .35;
+      cursor: auto;
+      pointer-events: none;
+    }
+
+    &-scrollbar {
+      top: 40px;
+      left: 0;
+      width: 88%;
+      height: 2px;
+      z-index: 18;
+
+      &-drag {
+        top: -2px;
+        height: 5px;
+        background: #2e1b1b;
+        cursor: pointer;
+      }
+    }
+  }
+}

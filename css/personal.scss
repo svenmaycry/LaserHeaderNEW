@@ -1,13 +1,4 @@
-.main {
-
-  &__wrapper {
-    position: relative;
-    background: linear-gradient(to bottom, #FFFFFF, #E3EFFF);
-    z-index: 1;
-  }
-}
-
-// СЕКЦИЯ БАНЕРА СТАТЕЙ И АКЦИЯ
+// СЕКЦИЯ БАНЕРА СТАТЕЙ И АКЦИЙ
 .personal {
 
   &__wrapper {
@@ -303,7 +294,7 @@
 // СЕКЦИЯ КАТЕГОРИЙ
 .categories {
   position: relative;
-  padding-bottom: 110px;
+  margin-bottom: 110px;
 
   &__title {
     font-family: $fontHeading;
