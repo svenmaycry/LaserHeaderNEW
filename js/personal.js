@@ -15,15 +15,15 @@ const bannerSwiper = new Swiper('.js-swiper-banner', {
 
   // If we need pagination
   pagination: {
-    el: '.swiper-pagination--banner',
+    el: '.js-swiper-pagination--banner',
     clickable: true,
     autoHeight: true,
   },
 
   // Navigation arrows
   navigation: {
-    nextEl: '.swiper-button-next--banner',
-    prevEl: '.swiper-button-prev--banner',
+    nextEl: '.js-swiper-button-next--banner',
+    prevEl: '.js-swiper-button-prev--banner',
   },
 
   // Брейкпоинты
@@ -64,17 +64,10 @@ const articlesSwiper = new Swiper('.js-swiper-articles', {
   //   delay: 3000,
   // },
 
-  // If we need pagination
-  pagination: {
-    el: '.swiper-pagination--articles',
-    clickable: true,
-    autoHeight: true,
-  },
-
   // Navigation arrows
   navigation: {
-    nextEl: '.swiper-button-next--articles',
-    prevEl: '.swiper-button-prev--articles',
+    nextEl: '.js-swiper-button-next--articles',
+    prevEl: '.js-swiper-button-prev--articles',
     disabledClass: 'swiper-button-disabled',
   },
 
@@ -121,17 +114,10 @@ const categoriesSwiper = new Swiper('.js-swiper-categories', {
   parallax: true,
   preloadImages: false,
 
-  // If we need pagination
-  pagination: {
-    el: '.swiper-pagination--categories',
-    clickable: true,
-    autoHeight: true,
-  },
-
   // Navigation arrows
   navigation: {
-    nextEl: '.swiper-button-next--categories',
-    prevEl: '.swiper-button-prev--categories',
+    nextEl: '.js-swiper-button-next--categories',
+    prevEl: '.js-swiper-button-prev--categories',
     disabledClass: 'swiper-button-disabled',
   },
 

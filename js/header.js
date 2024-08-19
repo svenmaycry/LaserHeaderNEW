@@ -2,8 +2,7 @@ const body = document.querySelector('body');
 const iconMenuButton = document.querySelector('.js-icon-menu');
 const overlay = document.querySelector('.js-header-overlay');
 const mainHeader = document.querySelector('.js-main-header');
-const headerWrapper = document.querySelector('.js-main-header-wrapper');
-const mainNavItemButton = document.querySelectorAll('.js-main-nav-item-button');
+const mainNavItemLink = document.querySelectorAll('.js-main-nav-item-link');
 const searchInput = document.querySelector('.js-search-input');
 const catalogItem = document.querySelector('.js-catalog-item');
 
@@ -39,103 +38,111 @@ function menuInit() {
     });
 }
 
-// Модуль работы со спойлерами.
 function spoilersHeader() {
-  const spoilersArray = document.querySelectorAll("[data-spoilers]");
+  const spoilers = document.querySelectorAll("[data-spoiler]");
 
-  if (spoilersArray.length > 0) {
-    const regularHeaderSpoilers = Array.from(spoilersArray).filter(item => !item.dataset.mainSpoilers);
-    const mediaHeaderSpoilers = Array.from(spoilersArray).filter(item => item.dataset.mainSpoilers);
+  if (spoilers.length > 0) {
+    const breakpoint = 1279;
+    const matchMedia = window.matchMedia(`(max-width: ${breakpoint}px)`);
 
-    if (regularHeaderSpoilers.length) initSpoilers(regularHeaderSpoilers);
+    initSpoilers(spoilers, matchMedia);
 
-    if (mediaHeaderSpoilers.length) {
-      mediaHeaderSpoilers.forEach(spoilersHeaderBlock => {
-        const paramsArray = spoilersHeaderBlock.dataset.mainSpoilers.split(",");
-        const breakpoint = paramsArray[0];
-        const type = paramsArray[1] ? paramsArray[1].trim() : "max";
+    matchMedia.addEventListener('change', () => initSpoilers(spoilers, matchMedia));
 
-        const matchMedia = window.matchMedia(`(${type}-width: ${breakpoint}px)`);
+    function initSpoilers(spoilersArray, matchMedia) {
+      spoilersArray.forEach(spoiler => {
+        spoiler.classList.add("--spoiler-init");
 
-        matchMedia.addEventListener('change', () => initHeaderSpoilersOnMedia(spoilersHeaderBlock, matchMedia));
-        initHeaderSpoilersOnMedia(spoilersHeaderBlock, matchMedia);
-      });
-    }
-
-    function initHeaderSpoilersOnMedia(spoilersBlock, matchMedia) {
-      if (matchMedia.matches) {
-        spoilersBlock.classList.add("--spoiler-init");
-        spoilersBlock.addEventListener("click", setSpoilerAction);
-      } else {
-        spoilersBlock.classList.remove("--spoiler-init");
-        spoilersBlock.removeEventListener("click", setSpoilerAction);
-      }
-    }
-
-    function initSpoilers(spoilersMainArray) {
-      spoilersMainArray.forEach(spoilersMainBlock => {
-        spoilersMainBlock.classList.add("--spoiler-init");
-        spoilersMainBlock.addEventListener("click", setSpoilerAction);
+        if (matchMedia.matches || spoiler.dataset.spoiler === "click") {
+          spoiler.removeEventListener("mouseover", setSpoilerAction);
+          spoiler.addEventListener("click", toggleSpoiler);
+        } else {
+          spoiler.removeEventListener("click", toggleSpoiler);
+          spoiler.addEventListener("mouseover", setSpoilerAction);
+        }
       });
     }
 
     function setSpoilerAction(e) {
-      const el = e.target;
-      if (el.closest("[data-spoiler]")) {
-        const spoilerTitle = el.closest("[data-spoiler]");
-        const spoilersBlock = spoilerTitle.closest("[data-spoilers]");
-        const oneSpoiler = spoilersBlock.hasAttribute("data-one-spoiler");
+      const el = e.target.closest("[data-spoiler]");
+      if (el) {
+        const oneSpoiler = el.hasAttribute("data-one-spoiler");
 
-        if (oneSpoiler && !spoilerTitle.classList.contains("--spoiler-active")) {
-          hideSpoilersBody(spoilersBlock);
+        if (oneSpoiler && !el.classList.contains("--spoiler-active")) {
+          hideSpoilersBody();
         }
 
+        el.classList.add("--spoiler-active");
         if (window.innerWidth >= 1280) {
-          overlay.classList.toggle("--active");
+          overlay.classList.add("--active");
         }
-
         if (!body.classList.contains("main-nav-open")) {
-          body.classList.toggle("lock");
+          body.classList.add("lock");
         }
 
-        spoilerTitle.classList.toggle("--spoiler-active");
         e.preventDefault();
       }
     }
 
-    // Закрытие при клике вне спойлера
-    function hideSpoilersBody(spoilersBlock) {
-      const spoilerActiveTitle = spoilersBlock.querySelector(
-        "[data-spoiler].--spoiler-active"
-      );
-      if (spoilerActiveTitle) {
-        overlay.classList.remove("--active");
-        body.classList.remove("lock");
-        spoilerActiveTitle.classList.remove("--spoiler-active");
+    function toggleSpoiler(e) {
+      const el = e.target.closest("[data-spoiler]");
+      if (el) {
+        const oneSpoiler = el.hasAttribute("data-one-spoiler");
+
+        if (oneSpoiler && !el.classList.contains("--spoiler-active")) {
+          hideSpoilersBody();
+        }
+
+        el.classList.toggle("--spoiler-active");
+        if (window.innerWidth >= 1280) {
+          overlay.classList.toggle("--active", el.classList.contains("--spoiler-active"));
+        }
+        if (!body.classList.contains("main-nav-open")) {
+          body.classList.toggle("lock", el.classList.contains("--spoiler-active"));
+        }
+
+        e.preventDefault();
       }
     }
 
-    const spoilersClose = document.querySelectorAll("[data-spoiler-close]");
+    function hideSpoilersBody() {
+      const activeSpoilers = document.querySelectorAll("[data-spoiler].--spoiler-active");
+      if (activeSpoilers.length > 0 && window.innerWidth >= 1280) {
+        activeSpoilers.forEach(activeSpoiler => {
+          activeSpoiler.classList.remove("--spoiler-active");
+          overlay.classList.remove("--active");
+          body.classList.remove("lock");
+        });
+      }
+    }
 
-    if (spoilersClose.length) {
-      document.addEventListener("click", function (e) {
-        if (!e.target.closest("[data-spoilers]"))
-          spoilersClose.forEach((spoilerClose) => {
-            overlay.classList.remove("--active");
-            if (!body.classList.contains("main-nav-open"))
-              body.classList.remove("lock");
-            spoilerClose.classList.remove("--spoiler-active");
-          });
-      });
-      document.addEventListener("keydown", function (e) {
-        if ("Escape" === e.key)
-          spoilersClose.forEach((spoilerClose) => {
-            overlay.classList.remove("--active");
-            if (!body.classList.contains("main-nav-open"))
-              body.classList.remove("lock");
-            spoilerClose.classList.remove("--spoiler-active");
-          });
-      });
+    document.addEventListener("mouseover", handleMouseLeft);
+    document.addEventListener("click", handleClickOutside);
+    document.addEventListener("keydown", handleKeydown);
+  }
+
+  function handleMouseLeft(e) {
+    const allHovSpoilers = document.querySelectorAll(".js-main-nav-item-link-hover");
+    allHovSpoilers.forEach((oneSpoiler) => {
+      if (oneSpoiler.classList.contains('--spoiler-active') && window.innerWidth >= 1280) {
+        if (!e.target.closest(".js-main-nav-item-link-hover") && !e.target.closest(".js-main-nav-item-content")) {
+          oneSpoiler.classList.remove("--spoiler-active");
+          overlay.classList.remove("--active");
+          body.classList.remove("lock");
+        }
+      }
+    })
+  }
+
+  function handleClickOutside(e) {
+    if (!e.target.closest("[data-spoiler]") && !e.target.closest(".js-main-nav-item-content")) {
+      hideSpoilersBody();
+    }
+  }
+
+  function handleKeydown(e) {
+    if (e.key === 'Escape') {
+      hideSpoilersBody();
     }
   }
 }
@@ -291,7 +298,7 @@ const overlayClose = () => {
 // При клике на меню и поиск закрытие спойлеров мобильного меню.
 const closeSpoilersContent = () => {
   if (body.classList.contains("main-nav-open")) {
-    mainNavItemButton.forEach((oneButton) => {
+    mainNavItemLink.forEach((oneButton) => {
       if (oneButton.classList.contains("--spoiler-active")) {
         oneButton.classList.remove("--spoiler-active");
       }
@@ -314,16 +321,20 @@ const showAndHideHeader = () => {
 
 // Изменить атрибут у контейнера шапки для изменения логики работы Спойлеров.
 const changeContainerAttribute = () => {
-  if (window.innerWidth <= 1279)
-    headerWrapper.removeAttribute("data-one-spoiler");
-  else if (window.innerWidth >= 1280)
-    headerWrapper.setAttribute("data-one-spoiler", "");
+  const allSpoilers = document.querySelectorAll('[data-spoiler]')
+  allSpoilers.forEach((oneSpoiler) => {
+    if (window.innerWidth <= 1279) {
+      oneSpoiler.removeAttribute('data-one-spoiler')
+    } else if (window.innerWidth >= 1280) {
+      oneSpoiler.setAttribute('data-one-spoiler', '')
+    }
+  })
 };
 
 // Закрыть спойлера, оверлея и lock body, при ресайзе страницы.
 const closeSpoiler = () => {
   if (!body.classList.contains("main-nav-open") && window.innerWidth <= 1279) {
-    mainNavItemButton.forEach((spoiler) => {
+    mainNavItemLink.forEach((spoiler) => {
       if (spoiler.classList.contains("--spoiler-active")) {
         spoiler.classList.remove("--spoiler-active");
         overlay.classList.remove("--active");
@@ -334,7 +345,7 @@ const closeSpoiler = () => {
 
   if (body.classList.contains("main-nav-open") && window.innerWidth >= 1280) {
     body.classList.remove("lock", "main-nav-open");
-    mainNavItemButton.forEach((spoiler) => {
+    mainNavItemLink.forEach((spoiler) => {
       spoiler.classList.remove("--spoiler-active");
     });
   }
@@ -380,7 +391,7 @@ const onDocumentResize = () => {
 
 const onInputClick = (e) => {
   overlayClose(e);
-  mainNavItemButton.forEach((spoiler) => {
+  mainNavItemLink.forEach((spoiler) => {
     if (spoiler.classList.contains("--spoiler-active")) {
       spoiler.classList.remove("--spoiler-active");
       overlay.classList.remove("--active");
