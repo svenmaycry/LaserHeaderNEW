@@ -3,9 +3,9 @@ const mainBloggersSwiper = new Swiper('.js-swiper-main-bloggers', {
   observer: true,
   observeParents: true,
   loop: false,
-  slidesPerView: 4,
-  slidesPerGroup: 2,
-  spaceBetween: 45,
+  slidesPerView: 1.4,
+  slidesPerGroup: 1.4,
+  spaceBetween: 10,
   speed: 900,
   parallax: true,
   preloadImages: false,
@@ -33,13 +33,29 @@ const mainBloggersSwiper = new Swiper('.js-swiper-main-bloggers', {
 
   breakpoints: {
     320: {
-      slidesPerView: 2,
-      slidesPerGroup: 2,
+      slidesPerView: 1.4,
+      slidesPerGroup: 1.4,
       spaceBetween: 10,
     },
-    1840: {
-      spaceBetween: 45,
+    479: {
+      slidesPerView: 1.7,
+      slidesPerGroup: 1.7,
+      spaceBetween: 10,
+    },
+    767: {
+      slidesPerView: 2.3,
+      slidesPerGroup: 2.3,
+      spaceBetween: 30,
+    },
+    1279: {
+      slidesPerView: 3.3,
+      slidesPerGroup: 3.3,
+      spaceBetween: 35,
+    },
+    1601: {
+      slidesPerView: 4,
+      slidesPerGroup: 4,
+      spaceBetween: 35,
     },
   }
-
 });

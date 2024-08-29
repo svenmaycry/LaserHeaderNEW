@@ -9,9 +9,9 @@ const bannerSwiper = new Swiper('.js-swiper-banner', {
   speed: 900,
   parallax: true,
   preloadImages: false,
-  autoplay: {
-    delay: 5000,
-  },
+  // autoplay: {
+  //   delay: 5000,
+  // },
 
   // If we need pagination
   pagination: {

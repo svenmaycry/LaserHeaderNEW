@@ -4,8 +4,8 @@
   <title>LaserHeaderNEW</title>
   <meta charset="UTF-8">
   <meta name="format-detection" content="telephone=no">
-  <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="css/style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
@@ -41,10 +41,20 @@
               </a>
             </li>
             <li class="main-nav__item  main-nav-item">
+              <a href="#" class="main-nav-item__link">
+                Блог
+              </a>
+            </li>
+            <li class="main-nav__item  main-nav-item">
+              <a href="#" class="main-nav-item__link">
+                Контакты
+              </a>
+            </li>
+            <li class="main-nav__item  main-nav-item  js-main-nav-item">
               <a
-                data-spoiler
+                data-spoiler-header
                 data-one-spoiler
-                class="main-nav-item__link  js-main-nav-item-link  js-main-nav-item-link-hover"
+                class="main-nav-item__link  js-main-nav-item-link"
               >
                 Сервис
                 <svg width="13" height="13">
@@ -52,7 +62,7 @@
                 </svg>
               </a>
               <!-- Тут контент СЕРВИСА-->
-              <div class="main-nav-item__wrapper  main-nav-item-content  js-main-nav-item-content">
+              <div class="main-nav-item__wrapper  main-nav-item-content">
 
                 <ul class="main-nav-item-content__list">
                   <li class="main-nav-item-content__item">
@@ -91,11 +101,11 @@
 
               </div>
             </li>
-            <li class="main-nav__item  main-nav-item">
+            <li class="main-nav__item  main-nav-item  js-main-nav-item">
               <a
-                data-spoiler
+                data-spoiler-header
                 data-one-spoiler
-                class="main-nav-item__link  js-main-nav-item-link  js-main-nav-item-link-hover"
+                class="main-nav-item__link  js-main-nav-item-link"
               >
                 Выставки
                 <svg width="13" height="13">
@@ -104,7 +114,7 @@
               </a>
               <!-- Тут контент ВЫСТАВОК-->
               <div
-                class="main-nav-item__wrapper  main-nav-item-content  js-main-nav-item-content  main-nav-item-content--exhibitions">
+                class="main-nav-item__wrapper  main-nav-item-content  main-nav-item-content--exhibitions">
 
                 <ul class="main-nav-item-content__list">
                   <li class="main-nav-item-content__item">
@@ -192,11 +202,11 @@
 
               </div>
             </li>
-            <li class="main-nav__item  main-nav-item">
+            <li class="main-nav__item  main-nav-item  js-main-nav-item">
               <a
-                data-spoiler
+                data-spoiler-header
                 data-one-spoiler
-                class="main-nav-item__link  js-main-nav-item-link  js-main-nav-item-link-hover"
+                class="main-nav-item__link  js-main-nav-item-link"
               >
                 Доставка и оплата
                 <svg width="13" height="13">
@@ -204,7 +214,7 @@
                 </svg>
               </a>
               <!-- Тут контент ДОСТАВКИ и ОПЛАТЫ-->
-              <div class="main-nav-item__wrapper  main-nav-item-content  js-main-nav-item-content">
+              <div class="main-nav-item__wrapper  main-nav-item-content">
 
                 <ul class="main-nav-item-content__list">
                   <li class="main-nav-item-content__item">
@@ -222,11 +232,11 @@
 
               </div>
             </li>
-            <li class="main-nav__item  main-nav-item">
+            <li class="main-nav__item  main-nav-item  js-main-nav-item">
               <a
-                data-spoiler
+                data-spoiler-header
                 data-one-spoiler
-                class="main-nav-item__link  js-main-nav-item-link  js-main-nav-item-link-hover"
+                class="main-nav-item__link  js-main-nav-item-link"
               >
                 О компании
                 <svg width="13" height="13">
@@ -234,7 +244,7 @@
                 </svg>
               </a>
               <!-- Тут контент О КОМПАНИИ-->
-              <div class="main-nav-item__wrapper  main-nav-item-content  js-main-nav-item-content">
+              <div class="main-nav-item__wrapper  main-nav-item-content">
 
                 <ul class="main-nav-item-content__list">
                   <li class="main-nav-item-content__item">
@@ -246,16 +256,6 @@
                 </ul>
 
               </div>
-            </li>
-            <li class="main-nav__item  main-nav-item">
-              <a href="#" class="main-nav-item__link">
-                Блог
-              </a>
-            </li>
-            <li class="main-nav__item  main-nav-item">
-              <a href="#" class="main-nav-item__link">
-                Контакты
-              </a>
             </li>
           </ul>
 
@@ -331,7 +331,7 @@
     <div class="main-header__bottom  main-header-bottom  js-main-header-bottom">
       <div class="container  container--wide  main-header-bottom__wrapper">
 
-        <a href="https://lasercut.ru/" class="main-header-bottom__logo">
+        <a href="https://lasercut.ru/" class="main-header-bottom__logo  js-main-header-logo">
           <picture>
             <source media="(max-width: 767px)" srcset="https://svgshare.com/i/1721.svg">
             <img class="main-header-bottom__logo-img" src="https://svgshare.com/i/171f.svg" width="198" height="52"
@@ -342,26 +342,26 @@
         <ul class="main-header-bottom__catalog-list">
           <li
             data-da=".main-nav__list,1279,0"
-            class="main-header__item  main-nav-item  main-nav-item--catalog  js-catalog-item">
+            class="main-header__item  main-nav-item  main-nav-item--catalog  js-main-nav-item">
             <button
               type="button"
-              data-spoiler="click"
+              data-spoiler-header="click"
               data-one-spoiler
-              class="main-nav-item__link  main-nav-item__link--as-btn  js-main-nav-item-link"
+              class="main-nav-item__link  main-nav-item__link--as-btn  js-main-nav-item-link  js-catalog-btn"
             >
-              <div>
+              <span class="main-nav-item__link-icon">
                 <span></span>
                 <span></span>
                 <span></span>
-              </div>
+              </span>
               Каталог
               <svg width="13" height="13">
                 <use xlink:href="#icon-arrow-down"></use>
               </svg>
             </button>
-            <!-- Тут контент ТОВАРОВ-->
+            <!-- Тут контент КАТАЛОГА-->
             <div data-tabs-header
-                 class="main-nav-item__wrapper  main-nav-item-content  js-main-nav-item-content  main-nav-item-content--products">
+                 class="main-nav-item__wrapper  main-nav-item-content  main-nav-item-content--products">
 
               <ul data-tabs-header-titles class="main-nav-item-content__list">
                 <li class="main-nav-item-content__item  main-nav-item-content-item  main-nav-tab-active">
@@ -514,14 +514,68 @@
                   </a>
                 </li>
               </ul>
+
               <div data-tabs-header-body class="main-nav-item-content__media  main-nav-item-content-media">
                 <div class="main-nav-item-content-media__wrapper">
-                  <img class="main-nav-item-content-media__image" width="500" height="400"
-                       src="https://i.ibb.co/C12M3XM/image.png" alt="Лазерный станок, гравер">
-                  <h2 class="main-nav-item-content-media__title">Лазерный станок, гравер</h2>
-                  <p class="main-nav-item-content-media__desc">Тут описание лазерного станка. </p>
-                  <a href="https://lasercut.ru/katalog/lazernyie-stanki/"
-                     class="btn  btn--products">Подробнее...</a>
+
+                  <ul class="main-nav-item-content-media__list">
+                    <li class="main-nav-item-content-media__item  main-nav-item-content-media-item">
+                      <a href="#" class="main-nav-item-content-media-item__link">
+                        Для гравировки металла
+                      </a>
+                    </li>
+                    <li class="main-nav-item-content-media__item  main-nav-item-content-media-item">
+                      <a href="#" class="main-nav-item-content-media-item__link">
+                        Для дерева
+                      </a>
+                    </li>
+                    <li class="main-nav-item-content-media__item  main-nav-item-content-media-item">
+                      <a href="#" class="main-nav-item-content-media-item__link">
+                        Для пластика
+                      </a>
+                    </li>
+                    <li class="main-nav-item-content-media__item  main-nav-item-content-media-item">
+                      <a href="#" class="main-nav-item-content-media-item__link">
+                        Для ткани
+                      </a>
+                    </li>
+                    <li class="main-nav-item-content-media__item  main-nav-item-content-media-item">
+                      <a href="#" class="main-nav-item-content-media-item__link">
+                        Для стекла
+                      </a>
+                    </li>
+                    <li class="main-nav-item-content-media__item  main-nav-item-content-media-item">
+                      <a href="#" class="main-nav-item-content-media-item__link">
+                        Посмотреть все
+                      </a>
+                    </li>
+                  </ul>
+
+                  <a href="#" class="main-nav-item-content-media__banner-link">
+                    <img class="main-nav-item-content-media__banner-img" src="https://i.ibb.co/1047ZxM/banner-2.webp"
+                         alt="#"
+                         width="360" height="150">
+                  </a>
+                  <a href="#" class="main-nav-item-content-media__banner-link">
+                    <img class="main-nav-item-content-media__banner-img" src="https://i.ibb.co/1047ZxM/banner-2.webp"
+                         alt="#"
+                         width="360" height="150">
+                  </a>
+                  <a href="#" class="main-nav-item-content-media__banner-link">
+                    <img class="main-nav-item-content-media__banner-img" src="https://i.ibb.co/1047ZxM/banner-2.webp"
+                         alt="#"
+                         width="360" height="150">
+                  </a>
+                  <a href="#" class="main-nav-item-content-media__banner-link">
+                    <img class="main-nav-item-content-media__banner-img" src="https://i.ibb.co/1047ZxM/banner-2.webp"
+                         alt="#"
+                         width="360" height="150">
+                  </a>
+                  <a href="#" class="main-nav-item-content-media__banner-link">
+                    <img class="main-nav-item-content-media__banner-img" src="https://i.ibb.co/1047ZxM/banner-2.webp"
+                         alt="#"
+                         width="360" height="150">
+                  </a>
                 </div>
                 <div class="main-nav-item-content-media__wrapper">
                   <img class="main-nav-item-content-media__image" width="500" height="400"
@@ -681,9 +735,16 @@
         <h2 class="personal__title  visually-hidden">Секция баннеров</h2>
         <!--      БЛОК С БАННЕРОМ-->
         <div class="personal__banner  personal-banner">
-          <div class="swiper  js-swiper-banner">
-            <ul class="swiper-wrapper  personal-banner__list">
-              <li class="swiper-slide  personal-banner__item  personal-banner-item">
+          <div class="personal-banner__swiper  swiper  swiper--banner  js-swiper-banner">
+            <ul class="personal-banner__list  swiper-wrapper">
+              <li class="personal-banner__item  personal-banner-item  swiper-slide">
+                <a class="personal-banner-item__link" href="#">
+                  <img width="960" height="390" class="personal-banner-item__img"
+                       src="https://i.ibb.co/6NBz5CX/banner-3.jpg"
+                       alt="Фото банера">
+                </a>
+              </li>
+              <li class="personal-banner__item  personal-banner-item  swiper-slide">
                 <a class="personal-banner-item__link" href="#">
                   <img width="960" height="390" class="personal-banner-item__img"
                        src="https://i.ibb.co/qgyDbjY/banner-1.webp"
@@ -691,21 +752,21 @@
                 </a>
               </li>
 
-              <li class="swiper-slide  personal-banner__item  personal-banner-item">
+              <li class="personal-banner__item  personal-banner-item  swiper-slide">
                 <a class="personal-banner-item__link" href="#">
                   <img width="960" height="390" class="personal-banner-item__img"
                        src="https://i.ibb.co/1047ZxM/banner-2.webp" alt="Фото банера">
                 </a>
               </li>
-              <!--            <li class="swiper-slide  personal-banner__item  personal-banner-item">-->
-              <!--              <video width="960" height="390" loop muted autoplay>-->
-              <!--                <source src="img/video/banner-video.webm" type="video/webm">-->
-              <!--                <source src="img/video/banner-video.mp4" type="video/mp4">-->
-              <!--                Ваш браузер не поддерживает встроенные видео. Попробуйте скачать его по-->
-              <!--                <a href="img/video/banner-video.mp4">этой ссылке</a>-->
-              <!--                .-->
-              <!--              </video>-->
-              <!--            </li>-->
+              <!--              <li class="personal-banner__item  personal-banner-item  swiper-slide">-->
+              <!--                <video width="960" height="390" loop muted autoplay>-->
+              <!--                  <source src="img/video/banner-video.webm" type="video/webm">-->
+              <!--                  <source src="img/video/banner-video.mp4" type="video/mp4">-->
+              <!--                  Ваш браузер не поддерживает встроенные видео. Попробуйте скачать его по-->
+              <!--                  <a href="img/video/banner-video.mp4">этой ссылке</a>-->
+              <!--                  .-->
+              <!--                </video>-->
+              <!--              </li>-->
             </ul>
             <!-- Пагинация -->
             <div class="swiper-pagination  js-swiper-pagination--banner"></div>
@@ -717,66 +778,61 @@
 
         <!--      БЛОК СО СТАТЬЯМИ-->
         <div class="personal__articles  personal-articles">
-          <div class="personal-articles__cnt">
-
-            <h3 class="personal-articles__title">Топ статей</h3>
+          <h3 class="personal-articles__title">Про LASERCUT</h3>
+          <div class="personal-articles__swiper  swiper  swiper--articles  js-swiper-articles">
             <!-- Кнопки навигации -->
             <div class="swiper-button-prev  js-swiper-button-prev--articles"></div>
             <div class="swiper-button-next  js-swiper-button-next--articles"></div>
-
-            <div class="swiper  js-swiper-articles">
-
-              <ul class="swiper-wrapper  personal-articles__list">
-                <li class="swiper-slide  personal-articles__item  personal-articles-item">
-                  <a class="personal-articles-item__link" href="#">
-                    <img class="personal-articles-item__img"
-                         src="https://i.ibb.co/C12M3XM/image.png"
-                         alt="Фото статьи">
-                    <p class="personal-articles-item__text">Статьи о лазерном оборудовании</p>
-                  </a>
-                </li>
-                <li class="swiper-slide  personal-articles__item  personal-articles-item">
-                  <a class="personal-articles-item__link" href="#">
-                    <img class="personal-articles-item__img"
-                         src="https://i.ibb.co/kc5dS7J/katalog-komplekt.png"
-                         alt="Фото статьи">
-                    <p class="personal-articles-item__text">Статьи по комплектующим</p>
-                  </a>
-                </li>
-                <li class="swiper-slide  personal-articles__item  personal-articles-item">
-                  <a class="personal-articles-item__link" href="#">
-                    <img class="personal-articles-item__img"
-                         src="https://i.ibb.co/C12M3XM/image.png"
-                         alt="Фото статьи">
-                    <p class="personal-articles-item__text">Статьи о лазерном оборудовании</p>
-                  </a>
-                </li>
-                <li class="swiper-slide  personal-articles__item  personal-articles-item">
-                  <a class="personal-articles-item__link" href="#">
-                    <img class="personal-articles-item__img"
-                         src="https://i.ibb.co/C12M3XM/image.png"
-                         alt="Фото статьи">
-                    <p class="personal-articles-item__text">Статьи о лазерном оборудовании</p>
-                  </a>
-                </li>
-                <li class="swiper-slide  personal-articles__item  personal-articles-item">
-                  <a class="personal-articles-item__link" href="#">
-                    <img class="personal-articles-item__img"
-                         src="https://i.ibb.co/C12M3XM/image.png"
-                         alt="Фото статьи">
-                    <p class="personal-articles-item__text">Статьи о лазерном оборудовании</p>
-                  </a>
-                </li>
-                <li class="swiper-slide  personal-articles__item  personal-articles-item">
-                  <a class="personal-articles-item__link" href="#">
-                    <img class="personal-articles-item__img"
-                         src="https://i.ibb.co/C12M3XM/image.png"
-                         alt="Фото статьи">
-                    <p class="personal-articles-item__text">Статьи о лазерном оборудовании</p>
-                  </a>
-                </li>
-              </ul>
-            </div>
+            <ul class="personal-articles__list  swiper-wrapper">
+              <li class="personal-articles__item  personal-articles-item  swiper-slide">
+                <a class="personal-articles-item__link" href="#">
+                  <img class="personal-articles-item__img"
+                       src="https://i.ibb.co/C12M3XM/image.png"
+                       alt="Фото статьи">
+                  <p class="personal-articles-item__text">Статьи о лазерном оборудовании</p>
+                </a>
+              </li>
+              <li class="personal-articles__item  personal-articles-item  swiper-slide">
+                <a class="personal-articles-item__link" href="#">
+                  <img class="personal-articles-item__img"
+                       src="https://i.ibb.co/kc5dS7J/katalog-komplekt.png"
+                       alt="Фото статьи">
+                  <p class="personal-articles-item__text">Статьи по комплектующим</p>
+                </a>
+              </li>
+              <li class="personal-articles__item  personal-articles-item  swiper-slide">
+                <a class="personal-articles-item__link" href="#">
+                  <img class="personal-articles-item__img"
+                       src="https://i.ibb.co/C12M3XM/image.png"
+                       alt="Фото статьи">
+                  <p class="personal-articles-item__text">Статьи о лазерном оборудовании</p>
+                </a>
+              </li>
+              <li class="personal-articles__item  personal-articles-item  swiper-slide">
+                <a class="personal-articles-item__link" href="#">
+                  <img class="personal-articles-item__img"
+                       src="https://i.ibb.co/C12M3XM/image.png"
+                       alt="Фото статьи">
+                  <p class="personal-articles-item__text">Статьи о лазерном оборудовании</p>
+                </a>
+              </li>
+              <li class="personal-articles__item  personal-articles-item  swiper-slide">
+                <a class="personal-articles-item__link" href="#">
+                  <img class="personal-articles-item__img"
+                       src="https://i.ibb.co/C12M3XM/image.png"
+                       alt="Фото статьи">
+                  <p class="personal-articles-item__text">Статьи о лазерном оборудовании</p>
+                </a>
+              </li>
+              <li class="personal-articles__item  personal-articles-item  swiper-slide">
+                <a class="personal-articles-item__link" href="#">
+                  <img class="personal-articles-item__img"
+                       src="https://i.ibb.co/C12M3XM/image.png"
+                       alt="Фото статьи">
+                  <p class="personal-articles-item__text">Статьи о лазерном оборудовании</p>
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
 
@@ -805,14 +861,13 @@
     <!--  СЕКЦИЯ КАТЕГОРИЙ-->
     <section class="categories">
       <div class="container  container--wide  categories__wrapper">
-
         <h3 class="categories__title">Популярные категории</h3>
-        <!-- Кнопки навигации -->
-        <div class="swiper-button-prev  js-swiper-button-prev--categories"></div>
-        <div class="swiper-button-next  js-swiper-button-next--categories"></div>
-        <div class="swiper  js-swiper-categories">
-          <ul class="swiper-wrapper  categories__list">
-            <li class="swiper-slide  categories__item  categories-item">
+        <div class="categories__swiper  swiper  swiper--categories  js-swiper-categories">
+          <!-- Кнопки навигации -->
+          <div class="swiper-button-prev  js-swiper-button-prev--categories"></div>
+          <div class="swiper-button-next  js-swiper-button-next--categories"></div>
+          <ul class="categories__list  swiper-wrapper">
+            <li class="categories__item  categories-item  swiper-slide">
               <a href="#" class="categories-item__link">
                 <div class="categories-item__img-cnt">
                   <img width="1460" height="1000" class="categories-item__img"
@@ -822,7 +877,7 @@
                 <p class="categories-item__text">Лазерные станки</p>
               </a>
             </li>
-            <li class="swiper-slide  categories__item  categories-item">
+            <li class="categories__item  categories-item  swiper-slide">
               <a href="#" class="categories-item__link">
                 <div class="categories-item__img-cnt">
                   <img width="1460" height="1000" class="categories-item__img"
@@ -831,7 +886,7 @@
                 <p class="categories-item__text">Лазерные станки</p>
               </a>
             </li>
-            <li class="swiper-slide  categories__item  categories-item">
+            <li class="categories__item  categories-item  swiper-slide">
               <a href="#" class="categories-item__link">
                 <div class="categories-item__img-cnt">
                   <img width="1460" height="1000" class="categories-item__img"
@@ -840,7 +895,7 @@
                 <p class="categories-item__text">Лазерные станки</p>
               </a>
             </li>
-            <li class="swiper-slide  categories__item  categories-item">
+            <li class="categories__item  categories-item  swiper-slide">
               <a href="#" class="categories-item__link">
                 <div class="categories-item__img-cnt">
                   <img width="1460" height="1000" class="categories-item__img"
@@ -849,7 +904,7 @@
                 <p class="categories-item__text">Лазерные станки</p>
               </a>
             </li>
-            <li class="swiper-slide  categories__item  categories-item">
+            <li class="categories__item  categories-item  swiper-slide">
               <a href="#" class="categories-item__link">
                 <div class="categories-item__img-cnt">
                   <img width="1460" height="1000" class="categories-item__img"
@@ -859,7 +914,7 @@
                 <p class="categories-item__text">Лазерные станки</p>
               </a>
             </li>
-            <li class="swiper-slide  categories__item  categories-item">
+            <li class="categories__item  categories-item  swiper-slide">
               <a href="#" class="categories-item__link">
                 <div class="categories-item__img-cnt">
                   <img width="1460" height="1000" class="categories-item__img"
@@ -868,7 +923,7 @@
                 <p class="categories-item__text">Лазерные станки</p>
               </a>
             </li>
-            <li class="swiper-slide  categories__item  categories-item">
+            <li class="categories__item  categories-item  swiper-slide">
               <a href="#" class="categories-item__link">
                 <div class="categories-item__img-cnt">
                   <img width="1460" height="1000" class="categories-item__img"
@@ -878,7 +933,7 @@
                 <p class="categories-item__text">Лазерные станки</p>
               </a>
             </li>
-            <li class="swiper-slide  categories__item  categories-item">
+            <li class="categories__item  categories-item  swiper-slide">
               <a href="#" class="categories-item__link">
                 <div class="categories-item__img-cnt">
                   <img width="1460" height="1000" class="categories-item__img"
@@ -888,7 +943,7 @@
                 <p class="categories-item__text">Лазерные станки</p>
               </a>
             </li>
-            <li class="swiper-slide  categories__item  categories-item">
+            <li class="categories__item  categories-item  swiper-slide">
               <a href="#" class="categories-item__link">
                 <div class="categories-item__img-cnt">
                   <img width="1460" height="1000" class="categories-item__img"
@@ -898,7 +953,7 @@
                 <p class="categories-item__text">Лазерные станки</p>
               </a>
             </li>
-            <li class="swiper-slide  categories__item  categories-item">
+            <li class="categories__item  categories-item  swiper-slide">
               <a href="#" class="categories-item__link">
                 <div class="categories-item__img-cnt">
                   <img width="1460" height="1000" class="categories-item__img"
@@ -908,7 +963,7 @@
                 <p class="categories-item__text">Лазерные станки</p>
               </a>
             </li>
-            <li class="swiper-slide  categories__item  categories-item">
+            <li class="categories__item  categories-item  swiper-slide">
               <a href="#" class="categories-item__link">
                 <div class="categories-item__img-cnt">
                   <img width="1460" height="1000" class="categories-item__img"
@@ -918,7 +973,7 @@
                 <p class="categories-item__text">Лазерные станки</p>
               </a>
             </li>
-            <li class="swiper-slide  categories__item  categories-item">
+            <li class="categories__item  categories-item  swiper-slide">
               <a href="#" class="categories-item__link">
                 <div class="categories-item__img-cnt">
                   <img width="1460" height="1000" class="categories-item__img"
@@ -928,7 +983,7 @@
                 <p class="categories-item__text">Лазерные станки</p>
               </a>
             </li>
-            <li class="swiper-slide  categories__item  categories-item">
+            <li class="categories__item  categories-item  swiper-slide">
               <a href="#" class="categories-item__link">
                 <div class="categories-item__img-cnt">
                   <img width="1460" height="1000" class="categories-item__img"
@@ -940,7 +995,6 @@
             </li>
           </ul>
         </div>
-
       </div>
     </section>
 
@@ -950,9 +1004,9 @@
         <h3 class="main-bloggers__title">Блогеры</h3>
         <span class="main-bloggers__subtitle">О нас</span>
         <a class="main-bloggers__link" href="#">Все блогеры</a>
-        <div class="swiper  js-swiper-main-bloggers">
-          <ul class="swiper-wrapper  main-bloggers__list">
-            <li class="swiper-slide  main-bloggers__item  main-bloggers-item">
+        <div class="main-bloggers__swiper  swiper  swiper--blogger  js-swiper-main-bloggers">
+          <ul class="main-bloggers__list  swiper-wrapper">
+            <li class="main-bloggers__item  main-bloggers-item  swiper-slide">
               <a class="main-bloggers-item__link">
                 <img src="https://svgshare.com/i/18uC.svg" alt="Логотип Борщ TV" class="main-bloggers-item__img"
                      width="160" height="160">
@@ -964,7 +1018,7 @@
                 </div>
               </a>
             </li>
-            <li class="swiper-slide  main-bloggers__item  main-bloggers-item">
+            <li class="main-bloggers__item  main-bloggers-item  swiper-slide">
               <a class="main-bloggers-item__link">
                 <img src="https://svgshare.com/i/18uC.svg" alt="Логотип Борщ TV" class="main-bloggers-item__img"
                      width="160" height="160">
@@ -976,7 +1030,7 @@
                 </div>
               </a>
             </li>
-            <li class="swiper-slide  main-bloggers__item  main-bloggers-item">
+            <li class="main-bloggers__item  main-bloggers-item  swiper-slide">
               <a class="main-bloggers-item__link">
                 <img src="https://svgshare.com/i/18uC.svg" alt="Логотип Борщ TV" class="main-bloggers-item__img"
                      width="160" height="160">
@@ -988,7 +1042,7 @@
                 </div>
               </a>
             </li>
-            <li class="swiper-slide  main-bloggers__item  main-bloggers-item">
+            <li class="main-bloggers__item  main-bloggers-item  swiper-slide">
               <a class="main-bloggers-item__link">
                 <img src="https://svgshare.com/i/18uC.svg" alt="Логотип Борщ TV" class="main-bloggers-item__img"
                      width="160" height="160">
@@ -1000,7 +1054,7 @@
                 </div>
               </a>
             </li>
-            <li class="swiper-slide  main-bloggers__item  main-bloggers-item">
+            <li class="main-bloggers__item  main-bloggers-item  swiper-slide">
               <a class="main-bloggers-item__link">
                 <img src="https://svgshare.com/i/18uC.svg" alt="Логотип Борщ TV" class="main-bloggers-item__img"
                      width="160" height="160">
@@ -1012,7 +1066,7 @@
                 </div>
               </a>
             </li>
-            <li class="swiper-slide  main-bloggers__item  main-bloggers-item">
+            <li class="main-bloggers__item  main-bloggers-item  swiper-slide">
               <a class="main-bloggers-item__link">
                 <img src="https://svgshare.com/i/18uC.svg" alt="Логотип Борщ TV" class="main-bloggers-item__img"
                      width="160" height="160">
@@ -1024,7 +1078,7 @@
                 </div>
               </a>
             </li>
-            <li class="swiper-slide  main-bloggers__item  main-bloggers-item">
+            <li class="main-bloggers__item  main-bloggers-item  swiper-slide">
               <a class="main-bloggers-item__link">
                 <img src="https://svgshare.com/i/18uC.svg" alt="Логотип Борщ TV" class="main-bloggers-item__img"
                      width="160" height="160">
@@ -1036,7 +1090,7 @@
                 </div>
               </a>
             </li>
-            <li class="swiper-slide  main-bloggers__item  main-bloggers-item">
+            <li class="main-bloggers__item  main-bloggers-item  swiper-slide">
               <a class="main-bloggers-item__link">
                 <img src="https://svgshare.com/i/18uC.svg" alt="Логотип Борщ TV" class="main-bloggers-item__img"
                      width="160" height="160">
@@ -1049,15 +1103,14 @@
               </a>
             </li>
           </ul>
+          <!-- Скроллбар -->
+          <div class="swiper-scrollbar  swiper-scrollbar--main-bloggers">
+            <div class="swiper-scrollbar-drag"></div>
+          </div>
+          <!-- Кнопки навигации -->
+          <div class="swiper-button-prev  swiper-button-prev--main-bloggers"></div>
+          <div class="swiper-button-next  swiper-button-next--main-bloggers"></div>
         </div>
-
-        <!-- Скроллбар -->
-        <div class="swiper-scrollbar  swiper-scrollbar--main-bloggers">
-          <div class="swiper-scrollbar-drag"></div>
-        </div>
-        <!-- Кнопки навигации -->
-        <div class="swiper-button-prev  swiper-button-prev--main-bloggers"></div>
-        <div class="swiper-button-next  swiper-button-next--main-bloggers"></div>
       </div>
     </section>
 

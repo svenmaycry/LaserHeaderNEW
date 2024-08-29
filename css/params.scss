@@ -46,7 +46,7 @@ body {
     //  overflow: auto;
 
     @media (max-width: 767px) {
-      margin-top: 110px;
+      margin-top: 120px;
     }
   }
 }
@@ -55,7 +55,6 @@ body {
 $default-color: #ffffff;
 $default-secondary: #e3efff;
 $default-third: #f7f7f7;
-$primary-color: #0094da;
 $primary-color-dark: #0085c3;
 $primary-secondary: #d0dff8;
 $primary-third: rgb(128, 202, 237);
@@ -104,36 +103,19 @@ $shadowVeryLowColor: rgba(0, 0, 0, 0.2);
 $shadowLowColor: rgba(0, 0, 0, 0.4);
 $shadowHighColor: rgba(0, 0, 0, 1);
 $shadowMiddleColor: rgba(0, 0, 0, 0.8);
-$mainWhiteColor: rgba(255, 255, 255, 0.82);
+$mainWhiteColor: rgba(255, 255, 255);
 $greyColor: #9c9a9a;
 $greyBorderColor: #7979791f;
 $inputBorder: #a7a7a7;
 $inputBackColor: #c7c7c756;
-$blueColor: #0094da;
 $blueBackColor: #00b7ff75;
 $beigeColor: #faebd7;
-$primary-color: #0094da;
+//$primary-color: #0094da;
+$primary-color: #247cae;
 $blueGradientColor: #00b7ff;
 $grayGradientColor: rgb(247, 247, 247);
 $redColor: #fe3831;
 $danger-color: #ee4122;
-$vkColor: rgb(0, 119, 255);
-$tgColor: #25a0dd;
-
-//Цвета шапки
-$shadowVeryLowColor: rgba(0, 0, 0, 0.2);
-$shadowLowColor: rgba(0, 0, 0, 0.4);
-$shadowMiddleColor: rgba(0, 0, 0, 0.8);
-$shadowHighColor: rgba(0, 0, 0, 1);
-$mainWhiteColor: rgb(255, 255, 255);
-$greyColor: #9c9a9a;
-$greyBorderColor: #7979791f;
-$inputBorder: #a7a7a7;
-$inputBackColor: #c7c7c756;
-$blueBackColor: #00b7ff75;
-$beigeColor: #faebd7;
-$blueGradientColor: #00b7ff;
-$grayGradientColor: rgb(247, 247, 247);
 $vkColor: rgb(0, 119, 255);
 $tgColor: #25a0dd;
 

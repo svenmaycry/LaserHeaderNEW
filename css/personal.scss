@@ -1,6 +1,7 @@
 // СЕКЦИЯ БАНЕРА СТАТЕЙ И АКЦИЙ
 .personal {
   background: url('https://svgshare.com/i/18v3.svg') 100% 40% no-repeat;
+  margin-bottom: min(3vw, 25px);
 
   &__wrapper {
     display: grid;
@@ -11,15 +12,35 @@
     grid-template-rows: 1fr 1fr;
     gap: 30px;
 
-    @media (max-width: 1800px) {
-      grid-template-columns: 850px 1fr;
+    @media (max-width: 1760px) {
+      grid-template-columns: 930px 1fr;
     }
 
-    @media (max-width: 1550px) {
-      grid-template-columns: 760px 1fr;
+    @media (max-width: 1710px) {
+      grid-template-columns: 914px 1fr;
     }
 
-    @media (max-width: 1440px) {
+    @media (max-width: 1678px) {
+      grid-template-columns: 880px 1fr;
+    }
+
+    @media (max-width: 1620px) {
+      grid-template-columns: 863px 1fr;
+    }
+
+    @media (max-width: 1588px) {
+      grid-template-columns: 846px 1fr;
+    }
+
+    @media (max-width: 1560px) {
+      grid-template-columns: 825px 1fr;
+    }
+
+    @media (max-width: 1536px) {
+      grid-template-columns: 808px 1fr;
+    }
+
+    @media (max-width: 1520px) {
       grid-template-areas:
         "banner banner"
         "articles actions";
@@ -44,7 +65,6 @@
   // БЛОК БАННЕРА
   &-banner {
     grid-area: banner;
-    border-radius: 10px;
 
     &__list {
       list-style: none;
@@ -64,80 +84,23 @@
       &__img {
         width: 100%;
         height: 100%;
-        max-height: 420px;
-      }
-    }
-
-    .swiper {
-      position: relative;
-      border-radius: 10px;
-      height: 100%;
-
-      &:hover, &:focus {
-        .swiper-button-prev, .swiper-button-next {
-          opacity: 1;
-        }
-      }
-
-      &-button-prev, &-button-next {
-        background-color: $border-base;
-        border-radius: 50%;
-        height: 30px;
-        width: 30px;
-        opacity: 0;
-        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-        transition: opacity 0.3s ease-in, transform 0.3s ease-in;
-
-        &::after {
-          content: '';
-        }
-
-        &:hover, &:focus {
-          transform: scale(1.1);
-          outline: none;
-        }
-      }
-
-      &-button-prev {
-        background: $mainWhiteColor url('https://svgshare.com/i/18u5.svg') center / 12px no-repeat;
-      }
-
-      &-button-next {
-        background: $mainWhiteColor url('https://svgshare.com/i/18tt.svg') center / 12px no-repeat;
-      }
-
-      &-pagination {
-        position: absolute;
-        bottom: 10px;
-        right: 0;
-        left: 0;
-        cursor: pointer;
-
-        &-bullet {
-          margin-right: 10px;
-          border-radius: 50%;
-        }
+        max-height: 530px;
       }
     }
   }
 
   // БЛОК СТАТЕЙ
   &-articles {
-    grid-area: articles;
     position: relative;
+    grid-area: articles;
     overflow-x: hidden;
-    border-radius: 10px;
-
-    &__cnt {
-      overflow-y: hidden;
-    }
 
     &__title {
       display: flex;
       font-family: $fontHeading;
       font-size: 15px;
       font-weight: 700;
-      margin: 5px 0 10px;
+      margin: 7px 0 10px;
 
       &::before {
         content: '';
@@ -165,7 +128,7 @@
         align-items: center;
         background-color: $mainWhiteColor;
         border: 1px solid #DCE4F0;
-        border-radius: 10px;
+        border-radius: 12px;
         padding: 35px 3px;
 
         @media (max-width: 767px) {
@@ -203,46 +166,6 @@
         }
       }
     }
-
-    .swiper {
-
-      &-button-prev, &-button-next {
-        top: 26px;
-        height: 30px;
-        width: 30px;
-        border-radius: 50%;
-        transition: opacity 0.3s ease-in, background-color 0.3s ease-in, transform 0.3s ease-in;
-        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-        opacity: 1;
-
-        &::after {
-          content: '';
-        }
-
-        &:hover, &:focus {
-          transform: scale(1.1);
-          outline: none;
-        }
-      }
-
-      &-button-prev {
-        left: auto;
-        right: 60px;
-        background: $mainWhiteColor url('https://svgshare.com/i/18u5.svg') center / 12px no-repeat;
-      }
-
-      &-button-next {
-        left: auto;
-        right: 4px;
-        background: $mainWhiteColor url('https://svgshare.com/i/18tt.svg') center / 12px no-repeat;
-      }
-
-      &-button-disabled {
-        opacity: .35;
-        cursor: auto;
-        pointer-events: none;
-      }
-    }
   }
 
   // БЛОК АКЦИЙ
@@ -252,7 +175,6 @@
     column-gap: 30px;
     grid-template-columns: repeat(2, 1fr);
     justify-items: center;
-    border-radius: 10px;
 
     @media (max-width: 767px) {
       column-gap: 15px;
@@ -261,8 +183,8 @@
     &__link {
       width: 100%;
       height: 100%;
+      border-radius: 12px;
       overflow: hidden;
-      border-radius: 10px;
     }
 
     &__img {
@@ -280,13 +202,16 @@
 
 // СЕКЦИЯ КАТЕГОРИЙ
 .categories {
-  position: relative;
   margin-bottom: 110px;
+
+  &__wrapper {
+    position: relative;
+  }
 
   &__title {
     font-family: $fontHeading;
     font-size: clamp(18px, 3vw, 22px);
-    margin: min(2vw, 25px) 0 min(2vw, 5px);
+    margin: 10px 0;
   }
 
   &__list {
@@ -331,9 +256,13 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background-color: $mainWhiteColor;
+      background: linear-gradient(
+                      to bottom,
+                      #F5F8FF 30%,
+                      #DDE4F5 59%,
+                      #FFFFFF 85%);
       border: 1px solid #DCE4F0;
-      border-radius: 10px;
+      border-radius: 12px;
       max-width: 120px;
       min-height: 120px;
       transition: box-shadow 0.3s ease-in;
@@ -382,47 +311,6 @@
       margin: 0 auto;
       text-align: center;
       transition: color 0.3s ease-in;
-    }
-  }
-
-  .swiper {
-
-    &-button-prev, &-button-next {
-      border-radius: 50%;
-      height: 30px;
-      width: 30px;
-      opacity: 1;
-      transition: opacity 0.3s ease-in, background-color 0.3s ease-in, transform 0.3s ease-in;
-      top: 26px;
-      box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-
-      &::after {
-        content: '';
-      }
-
-      &:hover, &:focus {
-        transform: scale(1.1);
-        outline: none;
-      }
-    }
-
-
-    &-button-prev {
-      left: auto;
-      right: clamp(60px, 15vw, 133px);
-      background: $mainWhiteColor url('https://svgshare.com/i/18u5.svg') center / 12px no-repeat;
-    }
-
-    &-button-next {
-      left: auto;
-      right: clamp(13px, 6vw, 76px);
-      background: $mainWhiteColor url('https://svgshare.com/i/18tt.svg') center / 12px no-repeat;
-    }
-
-    &-button-disabled {
-      opacity: .35;
-      cursor: auto;
-      pointer-events: none;
     }
   }
 }

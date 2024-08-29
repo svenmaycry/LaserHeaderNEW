@@ -1,10 +1,14 @@
 const body = document.querySelector('body');
-const iconMenuButton = document.querySelector('.js-icon-menu');
+const headerIconMenuButton = document.querySelector('.js-icon-menu');
 const overlay = document.querySelector('.js-header-overlay');
-const mainHeader = document.querySelector('.js-main-header');
-const mainNavItemLink = document.querySelectorAll('.js-main-nav-item-link');
-const searchInput = document.querySelector('.js-search-input');
-const catalogItem = document.querySelector('.js-catalog-item');
+const headerMain = document.querySelector('.js-main-header');
+const headerTop = document.querySelector('.js-main-header-top');
+const headerBot = document.querySelector('.js-main-header-bottom');
+const headerLogo = document.querySelector('.js-main-header-logo');
+const headerInput = document.querySelector('.js-search-input');
+const headerMainNavItemLink = document.querySelectorAll('.js-main-nav-item-link');
+const headerCatalogBtn = document.querySelector('.js-catalog-btn');
+
 
 // Модуль работы с меню (бургер).
 let bodyLockStatus = true;
@@ -29,7 +33,7 @@ let bodyLock = () => {
 };
 
 function menuInit() {
-  if (iconMenuButton)
+  if (headerIconMenuButton)
     document.addEventListener("click", function (e) {
       if (bodyLockStatus && e.target.closest(".js-icon-menu")) {
         bodyLockToggle();
@@ -39,7 +43,7 @@ function menuInit() {
 }
 
 function spoilersHeader() {
-  const spoilers = document.querySelectorAll("[data-spoiler]");
+  const spoilers = document.querySelectorAll("[data-spoiler-header]");
 
   if (spoilers.length > 0) {
     const breakpoint = 1279;
@@ -51,48 +55,56 @@ function spoilersHeader() {
 
     function initSpoilers(spoilersArray, matchMedia) {
       spoilersArray.forEach(spoiler => {
-        spoiler.classList.add("--spoiler-init");
 
-        if (matchMedia.matches || spoiler.dataset.spoiler === "click") {
-          spoiler.removeEventListener("mouseover", setSpoilerAction);
-          spoiler.addEventListener("click", toggleSpoiler);
-        } else {
-          spoiler.removeEventListener("click", toggleSpoiler);
-          spoiler.addEventListener("mouseover", setSpoilerAction);
+        const mainNavItem = spoiler.closest(".js-main-nav-item");
+
+        if (mainNavItem) {
+          if (matchMedia.matches || spoiler.dataset.spoilerHeader === "click") {
+            spoiler.addEventListener("click", toggleSpoiler);
+            spoiler.removeEventListener("mouseover", showSpoiler);
+            mainNavItem.removeEventListener("mouseleave", hideSpoiler);
+          } else {
+            spoiler.removeEventListener("click", toggleSpoiler);
+            spoiler.addEventListener("mouseover", showSpoiler);
+            mainNavItem.addEventListener("mouseleave", hideSpoiler);
+          }
         }
       });
     }
 
-    function setSpoilerAction(e) {
-      const el = e.target.closest("[data-spoiler]");
+    function showSpoiler(e) {
+      const el = e.target.closest("[data-spoiler-header]");
       if (el) {
         const oneSpoiler = el.hasAttribute("data-one-spoiler");
 
         if (oneSpoiler && !el.classList.contains("--spoiler-active")) {
-          hideSpoilersBody();
+          hideSpoiler();
         }
 
         el.classList.add("--spoiler-active");
         if (window.innerWidth >= 1280) {
           overlay.classList.add("--active");
+          headerBot.style.backgroundColor = 'rgba(0, 0, 0, 0.4)';
+          headerInput.style.opacity = '0.2';
+          headerCatalogBtn.style.opacity = '0.2';
+          headerLogo.style.opacity = '0.5';
         }
         if (!body.classList.contains("main-nav-open")) {
           body.classList.add("lock");
         }
-
         e.preventDefault();
       }
     }
 
     function toggleSpoiler(e) {
-      const el = e.target.closest("[data-spoiler]");
+      const el = e.target.closest("[data-spoiler-header]");
       if (el) {
         const oneSpoiler = el.hasAttribute("data-one-spoiler");
 
         if (oneSpoiler && !el.classList.contains("--spoiler-active")) {
-          hideSpoilersBody();
+          hideSpoiler();
         }
-
+        
         el.classList.toggle("--spoiler-active");
         if (window.innerWidth >= 1280) {
           overlay.classList.toggle("--active", el.classList.contains("--spoiler-active"));
@@ -100,52 +112,42 @@ function spoilersHeader() {
         if (!body.classList.contains("main-nav-open")) {
           body.classList.toggle("lock", el.classList.contains("--spoiler-active"));
         }
-
         e.preventDefault();
       }
     }
 
-    function hideSpoilersBody() {
-      const activeSpoilers = document.querySelectorAll("[data-spoiler].--spoiler-active");
+    function hideSpoiler() {
+      const activeSpoilers = document.querySelectorAll("[data-spoiler-header].--spoiler-active");
       if (activeSpoilers.length > 0 && window.innerWidth >= 1280) {
         activeSpoilers.forEach(activeSpoiler => {
           activeSpoiler.classList.remove("--spoiler-active");
           overlay.classList.remove("--active");
           body.classList.remove("lock");
+          headerBot.style.backgroundColor = '';
+          headerInput.style.opacity = '';
+          headerCatalogBtn.style.opacity = '';
+          headerLogo.style.opacity = '';
         });
       }
     }
 
-    document.addEventListener("mouseover", handleMouseLeft);
+    function handleClickOutside(e) {
+      if (!e.target.closest(".js-main-nav-item")) {
+        hideSpoiler();
+      }
+    }
+
+    function handleKeydown(e) {
+      if (e.key === 'Escape') {
+        hideSpoiler();
+      }
+    }
+
     document.addEventListener("click", handleClickOutside);
     document.addEventListener("keydown", handleKeydown);
   }
-
-  function handleMouseLeft(e) {
-    const allHovSpoilers = document.querySelectorAll(".js-main-nav-item-link-hover");
-    allHovSpoilers.forEach((oneSpoiler) => {
-      if (oneSpoiler.classList.contains('--spoiler-active') && window.innerWidth >= 1280) {
-        if (!e.target.closest(".js-main-nav-item-link-hover") && !e.target.closest(".js-main-nav-item-content")) {
-          oneSpoiler.classList.remove("--spoiler-active");
-          overlay.classList.remove("--active");
-          body.classList.remove("lock");
-        }
-      }
-    })
-  }
-
-  function handleClickOutside(e) {
-    if (!e.target.closest("[data-spoiler]") && !e.target.closest(".js-main-nav-item-content")) {
-      hideSpoilersBody();
-    }
-  }
-
-  function handleKeydown(e) {
-    if (e.key === 'Escape') {
-      hideSpoilersBody();
-    }
-  }
 }
+
 
 // Модуль работы с табами.
 function tabsHeader() {
@@ -298,7 +300,7 @@ const overlayClose = () => {
 // При клике на меню и поиск закрытие спойлеров мобильного меню.
 const closeSpoilersContent = () => {
   if (body.classList.contains("main-nav-open")) {
-    mainNavItemLink.forEach((oneButton) => {
+    headerMainNavItemLink.forEach((oneButton) => {
       if (oneButton.classList.contains("--spoiler-active")) {
         oneButton.classList.remove("--spoiler-active");
       }
@@ -308,25 +310,25 @@ const closeSpoilersContent = () => {
 
 // При скролле страницы показ и скрытие шапки.
 let prevScrollPos = window.scrollY;
-const headerHeight = mainHeader.offsetHeight;
+const headerHeight = headerMain.offsetHeight;
 const scrollThreshold = 100;
 
 const showAndHideHeader = () => {
   let currentScrollPos = window.scrollY;
-  if (prevScrollPos > currentScrollPos) mainHeader.style.top = "0px";
+  if (prevScrollPos > currentScrollPos) headerMain.style.top = "0px";
   else if (currentScrollPos > scrollThreshold)
-    mainHeader.style.top = `-${headerHeight}px`;
+    headerMain.style.top = `-${headerHeight}px`;
   prevScrollPos = currentScrollPos;
 };
 
 // Изменить атрибут у контейнера шапки для изменения логики работы Спойлеров.
 const changeContainerAttribute = () => {
-  const allSpoilers = document.querySelectorAll('[data-spoiler]')
+  const allSpoilers = document.querySelectorAll('[data-spoiler-header]')
   allSpoilers.forEach((oneSpoiler) => {
     if (window.innerWidth <= 1279) {
-      oneSpoiler.removeAttribute('data-one-spoiler')
+      oneSpoiler.removeAttribute('data-one-spoiler-header')
     } else if (window.innerWidth >= 1280) {
-      oneSpoiler.setAttribute('data-one-spoiler', '')
+      oneSpoiler.setAttribute('data-one-spoiler-header', '')
     }
   })
 };
@@ -334,7 +336,7 @@ const changeContainerAttribute = () => {
 // Закрыть спойлера, оверлея и lock body, при ресайзе страницы.
 const closeSpoiler = () => {
   if (!body.classList.contains("main-nav-open") && window.innerWidth <= 1279) {
-    mainNavItemLink.forEach((spoiler) => {
+    headerMainNavItemLink.forEach((spoiler) => {
       if (spoiler.classList.contains("--spoiler-active")) {
         spoiler.classList.remove("--spoiler-active");
         overlay.classList.remove("--active");
@@ -345,7 +347,7 @@ const closeSpoiler = () => {
 
   if (body.classList.contains("main-nav-open") && window.innerWidth >= 1280) {
     body.classList.remove("lock", "main-nav-open");
-    mainNavItemLink.forEach((spoiler) => {
+    headerMainNavItemLink.forEach((spoiler) => {
       spoiler.classList.remove("--spoiler-active");
     });
   }
@@ -354,21 +356,21 @@ const closeSpoiler = () => {
 // Менять класс у айтема Каталога
 const prodClassChange = () => {
   if (window.innerWidth <= 1279)
-    catalogItem.classList.remove('main-nav-item--catalog');
+    headerCatalogBtn.classList.remove('main-nav-item--catalog');
   else if (window.innerWidth >= 1280)
-    catalogItem.classList.add('main-nav-item--catalog');
+    headerCatalogBtn.classList.add('main-nav-item--catalog');
 }
 
 // Добавление / удаление классов у body и header в зависимости от скроллбара
 const updatePadding = () => {
   if (document.documentElement.scrollHeight > document.documentElement.clientHeight) {
     body.classList.add('has-scrollbar');
-    document.querySelector('.js-main-header-top').classList.add('has-scrollbar');
-    document.querySelector('.js-main-header-bottom').classList.add('has-scrollbar')
+    headerTop.classList.add('has-scrollbar');
+    headerBot.classList.add('has-scrollbar')
   } else {
     body.classList.remove('has-scrollbar');
-    document.querySelector('.js-main-header-top').classList.remove('has-scrollbar');
-    document.querySelector('.js-main-header-bottom').classList.remove('has-scrollbar')
+    headerTop.classList.remove('has-scrollbar');
+    headerBot.classList.remove('has-scrollbar')
   }
 }
 
@@ -383,7 +385,7 @@ const onDocumentScroll = () => {
 };
 
 const onDocumentResize = () => {
-  changeContainerAttribute();
+  // changeContainerAttribute();
   closeSpoiler();
   prodClassChange();
   updatePadding();
@@ -391,7 +393,7 @@ const onDocumentResize = () => {
 
 const onInputClick = (e) => {
   overlayClose(e);
-  mainNavItemLink.forEach((spoiler) => {
+  headerMainNavItemLink.forEach((spoiler) => {
     if (spoiler.classList.contains("--spoiler-active")) {
       spoiler.classList.remove("--spoiler-active");
       overlay.classList.remove("--active");
@@ -402,11 +404,11 @@ const onInputClick = (e) => {
 };
 
 // События на странице.
-iconMenuButton.addEventListener("click", onIconMenuClick);
+headerIconMenuButton.addEventListener("click", onIconMenuClick);
 document.addEventListener("scroll", onDocumentScroll);
 window.addEventListener("resize", onDocumentResize);
 window.addEventListener("load", onDocumentResize);
-searchInput.addEventListener('click', onInputClick);
+headerInput.addEventListener('click', onInputClick);
 
 menuInit();
 spoilersHeader();
