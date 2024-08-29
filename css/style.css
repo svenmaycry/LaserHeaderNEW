@@ -743,7 +743,6 @@ body > main {
 }
 .swiper--blogger {
   position: static;
-  padding: 0 5px;
 }
 .swiper--blogger .swiper-button-prev, .swiper--blogger .swiper-button-next {
   top: inherit;
@@ -1757,6 +1756,7 @@ body > main {
   flex-direction: column;
   align-items: center;
   color: inherit;
+  padding-top: 7px;
 }
 .categories-item__link:hover .categories-item__img, .categories-item__link:focus .categories-item__img {
   transform: scale(1.1);
@@ -1857,6 +1857,7 @@ body > main {
 }
 .main-bloggers-item {
   max-width: 450px;
+  padding: 7px;
 }
 .main-bloggers-item__link {
   display: flex;

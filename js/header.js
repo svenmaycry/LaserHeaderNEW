@@ -42,6 +42,7 @@ function menuInit() {
     });
 }
 
+// Модуль работы со спойлерами.
 function spoilersHeader() {
   const spoilers = document.querySelectorAll("[data-spoiler-header]");
 
@@ -104,7 +105,7 @@ function spoilersHeader() {
         if (oneSpoiler && !el.classList.contains("--spoiler-active")) {
           hideSpoiler();
         }
-        
+
         el.classList.toggle("--spoiler-active");
         if (window.innerWidth >= 1280) {
           overlay.classList.toggle("--active", el.classList.contains("--spoiler-active"));
@@ -147,7 +148,6 @@ function spoilersHeader() {
     document.addEventListener("keydown", handleKeydown);
   }
 }
-
 
 // Модуль работы с табами.
 function tabsHeader() {
@@ -297,7 +297,7 @@ const overlayClose = () => {
   overlay.classList.remove("--active");
 };
 
-// При клике на меню и поиск закрытие спойлеров мобильного меню.
+// При клике на меню и закрытие спойлеров мобильного меню.
 const closeSpoilersContent = () => {
   if (body.classList.contains("main-nav-open")) {
     headerMainNavItemLink.forEach((oneButton) => {
@@ -319,18 +319,6 @@ const showAndHideHeader = () => {
   else if (currentScrollPos > scrollThreshold)
     headerMain.style.top = `-${headerHeight}px`;
   prevScrollPos = currentScrollPos;
-};
-
-// Изменить атрибут у контейнера шапки для изменения логики работы Спойлеров.
-const changeContainerAttribute = () => {
-  const allSpoilers = document.querySelectorAll('[data-spoiler-header]')
-  allSpoilers.forEach((oneSpoiler) => {
-    if (window.innerWidth <= 1279) {
-      oneSpoiler.removeAttribute('data-one-spoiler-header')
-    } else if (window.innerWidth >= 1280) {
-      oneSpoiler.setAttribute('data-one-spoiler-header', '')
-    }
-  })
 };
 
 // Закрыть спойлера, оверлея и lock body, при ресайзе страницы.
@@ -385,7 +373,6 @@ const onDocumentScroll = () => {
 };
 
 const onDocumentResize = () => {
-  // changeContainerAttribute();
   closeSpoiler();
   prodClassChange();
   updatePadding();
