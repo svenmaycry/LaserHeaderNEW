@@ -22,10 +22,18 @@
         padding-top: 12px;
         padding-bottom: 12px;
       }
+
+      @media (max-width: 767px) {
+        padding: 0;
+      }
     }
 
     &-geo {
       margin-right: 50px;
+
+      @media (max-width: 767px) {
+        display: none;
+      }
 
       &__city {
         font-size: 13px;
@@ -45,7 +53,7 @@
         display: block;
         position: absolute;
         top: 13px;
-        right: 13px;
+        right: 35px;
         width: 30px;
         height: 18px;
         cursor: pointer;
@@ -88,6 +96,11 @@
           }
         }
       }
+
+      @media (max-width: 767px) {
+        top: 17px;
+        right: 15px;
+      }
     }
   }
 
@@ -112,6 +125,10 @@
       flex: 0 0 auto;
       transition: opacity 0.3s;
 
+      @media (max-width: 767px) {
+        order: 1;
+      }
+
       &-img {
         width: auto;
       }
@@ -130,15 +147,20 @@
     &-search {
       flex: 1 1 auto;
 
-      &__form {
+      @media (max-width: 767px) {
+        order: 3;
+        margin-right: 35px;
+      }
+
+      &-form {
         position: relative;
         max-width: 525px;
 
-        input {
+        &__input {
           width: 100%;
           height: 100%;
           border: 1px solid $inputBorder;
-          padding: 11px 80px 11px 13px;
+          padding: 11px 90px 11px 13px;
           border-radius: 12px;
           transition: opacity 0.3s;
           box-sizing: border-box;
@@ -148,33 +170,63 @@
             background-color: $mainWhiteColor;
             outline: 2px solid $primary-color;
           }
-        }
-      }
 
-      &__btn {
-        position: absolute;
-        top: 4px;
-        right: 5px;
-        width: 34px;
-        height: 34px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border: none;
-        padding: 0;
-        border-radius: 12px;
-        background-color: inherit;
-        transition: background-color 0.3s ease-in;
-
-        svg {
-          transition: fill 0.3s ease-in;
+          @media (max-width: 767px) {
+            display: none;
+          }
         }
 
-        &:hover, &:focus {
-          background-color: #80808030;
+        &__btn {
+          position: absolute;
+          top: 4px;
+          right: 5px;
+          width: 34px;
+          height: 34px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border: none;
+          padding: 0;
+          border-radius: 12px;
+          background-color: inherit;
+          transition: background-color 0.3s ease-in;
 
-          svg {
-            fill: $primary-color;
+          &:hover, &:focus {
+            background-color: #80808030;
+          }
+
+          &--close {
+            right: 50px;
+
+            svg {
+              fill: $danger-color;
+              width: 25px;
+              height: 25px;
+            }
+
+            &::before {
+              content: "";
+              position: absolute;
+              top: 5px;
+              right: -6px;
+              width: 1px;
+              height: 24px;
+              background: #d9d9d9;
+              background-size: cover;
+            }
+          }
+
+          &--search {
+
+            svg {
+              fill: $primary-color;
+              width: 30px;
+              height: 30px;
+            }
+
+            @media (max-width: 767px) {
+              top: -17px;
+            }
           }
         }
       }
@@ -187,6 +239,12 @@
       row-gap: 6px;
       font-size: 14px;
       margin-left: 10px;
+
+      @media (max-width: 767px) {
+        order: 2;
+        color: #6d6c6c;
+        margin-left: 5px;
+      }
 
       &__phone-value {
         font-size: 16px;
@@ -207,7 +265,7 @@
         }
 
         @media (max-width: 767px) {
-          font-size: 12px;
+          font-size: 14px;
         }
       }
 
@@ -250,7 +308,7 @@
     flex-direction: column;
     position: fixed;
     width: 100%;
-    height: 79dvh;
+    height: 84dvh;
     top: 121px;
     left: -120%;
     overflow-y: auto;
@@ -258,12 +316,12 @@
     transition: left 0.3s;
 
     @media (max-width: 767px) {
-      top: 108px;
+      top: 53px;
     }
 
     .main-nav-open & {
       left: 0;
-      box-shadow: 0 30px 10px $shadowMiddleColor;
+      box-shadow: 0 68px 0 rgba(0, 0, 0, 0.6);
 
       @media (max-width: 1279px) {
         padding-bottom: 450px;

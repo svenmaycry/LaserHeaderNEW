@@ -49,13 +49,13 @@ const bannerSwiper = new Swiper('.js-swiper-banner', {
 
 });
 
-const articlesSwiper = new Swiper('.js-swiper-articles', {
+const aboutSwiper = new Swiper('.js-swiper-about', {
   // Optional parameters
   observer: true,
   observeParents: true,
   loop: false,
-  slidesPerView: 1,
-  slidesPerGroup: 1,
+  slidesPerView: 1.8,
+  slidesPerGroup: 1.8,
   spaceBetween: 15,
   speed: 900,
   parallax: true,
@@ -66,8 +66,8 @@ const articlesSwiper = new Swiper('.js-swiper-articles', {
 
   // Navigation arrows
   navigation: {
-    nextEl: '.js-swiper-button-next--articles',
-    prevEl: '.js-swiper-button-prev--articles',
+    nextEl: '.js-swiper-button-next--about',
+    prevEl: '.js-swiper-button-prev--about',
     disabledClass: 'swiper-button-disabled',
   },
 
@@ -75,8 +75,8 @@ const articlesSwiper = new Swiper('.js-swiper-articles', {
 
   breakpoints: {
     320: {
-      slidesPerView: 1.4,
-      slidesPerGroup: 1.4,
+      slidesPerView: 1.8,
+      slidesPerGroup: 1.8,
     },
     479: {
       slidesPerView: 2.2,
@@ -107,8 +107,8 @@ const categoriesSwiper = new Swiper('.js-swiper-categories', {
   observer: true,
   observeParents: true,
   loop: false,
-  slidesPerView: 3,
-  slidesPerGroup: 3,
+  slidesPerView: 3.7,
+  slidesPerGroup: 3.7,
   spaceBetween: 0,
   speed: 900,
   parallax: true,
@@ -125,39 +125,35 @@ const categoriesSwiper = new Swiper('.js-swiper-categories', {
 
   breakpoints: {
     320: {
-      slidesPerView: 3,
-      slidesPerGroup: 3,
+      slidesPerView: 3.7,
+      slidesPerGroup: 3.7,
       spaceBetween: 0,
     },
     340: {
-      slidesPerView: 4,
-      slidesPerGroup: 4,
+      slidesPerView: 4.3,
+      slidesPerGroup: 4.3,
     },
     479: {
-      slidesPerView: 6,
-      slidesPerGroup: 6,
+      slidesPerView: 5.7,
+      slidesPerGroup: 5.7,
     },
     606: {
-      slidesPerView: 6,
-      slidesPerGroup: 6,
+      slidesPerView: 6.7,
+      slidesPerGroup: 6.7,
     },
     700: {
-      slidesPerView: 8,
-      slidesPerGroup: 8,
+      slidesPerView: 7.7,
+      slidesPerGroup: 7.7,
     },
     900: {
-      slidesPerView: 6,
-      slidesPerGroup: 6,
-    },
-    1000: {
-      slidesPerView: 7,
-      slidesPerGroup: 7,
+      slidesPerView: 6.7,
+      slidesPerGroup: 6.7,
     },
     1190: {
-      slidesPerView: 8,
-      slidesPerGroup: 8,
+      slidesPerView: 8.7,
+      slidesPerGroup: 8.7,
     },
-    1279: {
+    1280: {
       slidesPerView: 9,
       slidesPerGroup: 9,
       spaceBetween: 10,

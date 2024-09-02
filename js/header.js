@@ -5,7 +5,7 @@ const headerMain = document.querySelector('.js-main-header');
 const headerTop = document.querySelector('.js-main-header-top');
 const headerBot = document.querySelector('.js-main-header-bottom');
 const headerLogo = document.querySelector('.js-main-header-logo');
-const headerInput = document.querySelector('.js-search-input');
+const headerInput = document.querySelector('.js-search-header-input');
 const headerMainNavItemLink = document.querySelectorAll('.js-main-nav-item-link');
 const headerCatalogBtn = document.querySelector('.js-catalog-btn');
 
@@ -347,9 +347,9 @@ const prodClassChange = () => {
     headerCatalogBtn.classList.remove('main-nav-item--catalog');
   else if (window.innerWidth >= 1280)
     headerCatalogBtn.classList.add('main-nav-item--catalog');
-}
+};
 
-// Добавление / удаление классов у body и header в зависимости от скроллбара
+// Добавление / удаление классов у body и header в зависимости от скроллбара.
 const updatePadding = () => {
   if (document.documentElement.scrollHeight > document.documentElement.clientHeight) {
     body.classList.add('has-scrollbar');
@@ -360,6 +360,27 @@ const updatePadding = () => {
     headerTop.classList.remove('has-scrollbar');
     headerBot.classList.remove('has-scrollbar')
   }
+};
+
+// Показ и скрытие кнопки закрытия в поиске.
+function showOrHideCloseBtn() {
+
+  const closeButton = document.querySelector('.js-input-header-close-btn');
+
+  headerInput.addEventListener('input', function () {
+    if (headerInput.value.trim() !== '') {
+      closeButton.style.display = 'flex';
+    } else {
+      closeButton.style.display = 'none';
+    }
+  });
+
+  closeButton.addEventListener('click', function (e) {
+    e.preventDefault();
+    headerInput.value = '';
+    closeButton.style.display = 'none';
+    headerInput.focus();
+  });
 }
 
 // Функции-хендлеры.
@@ -401,3 +422,4 @@ menuInit();
 spoilersHeader();
 tabsHeader();
 dynamicAdapt();
+showOrHideCloseBtn();

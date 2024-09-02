@@ -695,17 +695,32 @@
 
         <div class="main-header-bottom__search  main-header-bottom-search">
 
-          <form class="main-header-bottom-search__form" action="" method="GET">
+          <form class="main-header-bottom-search__form  main-header-bottom-search-form" action="" method="GET">
             <label for="search-header"></label>
-            <input class="js-search-input" id="search-header" type="text" name="form-input"
-                   placeholder="Например, Лазерный станок">
-            <button class="main-header-bottom-search__btn">
-              <svg width="30" height="30">
+            <input
+              class="main-header-bottom-search-form__input  js-search-header-input" id="search-header" type="text"
+              name="form-input"
+              placeholder="Например, Лазерный станок">
+
+            <button
+              class="main-header-bottom-search-form__btn  main-header-bottom-search-form__btn--close  js-input-header-close-btn"
+              style="display: none"
+            >
+              <svg>
+                <use xlink:href="#icon-header-close"></use>
+              </svg>
+            </button>
+
+            <button
+              class="main-header-bottom-search-form__btn  main-header-bottom-search-form__btn--search
+                js-input-header-search-btn"
+              type="button"
+            >
+              <svg>
                 <use xlink:href="#icon-header-search"></use>
               </svg>
             </button>
           </form>
-
         </div>
 
         <dl class="main-header-bottom__contacts  main-header-bottom-contacts">
@@ -739,8 +754,8 @@
             <ul class="personal-banner__list  swiper-wrapper">
               <li class="personal-banner__item  personal-banner-item  swiper-slide">
                 <a class="personal-banner-item__link" href="#">
-                  <img width="960" height="390" class="personal-banner-item__img"
-                       src="https://i.ibb.co/6NBz5CX/banner-3.jpg"
+                  <img width="1680" height="679" class="personal-banner-item__img"
+                       src="https://i.ibb.co/kXLJ2HG/banner-3.png"
                        alt="Фото банера">
                 </a>
               </li>
@@ -776,85 +791,134 @@
           </div>
         </div>
 
-        <!--      БЛОК СО СТАТЬЯМИ-->
-        <div class="personal__articles  personal-articles">
-          <h3 class="personal-articles__title">Про LASERCUT</h3>
-          <div class="personal-articles__swiper  swiper  swiper--articles  js-swiper-articles">
+        <!--      БЛОК ПРО ЛАЗЕРКАТ-->
+        <div class="personal__about  personal-about">
+          <h3 class="personal-about__title">Про LASERCUT</h3>
+          <div class="personal-about__swiper  swiper  swiper--about  js-swiper-about">
             <!-- Кнопки навигации -->
-            <div class="swiper-button-prev  js-swiper-button-prev--articles"></div>
-            <div class="swiper-button-next  js-swiper-button-next--articles"></div>
-            <ul class="personal-articles__list  swiper-wrapper">
-              <li class="personal-articles__item  personal-articles-item  swiper-slide">
-                <a class="personal-articles-item__link" href="#">
-                  <img class="personal-articles-item__img"
-                       src="https://i.ibb.co/C12M3XM/image.png"
-                       alt="Фото статьи">
-                  <p class="personal-articles-item__text">Статьи о лазерном оборудовании</p>
+            <div class="swiper-button-prev  js-swiper-button-prev--about"></div>
+            <div class="swiper-button-next  js-swiper-button-next--about"></div>
+            <ul class="personal-about__list  swiper-wrapper">
+              <li class="personal-about__item  personal-about-item  swiper-slide">
+                <a class="personal-about-item__link" href="#">
+                  <img class="personal-about-item__img"
+                       src="https://i.ibb.co/1TXvxT8/personal-reveiws.png"
+                       alt="Отзывы о Lasercut"
+                       width="490"
+                       height="282"
+                  >
                 </a>
               </li>
-              <li class="personal-articles__item  personal-articles-item  swiper-slide">
-                <a class="personal-articles-item__link" href="#">
-                  <img class="personal-articles-item__img"
-                       src="https://i.ibb.co/kc5dS7J/katalog-komplekt.png"
-                       alt="Фото статьи">
-                  <p class="personal-articles-item__text">Статьи по комплектующим</p>
+              <li class="personal-about__item  personal-about-item  swiper-slide">
+                <a class="personal-about-item__link" href="#">
+                  <img class="personal-about-item__img"
+                       src="https://i.ibb.co/Y3tnpgk/personal-about-blog.png"
+                       alt="Блогеры о нас"
+                       width="490"
+                       height="282"
+                  >
                 </a>
               </li>
-              <li class="personal-articles__item  personal-articles-item  swiper-slide">
-                <a class="personal-articles-item__link" href="#">
-                  <img class="personal-articles-item__img"
-                       src="https://i.ibb.co/C12M3XM/image.png"
-                       alt="Фото статьи">
-                  <p class="personal-articles-item__text">Статьи о лазерном оборудовании</p>
+              <li class="personal-about__item  personal-about-item  swiper-slide">
+                <a class="personal-about-item__link" href="#">
+                  <img class="personal-about-item__img"
+                       src="https://i.ibb.co/MR6QP74/personal-news-ping.png"
+                       alt="Новости компании"
+                       width="490"
+                       height="282"
+                  >
                 </a>
               </li>
-              <li class="personal-articles__item  personal-articles-item  swiper-slide">
-                <a class="personal-articles-item__link" href="#">
-                  <img class="personal-articles-item__img"
-                       src="https://i.ibb.co/C12M3XM/image.png"
-                       alt="Фото статьи">
-                  <p class="personal-articles-item__text">Статьи о лазерном оборудовании</p>
+              <li class="personal-about__item  personal-about-item  swiper-slide">
+                <a class="personal-about-item__link" href="#">
+                  <img class="personal-about-item__img"
+                       src="https://i.ibb.co/1TXvxT8/personal-reveiws.png"
+                       alt="Отзывы о Lasercut"
+                       width="490"
+                       height="282"
+                  >
                 </a>
               </li>
-              <li class="personal-articles__item  personal-articles-item  swiper-slide">
-                <a class="personal-articles-item__link" href="#">
-                  <img class="personal-articles-item__img"
-                       src="https://i.ibb.co/C12M3XM/image.png"
-                       alt="Фото статьи">
-                  <p class="personal-articles-item__text">Статьи о лазерном оборудовании</p>
+              <li class="personal-about__item  personal-about-item  swiper-slide">
+                <a class="personal-about-item__link" href="#">
+                  <img class="personal-about-item__img"
+                       src="https://i.ibb.co/Y3tnpgk/personal-about-blog.png"
+                       alt="Блогеры о нас"
+                       width="490"
+                       height="282"
+                  >
                 </a>
               </li>
-              <li class="personal-articles__item  personal-articles-item  swiper-slide">
-                <a class="personal-articles-item__link" href="#">
-                  <img class="personal-articles-item__img"
-                       src="https://i.ibb.co/C12M3XM/image.png"
-                       alt="Фото статьи">
-                  <p class="personal-articles-item__text">Статьи о лазерном оборудовании</p>
+              <li class="personal-about__item  personal-about-item  swiper-slide">
+                <a class="personal-about-item__link" href="#">
+                  <img class="personal-about-item__img"
+                       src="https://i.ibb.co/MR6QP74/personal-news-ping.png"
+                       alt="Новости компании"
+                       width="490"
+                       height="282"
+                  >
                 </a>
               </li>
+
+              <!--ВНУТРЬ АЙТЕМА ПРИЛЕТАЕТ ССЫЛКА ДЕМОНСТАРЦИЙ-->
+              <li class="personal-about__item  personal-about-item  personal-about-item--demo  swiper-slide">
+
+              </li>
+
+              <!--ВНУТРЬ АЙТЕМА ПРИЛЕТАЕТ ССЫЛКА АКЦИЙ-->
+              <li class="personal-about__item  personal-about-item  personal-about-item--action  swiper-slide">
+
+              </li>
+
             </ul>
           </div>
         </div>
 
         <!--      БЛОК С АКЦИЯМИ-->
-        <div class="personal__actions  personal-actions">
-          <a href="#" class="personal-actions__link">
-            <img
-              width="365"
-              height="183" class="personal-actions__img"
-              src="https://i.ibb.co/SB4cRZm/demo-img.png"
-              alt="#">
-          </a>
-          <a href="#" class="personal-actions__link  personal-actions__link--promo">
-            <img
-              width="365"
-              height="183"
-              class="personal-actions__img"
-              src="https://i.ibb.co/mT2hLj5/promo-img.png"
-              alt="#">
-          </a>
-        </div>
-
+        <ul class="personal__actions  personal-actions">
+          <li class="personal-actions__item  personal-actions-item">
+            <a
+              class="personal-actions-item__link"
+              href="#"
+              data-da=".personal-about-item--demo,767,0"
+            >
+              <picture>
+                <source
+                  media="(max-width: 767px)"
+                  srcset="https://i.ibb.co/NL6Ty3z/demo-small-img.png"
+                >
+                <img
+                  class="personal-actions-item__img"
+                  src="https://i.ibb.co/zZWJsmM/demo-img.png"
+                  width="730"
+                  height="366"
+                  alt="Онлайн демонстранции"
+                >
+              </picture>
+            </a>
+          </li>
+          <li class="personal-actions__item  personal-actions-item">
+            <a
+              class="personal-actions-item__link"
+              href="#"
+              data-da=".personal-about-item--action,767,0"
+            >
+              <picture>
+                <source
+                  media="(max-width: 767px)"
+                  srcset="https://i.ibb.co/brpG4dT/promo-small-img.png"
+                >
+                <img
+                  class="personal-actions-item__img"
+                  src="https://i.ibb.co/RNDq29h/promo-img.png"
+                  width="730"
+                  height="366"
+                  alt="Акции"
+                >
+              </picture>
+            </a>
+          </li>
+        </ul>
       </div>
     </section>
 
@@ -1126,6 +1190,11 @@
     <symbol id="icon-header-search" viewBox="0 0 24 24">
       <path fill-rule="evenodd"
             d="M15 10.5C15 12.9853 12.9853 15 10.5 15C8.01472 15 6 12.9853 6 10.5C6 8.01472 8.01472 6 10.5 6C12.9853 6 15 8.01472 15 10.5ZM14.1793 15.2399C13.1632 16.0297 11.8865 16.5 10.5 16.5C7.18629 16.5 4.5 13.8137 4.5 10.5C4.5 7.18629 7.18629 4.5 10.5 4.5C13.8137 4.5 16.5 7.18629 16.5 10.5C16.5 11.8865 16.0297 13.1632 15.2399 14.1792L20.0304 18.9697L18.9697 20.0303L14.1793 15.2399Z"></path>
+    </symbol>
+
+    <symbol id="icon-header-close" viewBox="0 0 24 24">
+      <path
+        d="M6.2253 4.81108C5.83477 4.42056 5.20161 4.42056 4.81108 4.81108C4.42056 5.20161 4.42056 5.83477 4.81108 6.2253L10.5858 12L4.81114 17.7747C4.42062 18.1652 4.42062 18.7984 4.81114 19.1889C5.20167 19.5794 5.83483 19.5794 6.22535 19.1889L12 13.4142L17.7747 19.1889C18.1652 19.5794 18.7984 19.5794 19.1889 19.1889C19.5794 18.7984 19.5794 18.1652 19.1889 17.7747L13.4142 12L19.189 6.2253C19.5795 5.83477 19.5795 5.20161 19.189 4.81108C18.7985 4.42056 18.1653 4.42056 17.7748 4.81108L12 10.5858L6.2253 4.81108Z"/>
     </symbol>
 
     <symbol id="icon-logo-simple" viewBox="0 0 21 32">

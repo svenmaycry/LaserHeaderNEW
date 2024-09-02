@@ -89,8 +89,8 @@
     }
   }
 
-  // БЛОК СТАТЕЙ
-  &-articles {
+  // БЛОК ПРО ЛАЗЕРКАТ
+  &-about {
     position: relative;
     grid-area: articles;
     overflow-x: hidden;
@@ -100,7 +100,7 @@
       font-family: $fontHeading;
       font-size: 15px;
       font-weight: 700;
-      margin: 7px 0 10px;
+      margin: 7px 0 7px;
 
       &::before {
         content: '';
@@ -110,7 +110,7 @@
         width: 28px;
         height: 28px;
         border-radius: 50%;
-        background: $mainWhiteColor url('https://svgshare.com/i/189z.svg') 3px 3px / 80% no-repeat;
+        background: $mainWhiteColor url('https://svgshare.com/i/189z.svg') center / 80% no-repeat;
         margin-right: 5px;
       }
     }
@@ -124,76 +124,64 @@
     &-item {
 
       &__link {
-        display: flex;
-        align-items: center;
-        background-color: $mainWhiteColor;
+        display: block;
         border: 1px solid #DCE4F0;
         border-radius: 12px;
-        padding: 35px 3px;
-
-        @media (max-width: 767px) {
-          padding: 8px 3px;
-        }
-
-        &:hover, &:focus {
-
-          .personal-articles-item__text {
-            color: $primary-color;
-          }
-        }
+        overflow: hidden;
       }
 
       &__img {
-        width: 83px;
-        margin-right: 5px;
+        width: 100%;
+        height: 100%;
+      }
 
-        @media (max-width: 1800px) {
-          width: 58px;
+      &--demo {
+        @media (min-width: 768px) {
+          display: none;
         }
       }
 
-      &__text {
-        font-size: 12px;
-        color: #000000;
-        max-width: 150px;
-        font-weight: 600;
-        line-height: 1.4;
-        transition: color 0.3s ease-in;
-        margin: 0;
-
-        @media (max-width: 767px) {
-          line-height: 1.2;
+      &--action {
+        @media (min-width: 768px) {
+          display: none;
         }
       }
     }
   }
 
-  // БЛОК АКЦИЙ
+  // БЛОК АКЦИИ
   &-actions {
     grid-area: actions;
     display: grid;
     column-gap: 30px;
     grid-template-columns: repeat(2, 1fr);
     justify-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 
     @media (max-width: 767px) {
       column-gap: 15px;
     }
 
-    &__link {
-      width: 100%;
-      height: 100%;
-      border-radius: 12px;
-      overflow: hidden;
-    }
+    &-item {
 
-    &__img {
-      width: 100%;
-      height: 100%;
-      max-height: 183px;
+      &__link {
+        display: block;
+        width: 100%;
+        height: 100%;
+        border-radius: 12px;
+        overflow: hidden;
+      }
 
-      @media (max-width: 1279px) {
-        max-height: none;
+      &__img {
+        width: 100%;
+        height: 100%;
+        max-height: 183px;
+
+        @media (max-width: 1279px) {
+          max-height: none;
+        }
       }
     }
 
@@ -202,7 +190,7 @@
 
 // СЕКЦИЯ КАТЕГОРИЙ
 .categories {
-  margin-bottom: 110px;
+  margin-bottom: min(3vw, 110px);
 
   &__wrapper {
     position: relative;
@@ -210,8 +198,12 @@
 
   &__title {
     font-family: $fontHeading;
-    font-size: clamp(18px, 3vw, 22px);
+    font-size: clamp(14px, 3vw, 22px);
     margin: 10px 0;
+
+    @media (max-width: 767px) {
+      line-height: 2.5;
+    }
   }
 
   &__list {
