@@ -8,6 +8,7 @@ const headerLogo = document.querySelector('.js-main-header-logo');
 const headerInput = document.querySelector('.js-search-header-input');
 const headerMainNavItemLink = document.querySelectorAll('.js-main-nav-item-link');
 const headerCatalogBtn = document.querySelector('.js-catalog-btn');
+const mobileSearchBtn = document.querySelector('.js-mobile-search-btn');
 
 
 // Модуль работы с меню (бургер).
@@ -38,6 +39,9 @@ function menuInit() {
       if (bodyLockStatus && e.target.closest(".js-icon-menu")) {
         bodyLockToggle();
         body.classList.toggle("main-nav-open");
+        if (mobileSearchBtn.classList.contains("--spoiler-active")) {
+          body.classList.toggle('lock');
+        }
       }
     });
 }
@@ -47,7 +51,7 @@ function spoilersHeader() {
   const spoilers = document.querySelectorAll("[data-spoiler-header]");
 
   if (spoilers.length > 0) {
-    const breakpoint = 1279;
+    const breakpoint = 1024;
     const matchMedia = window.matchMedia(`(max-width: ${breakpoint}px)`);
 
     initSpoilers(spoilers, matchMedia);
@@ -83,7 +87,7 @@ function spoilersHeader() {
         }
 
         el.classList.add("--spoiler-active");
-        if (window.innerWidth >= 1280) {
+        if (window.innerWidth >= 1025) {
           overlay.classList.add("--active");
           headerBot.style.backgroundColor = 'rgba(0, 0, 0, 0.4)';
           headerInput.style.opacity = '0.2';
@@ -107,9 +111,14 @@ function spoilersHeader() {
         }
 
         el.classList.toggle("--spoiler-active");
-        if (window.innerWidth >= 1280) {
+        if (window.innerWidth >= 1025) {
           overlay.classList.toggle("--active", el.classList.contains("--spoiler-active"));
         }
+
+        if (window.innerWidth <= 1024 && !body.classList.contains("main-nav-open")) {
+          overlay.classList.toggle("--active");
+        }
+
         if (!body.classList.contains("main-nav-open")) {
           body.classList.toggle("lock", el.classList.contains("--spoiler-active"));
         }
@@ -117,9 +126,11 @@ function spoilersHeader() {
       }
     }
 
-    function hideSpoiler() {
+    function hideSpoiler(e) {
       const activeSpoilers = document.querySelectorAll("[data-spoiler-header].--spoiler-active");
-      if (activeSpoilers.length > 0 && window.innerWidth >= 1280) {
+      const mobileSearchBtnActive = document.querySelector('.js-mobile-search-btn.--spoiler-active');
+
+      if (activeSpoilers.length > 0 && window.innerWidth >= 1025) {
         activeSpoilers.forEach(activeSpoiler => {
           activeSpoiler.classList.remove("--spoiler-active");
           overlay.classList.remove("--active");
@@ -130,11 +141,24 @@ function spoilersHeader() {
           headerLogo.style.opacity = '';
         });
       }
+      // Закрытие кнопки-спойлера поиска
+      if (mobileSearchBtnActive && window.innerWidth <= 767) {
+        mobileSearchBtnActive.classList.remove("--spoiler-active");
+        overlay.classList.remove("--active");
+        body.classList.remove("lock");
+      }
     }
 
     function handleClickOutside(e) {
-      if (!e.target.closest(".js-main-nav-item")) {
+      if (window.innerWidth >= 1025 && !e.target.closest(".js-main-nav-item")) {
         hideSpoiler();
+      }
+      if (window.innerWidth <= 767 && !e.target.closest(".js-main-nav-item") || e.target.closest(".js-icon-menu")) {
+        mobileSearchBtn.classList.remove("--spoiler-active");
+      }
+      if (window.innerWidth <= 767 && !e.target.closest(".js-main-nav-item") && !e.target.closest(".js-icon-menu")) {
+        overlay.classList.remove("--active");
+        body.classList.remove("lock");
       }
     }
 
@@ -286,6 +310,19 @@ function dynamicAdapt() {
 
 // Модуль с моим кодом.
 
+// При скролле страницы показ и скрытие шапки.
+let prevScrollPos = window.scrollY;
+const headerHeight = headerMain.offsetHeight;
+const SCROLL_THRESHOLD = 100;
+
+const showAndHideHeader = () => {
+  let currentScrollPos = window.scrollY;
+  if (prevScrollPos > currentScrollPos) headerMain.style.top = "0px";
+  else if (currentScrollPos > SCROLL_THRESHOLD)
+    headerMain.style.top = `-${headerHeight}px`;
+  prevScrollPos = currentScrollPos;
+};
+
 // При клике на поиск закрытие Меню-бургер + Сохранение класса lock.
 const closeBurgerMenu = () => {
   if (body.classList.contains("main-nav-open"))
@@ -308,22 +345,9 @@ const closeSpoilersContent = () => {
   }
 };
 
-// При скролле страницы показ и скрытие шапки.
-let prevScrollPos = window.scrollY;
-const headerHeight = headerMain.offsetHeight;
-const scrollThreshold = 100;
-
-const showAndHideHeader = () => {
-  let currentScrollPos = window.scrollY;
-  if (prevScrollPos > currentScrollPos) headerMain.style.top = "0px";
-  else if (currentScrollPos > scrollThreshold)
-    headerMain.style.top = `-${headerHeight}px`;
-  prevScrollPos = currentScrollPos;
-};
-
 // Закрыть спойлера, оверлея и lock body, при ресайзе страницы.
 const closeSpoiler = () => {
-  if (!body.classList.contains("main-nav-open") && window.innerWidth <= 1279) {
+  if (!body.classList.contains("main-nav-open") && window.innerWidth <= 1024) {
     headerMainNavItemLink.forEach((spoiler) => {
       if (spoiler.classList.contains("--spoiler-active")) {
         spoiler.classList.remove("--spoiler-active");
@@ -333,19 +357,25 @@ const closeSpoiler = () => {
     });
   }
 
-  if (body.classList.contains("main-nav-open") && window.innerWidth >= 1280) {
+  if (body.classList.contains("main-nav-open") && window.innerWidth >= 1025) {
     body.classList.remove("lock", "main-nav-open");
     headerMainNavItemLink.forEach((spoiler) => {
       spoiler.classList.remove("--spoiler-active");
     });
   }
+
+  if (!body.classList.contains("main-nav-open") && window.innerWidth >= 678) {
+    body.classList.remove("lock", "main-nav-open");
+    mobileSearchBtn.classList.remove('--spoiler-active');
+    overlay.classList.remove("--active");
+  }
 };
 
 // Менять класс у айтема Каталога
 const prodClassChange = () => {
-  if (window.innerWidth <= 1279)
+  if (window.innerWidth <= 1024)
     headerCatalogBtn.classList.remove('main-nav-item--catalog');
-  else if (window.innerWidth >= 1280)
+  else if (window.innerWidth >= 1025)
     headerCatalogBtn.classList.add('main-nav-item--catalog');
 };
 
@@ -383,6 +413,18 @@ function showOrHideCloseBtn() {
   });
 }
 
+// Закрытие main-nav на мобилке при клмке на Поиск.
+const mainNavCloseOnMobile = () => {
+  if (window.innerWidth <= 767 && body.classList.contains('main-nav-open')) {
+    body.classList.remove('main-nav-open');
+    headerMainNavItemLink.forEach((oneButton) => {
+      if (oneButton.classList.contains("--spoiler-active")) {
+        oneButton.classList.remove("--spoiler-active");
+      }
+    });
+  }
+};
+
 // Функции-хендлеры.
 const onIconMenuClick = (e) => {
   overlayClose(e);
@@ -399,17 +441,24 @@ const onDocumentResize = () => {
   updatePadding();
 };
 
-const onInputClick = (e) => {
-  overlayClose(e);
-  headerMainNavItemLink.forEach((spoiler) => {
-    if (spoiler.classList.contains("--spoiler-active")) {
-      spoiler.classList.remove("--spoiler-active");
-      overlay.classList.remove("--active");
-      body.classList.remove("lock");
-    }
-  })
-  closeBurgerMenu();
+const onMobileSearchButtonClick = () => {
+  mainNavCloseOnMobile();
 };
+
+const onInputClick = (e) => {
+  if (window.innerWidth >= 768) {
+    overlayClose(e);
+    headerMainNavItemLink.forEach((spoiler) => {
+      if (spoiler.classList.contains("--spoiler-active")) {
+        spoiler.classList.remove("--spoiler-active");
+        overlay.classList.remove("--active");
+        body.classList.remove("lock");
+      }
+    })
+    closeBurgerMenu();
+  }
+};
+
 
 // События на странице.
 headerIconMenuButton.addEventListener("click", onIconMenuClick);
@@ -417,6 +466,7 @@ document.addEventListener("scroll", onDocumentScroll);
 window.addEventListener("resize", onDocumentResize);
 window.addEventListener("load", onDocumentResize);
 headerInput.addEventListener('click', onInputClick);
+mobileSearchBtn.addEventListener('click', onMobileSearchButtonClick);
 
 menuInit();
 spoilersHeader();

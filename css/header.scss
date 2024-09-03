@@ -9,7 +9,7 @@
   &-top {
 
     &.has-scrollbar {
-      @media (min-width: 1280px) {
+      @media (min-width: 1025px) {
         padding-right: calc(17px - (100vw - 100%));
       }
     }
@@ -18,7 +18,7 @@
       display: flex;
       align-items: center;
 
-      @media (max-width: 1279px) {
+      @media (max-width: 1024px) {
         padding-top: 12px;
         padding-bottom: 12px;
       }
@@ -49,11 +49,11 @@
     &__menu-btn {
       display: none;
 
-      @media (max-width: 1279px) {
+      @media (max-width: 1024px) {
         display: block;
         position: absolute;
         top: 13px;
-        right: 35px;
+        right: 25px;
         width: 30px;
         height: 18px;
         cursor: pointer;
@@ -98,7 +98,7 @@
       }
 
       @media (max-width: 767px) {
-        top: 17px;
+        top: 18px;
         right: 15px;
       }
     }
@@ -110,7 +110,7 @@
     transition: background-color 0.3s;
 
     &.has-scrollbar {
-      @media (min-width: 1280px) {
+      @media (min-width: 1025px) {
         padding-right: calc(17px - (100vw - 100%));
       }
     }
@@ -139,7 +139,7 @@
       padding: 0;
       margin: 0 40px 0 60px;
 
-      @media (max-width: 1279px) {
+      @media (max-width: 1024px) {
         display: none;
       }
     }
@@ -156,6 +156,12 @@
         position: relative;
         max-width: 525px;
 
+        @media (max-width: 767px) {
+          display: none;
+          margin-bottom: 20px;
+          max-width: 100%;
+        }
+
         &__input {
           width: 100%;
           height: 100%;
@@ -169,10 +175,6 @@
             border: 1px solid #00000000;
             background-color: $mainWhiteColor;
             outline: 2px solid $primary-color;
-          }
-
-          @media (max-width: 767px) {
-            display: none;
           }
         }
 
@@ -223,12 +225,86 @@
               width: 30px;
               height: 30px;
             }
-
-            @media (max-width: 767px) {
-              top: -17px;
-            }
           }
         }
+      }
+    }
+
+    &__search-btn-list {
+      list-style: none;
+      order: 3;
+      padding: 0;
+      margin: 0 40px 0 auto;
+
+      @media (min-width: 768px) {
+        display: none;
+      }
+    }
+
+    &-search-btn {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 34px;
+      height: 34px;
+      background-color: inherit;
+      border-radius: 12px;
+      border: none;
+      transition: background-color 0.3s ease-in;
+      padding: 0;
+
+
+      &::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: url(https://svgshare.com/i/19xX.svg) 3px / 86% no-repeat;
+      }
+
+      &:hover, &:focus {
+        background-color: #80808030;
+      }
+
+      &.--spoiler-active {
+        @media (max-width: 767px) {
+          + .main-header-bottom-search-content {
+            opacity: 1;
+            visibility: visible;
+
+            form {
+              display: block;
+            }
+          }
+
+          &::before {
+            content: '';
+            background: url(https://svgshare.com/i/19yY.svg) 3px / 86% no-repeat;
+          }
+        }
+
+      }
+    }
+
+    &-search-content {
+      @media (max-width: 767px) {
+        position: absolute;
+        top: 53px;
+        left: 0;
+        width: 100%;
+        max-height: 85dvh;
+        overflow-y: auto;
+        overflow-x: hidden;
+        box-shadow: 0 12px 11px rgba(0, 0, 0, 0.4);
+        background-color: rgb(255, 255, 255);
+        transition: opacity 0.3s;
+        padding: 20px 10px;
+        box-sizing: border-box;
+        border-top: 1px solid $greyBorderColor;
+        opacity: 0;
+        visibility: hidden;
+
       }
     }
 
@@ -258,7 +334,7 @@
           }
         }
 
-        @media (min-width: 1280px) {
+        @media (min-width: 1025px) {
           &:focus {
             color: $primary-color;
           }
@@ -287,7 +363,7 @@
             color: $primary-color;
           }
         }
-        @media (min-width: 1280px) {
+        @media (min-width: 1025px) {
           &:focus {
             color: $primary-color;
           }
@@ -303,16 +379,17 @@
   display: flex;
   flex: 1 1 auto;
 
-  @media (max-width: 1279px) {
+  @media (max-width: 1024px) {
     display: flex;
     flex-direction: column;
     position: fixed;
     width: 100%;
     height: 84dvh;
-    top: 121px;
+    top: 119px;
     left: -120%;
     overflow-y: auto;
     background-color: $mainWhiteColor;
+    border-top: 1px solid $greyBorderColor;
     transition: left 0.3s;
 
     @media (max-width: 767px) {
@@ -323,7 +400,7 @@
       left: 0;
       box-shadow: 0 68px 0 rgba(0, 0, 0, 0.6);
 
-      @media (max-width: 1279px) {
+      @media (max-width: 1024px) {
         padding-bottom: 450px;
       }
       @media (max-width: 767px) {
@@ -341,7 +418,7 @@
     margin: 0;
 
 
-    @media (max-width: 1279px) {
+    @media (max-width: 1024px) {
       display: block;
       min-height: auto;
       margin-bottom: 10px;
@@ -350,7 +427,7 @@
   }
 
   &-item {
-    @media (max-width: 1279px) {
+    @media (max-width: 1024px) {
       border-bottom: 1px solid $greyBorderColor;
     }
 
@@ -385,13 +462,13 @@
         background: url('https://svgshare.com/i/14bH.svg') 0 0 / contain no-repeat;
         transition: transform 0.3s, right 0.1s, top 0.1s, opacity 0.3s ease-in 0.1s;
 
-        @media (max-width: 1279px) {
+        @media (max-width: 1024px) {
           top: 14px;
           right: 3px;
         }
       }
 
-      @media (max-width: 1279px) {
+      @media (max-width: 1024px) {
         font-weight: 600;
         width: 100%;
         height: 100%;
@@ -419,12 +496,12 @@
 
       &.--spoiler-active {
 
-        @media (min-width: 1280px) {
+        @media (min-width: 1025px) {
           background-color: #E7F0FB;
         }
 
         &::before {
-          @media (max-width: 1279px) {
+          @media (max-width: 1024px) {
             opacity: 1;
             transform: rotate(90deg);
             top: 10px;
@@ -433,7 +510,7 @@
         }
 
         svg {
-          @media (max-width: 1279px) {
+          @media (max-width: 1024px) {
             transition: transform 0.3s;
             transform: rotate(-90deg);
           }
@@ -442,7 +519,7 @@
         + .main-nav-item-content {
           opacity: 1;
           visibility: visible;
-          @media (max-width: 1279px) {
+          @media (max-width: 1024px) {
             max-height: 3000px;
           }
 
@@ -490,7 +567,7 @@
         }
       }
 
-      @media (max-width: 1279px) {
+      @media (max-width: 1024px) {
         position: static;
         overflow: hidden;
         max-height: 0;
@@ -517,7 +594,7 @@
 
       .main-nav-item {
 
-        @media (min-width: 1280px) {
+        @media (min-width: 1025px) {
           &__link {
             gap: 10px;
             color: $mainWhiteColor;
@@ -604,7 +681,7 @@
         top: -15px;
         transition: top 0.3s, opacity 0.3s;
 
-        @media (max-width: 1279px) {
+        @media (max-width: 1024px) {
           top: -10px;
         }
       }
@@ -625,13 +702,13 @@
           }
         }
 
-        @media (min-width: 1280px) {
+        @media (min-width: 1025px) {
           &:focus {
             color: $primary-color;
             background-color: #EEF1F4;
           }
         }
-        @media (max-width: 1279px) {
+        @media (max-width: 1024px) {
           display: block;
           width: 100%;
           padding: 8px 0;
@@ -653,7 +730,7 @@
       }
 
       &--products {
-        @media (min-width: 1280px) {
+        @media (min-width: 1025px) {
           display: flex;
           column-gap: 30px;
           top: 125px;
@@ -679,7 +756,7 @@
             &.main-nav-tab-active {
 
               .main-nav-item-content-item__link {
-                @media (min-width: 1280px) {
+                @media (min-width: 1025px) {
                   color: $mainWhiteColor;
                 }
               }
@@ -693,12 +770,12 @@
                 transform: scale(1.2);
               }
 
-              @media (min-width: 1280px) {
+              @media (min-width: 1025px) {
                 background-color: $primary-color;
                 border-radius: 12px;
               }
 
-              @media (max-width: 1279px) {
+              @media (max-width: 1024px) {
                 color: inherit;
                 .main-nav-item-content-item__arrow {
                   visibility: hidden;
@@ -717,11 +794,11 @@
               color: inherit;
               border-radius: 12px;
 
-              @media (min-width: 1280px) {
+              @media (min-width: 1025px) {
 
                 &:hover, &:focus {
 
-                  @media (min-width: 1280px) {
+                  @media (min-width: 1025px) {
                     color: $mainWhiteColor;
                     background-color: $primary-color;
 
@@ -732,7 +809,7 @@
                 }
               }
 
-              @media (max-width: 1279px) {
+              @media (max-width: 1024px) {
                 padding: 0;
               }
 
@@ -782,7 +859,7 @@
               }
             }
 
-            @media (max-width: 1279px) {
+            @media (max-width: 1024px) {
               display: none;
             }
 
@@ -871,12 +948,12 @@
 
   &-social-header {
 
-    @media (min-width: 1280px) {
+    @media (min-width: 1025px) {
       margin-left: auto;
       align-self: center;
     }
 
-    @media (max-width: 1279px) {
+    @media (max-width: 1024px) {
       margin-bottom: 20px;
       padding: 0 10px;
     }
@@ -892,7 +969,7 @@
     &__item {
 
       &--vk {
-        @media (min-width: 1280px) {
+        @media (min-width: 1025px) {
           display: none;
         }
 
@@ -908,7 +985,7 @@
       }
 
       &--whatsapp {
-        @media (min-width: 1280px) {
+        @media (min-width: 1025px) {
           display: none;
         }
       }
@@ -917,7 +994,7 @@
     &__link {
       display: flex;
 
-      @media (min-width: 1280px) {
+      @media (min-width: 1025px) {
         &:focus {
           svg {
             transform: scale(1.3);
@@ -926,7 +1003,7 @@
       }
 
       svg {
-        @media (min-width: 1280px) {
+        @media (min-width: 1025px) {
           transition: transform 0.3s ease-in 0s;
           @media (any-hover: hover) {
             &:hover {
@@ -940,11 +1017,11 @@
 
   &-mobile-contacts {
 
-    @media (min-width: 1280px) {
+    @media (min-width: 1025px) {
       display: none;
     }
 
-    @media (max-width: 1279px) {
+    @media (max-width: 1024px) {
       padding: 0 10px;
     }
 
