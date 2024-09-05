@@ -1769,7 +1769,7 @@ body > main {
   font-family: "Cera Pro", Helvetica, sans-serif;
   font-size: 15px;
   font-weight: 700;
-  margin: 7px 0 7px;
+  margin: 7px 0 17px;
 }
 .personal-about__title::before {
   content: "";
@@ -1812,7 +1812,6 @@ body > main {
   display: grid;
   column-gap: 30px;
   grid-template-columns: repeat(2, 1fr);
-  justify-items: center;
   list-style: none;
   padding: 0;
   margin: 0;

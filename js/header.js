@@ -156,7 +156,7 @@ function spoilersHeader() {
       if (window.innerWidth <= 767 && !e.target.closest(".js-main-nav-item") || e.target.closest(".js-icon-menu")) {
         mobileSearchBtn.classList.remove("--spoiler-active");
       }
-      if (window.innerWidth <= 767 && !e.target.closest(".js-main-nav-item") && !e.target.closest(".js-icon-menu")) {
+      if (window.innerWidth <= 767 && !e.target.closest(".js-main-nav-item") && !e.target.closest(".js-icon-menu") && !body.classList.contains('main-nav-open')) {
         overlay.classList.remove("--active");
         body.classList.remove("lock");
       }
